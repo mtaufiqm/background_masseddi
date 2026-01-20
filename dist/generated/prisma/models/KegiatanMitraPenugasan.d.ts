@@ -1,0 +1,2262 @@
+import type * as runtime from "@prisma/client/runtime/client";
+import type * as Prisma from "../internal/prismaNamespace";
+/**
+ * Model KegiatanMitraPenugasan
+ *
+ */
+export type KegiatanMitraPenugasanModel = runtime.Types.Result.DefaultSelection<Prisma.$KegiatanMitraPenugasanPayload>;
+export type AggregateKegiatanMitraPenugasan = {
+    _count: KegiatanMitraPenugasanCountAggregateOutputType | null;
+    _avg: KegiatanMitraPenugasanAvgAggregateOutputType | null;
+    _sum: KegiatanMitraPenugasanSumAggregateOutputType | null;
+    _min: KegiatanMitraPenugasanMinAggregateOutputType | null;
+    _max: KegiatanMitraPenugasanMaxAggregateOutputType | null;
+};
+export type KegiatanMitraPenugasanAvgAggregateOutputType = {
+    group_type_id: number | null;
+    status: number | null;
+};
+export type KegiatanMitraPenugasanSumAggregateOutputType = {
+    group_type_id: number | null;
+    status: number | null;
+};
+export type KegiatanMitraPenugasanMinAggregateOutputType = {
+    uuid: string | null;
+    bridge_uuid: string | null;
+    code: string | null;
+    group: string | null;
+    group_type_id: number | null;
+    group_desc: string | null;
+    description: string | null;
+    unit: string | null;
+    status: number | null;
+    started_time: string | null;
+    ended_time: string | null;
+    location_latitude: string | null;
+    location_longitude: string | null;
+    notes: string | null;
+    created_at: string | null;
+    last_updated: string | null;
+};
+export type KegiatanMitraPenugasanMaxAggregateOutputType = {
+    uuid: string | null;
+    bridge_uuid: string | null;
+    code: string | null;
+    group: string | null;
+    group_type_id: number | null;
+    group_desc: string | null;
+    description: string | null;
+    unit: string | null;
+    status: number | null;
+    started_time: string | null;
+    ended_time: string | null;
+    location_latitude: string | null;
+    location_longitude: string | null;
+    notes: string | null;
+    created_at: string | null;
+    last_updated: string | null;
+};
+export type KegiatanMitraPenugasanCountAggregateOutputType = {
+    uuid: number;
+    bridge_uuid: number;
+    code: number;
+    group: number;
+    group_type_id: number;
+    group_desc: number;
+    description: number;
+    unit: number;
+    status: number;
+    started_time: number;
+    ended_time: number;
+    location_latitude: number;
+    location_longitude: number;
+    notes: number;
+    created_at: number;
+    last_updated: number;
+    _all: number;
+};
+export type KegiatanMitraPenugasanAvgAggregateInputType = {
+    group_type_id?: true;
+    status?: true;
+};
+export type KegiatanMitraPenugasanSumAggregateInputType = {
+    group_type_id?: true;
+    status?: true;
+};
+export type KegiatanMitraPenugasanMinAggregateInputType = {
+    uuid?: true;
+    bridge_uuid?: true;
+    code?: true;
+    group?: true;
+    group_type_id?: true;
+    group_desc?: true;
+    description?: true;
+    unit?: true;
+    status?: true;
+    started_time?: true;
+    ended_time?: true;
+    location_latitude?: true;
+    location_longitude?: true;
+    notes?: true;
+    created_at?: true;
+    last_updated?: true;
+};
+export type KegiatanMitraPenugasanMaxAggregateInputType = {
+    uuid?: true;
+    bridge_uuid?: true;
+    code?: true;
+    group?: true;
+    group_type_id?: true;
+    group_desc?: true;
+    description?: true;
+    unit?: true;
+    status?: true;
+    started_time?: true;
+    ended_time?: true;
+    location_latitude?: true;
+    location_longitude?: true;
+    notes?: true;
+    created_at?: true;
+    last_updated?: true;
+};
+export type KegiatanMitraPenugasanCountAggregateInputType = {
+    uuid?: true;
+    bridge_uuid?: true;
+    code?: true;
+    group?: true;
+    group_type_id?: true;
+    group_desc?: true;
+    description?: true;
+    unit?: true;
+    status?: true;
+    started_time?: true;
+    ended_time?: true;
+    location_latitude?: true;
+    location_longitude?: true;
+    notes?: true;
+    created_at?: true;
+    last_updated?: true;
+    _all?: true;
+};
+export type KegiatanMitraPenugasanAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Filter which KegiatanMitraPenugasan to aggregate.
+     */
+    where?: Prisma.KegiatanMitraPenugasanWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of KegiatanMitraPenugasans to fetch.
+     */
+    orderBy?: Prisma.KegiatanMitraPenugasanOrderByWithRelationInput | Prisma.KegiatanMitraPenugasanOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the start position
+     */
+    cursor?: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` KegiatanMitraPenugasans from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` KegiatanMitraPenugasans.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned KegiatanMitraPenugasans
+    **/
+    _count?: true | KegiatanMitraPenugasanCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to average
+    **/
+    _avg?: KegiatanMitraPenugasanAvgAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to sum
+    **/
+    _sum?: KegiatanMitraPenugasanSumAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+    **/
+    _min?: KegiatanMitraPenugasanMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+    **/
+    _max?: KegiatanMitraPenugasanMaxAggregateInputType;
+};
+export type GetKegiatanMitraPenugasanAggregateType<T extends KegiatanMitraPenugasanAggregateArgs> = {
+    [P in keyof T & keyof AggregateKegiatanMitraPenugasan]: P extends '_count' | 'count' ? T[P] extends true ? number : Prisma.GetScalarType<T[P], AggregateKegiatanMitraPenugasan[P]> : Prisma.GetScalarType<T[P], AggregateKegiatanMitraPenugasan[P]>;
+};
+export type KegiatanMitraPenugasanGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.KegiatanMitraPenugasanWhereInput;
+    orderBy?: Prisma.KegiatanMitraPenugasanOrderByWithAggregationInput | Prisma.KegiatanMitraPenugasanOrderByWithAggregationInput[];
+    by: Prisma.KegiatanMitraPenugasanScalarFieldEnum[] | Prisma.KegiatanMitraPenugasanScalarFieldEnum;
+    having?: Prisma.KegiatanMitraPenugasanScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: KegiatanMitraPenugasanCountAggregateInputType | true;
+    _avg?: KegiatanMitraPenugasanAvgAggregateInputType;
+    _sum?: KegiatanMitraPenugasanSumAggregateInputType;
+    _min?: KegiatanMitraPenugasanMinAggregateInputType;
+    _max?: KegiatanMitraPenugasanMaxAggregateInputType;
+};
+export type KegiatanMitraPenugasanGroupByOutputType = {
+    uuid: string;
+    bridge_uuid: string;
+    code: string;
+    group: string;
+    group_type_id: number;
+    group_desc: string;
+    description: string;
+    unit: string;
+    status: number;
+    started_time: string | null;
+    ended_time: string | null;
+    location_latitude: string | null;
+    location_longitude: string | null;
+    notes: string | null;
+    created_at: string | null;
+    last_updated: string | null;
+    _count: KegiatanMitraPenugasanCountAggregateOutputType | null;
+    _avg: KegiatanMitraPenugasanAvgAggregateOutputType | null;
+    _sum: KegiatanMitraPenugasanSumAggregateOutputType | null;
+    _min: KegiatanMitraPenugasanMinAggregateOutputType | null;
+    _max: KegiatanMitraPenugasanMaxAggregateOutputType | null;
+};
+type GetKegiatanMitraPenugasanGroupByPayload<T extends KegiatanMitraPenugasanGroupByArgs> = Prisma.PrismaPromise<Array<Prisma.PickEnumerable<KegiatanMitraPenugasanGroupByOutputType, T['by']> & {
+    [P in ((keyof T) & (keyof KegiatanMitraPenugasanGroupByOutputType))]: P extends '_count' ? T[P] extends boolean ? number : Prisma.GetScalarType<T[P], KegiatanMitraPenugasanGroupByOutputType[P]> : Prisma.GetScalarType<T[P], KegiatanMitraPenugasanGroupByOutputType[P]>;
+}>>;
+export type KegiatanMitraPenugasanWhereInput = {
+    AND?: Prisma.KegiatanMitraPenugasanWhereInput | Prisma.KegiatanMitraPenugasanWhereInput[];
+    OR?: Prisma.KegiatanMitraPenugasanWhereInput[];
+    NOT?: Prisma.KegiatanMitraPenugasanWhereInput | Prisma.KegiatanMitraPenugasanWhereInput[];
+    uuid?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    bridge_uuid?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    code?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    group?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    group_type_id?: Prisma.IntFilter<"KegiatanMitraPenugasan"> | number;
+    group_desc?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    description?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    unit?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    status?: Prisma.IntFilter<"KegiatanMitraPenugasan"> | number;
+    started_time?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    ended_time?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    location_latitude?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    location_longitude?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    notes?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    created_at?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    last_updated?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    bridgeObj?: Prisma.XOR<Prisma.KegiatanMitraBridgeScalarRelationFilter, Prisma.KegiatanMitraBridgeWhereInput>;
+    statusObj?: Prisma.XOR<Prisma.PenugasanStatusScalarRelationFilter, Prisma.PenugasanStatusWhereInput>;
+    groupObj?: Prisma.XOR<Prisma.PenugasanGroupTypeScalarRelationFilter, Prisma.PenugasanGroupTypeWhereInput>;
+    historyListObj?: Prisma.PenugasanHistoryListRelationFilter;
+    penugasanPhoto?: Prisma.XOR<Prisma.PenugasanPhotoNullableScalarRelationFilter, Prisma.PenugasanPhotoWhereInput> | null;
+};
+export type KegiatanMitraPenugasanOrderByWithRelationInput = {
+    uuid?: Prisma.SortOrder;
+    bridge_uuid?: Prisma.SortOrder;
+    code?: Prisma.SortOrder;
+    group?: Prisma.SortOrder;
+    group_type_id?: Prisma.SortOrder;
+    group_desc?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+    unit?: Prisma.SortOrder;
+    status?: Prisma.SortOrder;
+    started_time?: Prisma.SortOrderInput | Prisma.SortOrder;
+    ended_time?: Prisma.SortOrderInput | Prisma.SortOrder;
+    location_latitude?: Prisma.SortOrderInput | Prisma.SortOrder;
+    location_longitude?: Prisma.SortOrderInput | Prisma.SortOrder;
+    notes?: Prisma.SortOrderInput | Prisma.SortOrder;
+    created_at?: Prisma.SortOrderInput | Prisma.SortOrder;
+    last_updated?: Prisma.SortOrderInput | Prisma.SortOrder;
+    bridgeObj?: Prisma.KegiatanMitraBridgeOrderByWithRelationInput;
+    statusObj?: Prisma.PenugasanStatusOrderByWithRelationInput;
+    groupObj?: Prisma.PenugasanGroupTypeOrderByWithRelationInput;
+    historyListObj?: Prisma.PenugasanHistoryOrderByRelationAggregateInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoOrderByWithRelationInput;
+};
+export type KegiatanMitraPenugasanWhereUniqueInput = Prisma.AtLeast<{
+    uuid?: string;
+    AND?: Prisma.KegiatanMitraPenugasanWhereInput | Prisma.KegiatanMitraPenugasanWhereInput[];
+    OR?: Prisma.KegiatanMitraPenugasanWhereInput[];
+    NOT?: Prisma.KegiatanMitraPenugasanWhereInput | Prisma.KegiatanMitraPenugasanWhereInput[];
+    bridge_uuid?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    code?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    group?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    group_type_id?: Prisma.IntFilter<"KegiatanMitraPenugasan"> | number;
+    group_desc?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    description?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    unit?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    status?: Prisma.IntFilter<"KegiatanMitraPenugasan"> | number;
+    started_time?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    ended_time?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    location_latitude?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    location_longitude?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    notes?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    created_at?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    last_updated?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    bridgeObj?: Prisma.XOR<Prisma.KegiatanMitraBridgeScalarRelationFilter, Prisma.KegiatanMitraBridgeWhereInput>;
+    statusObj?: Prisma.XOR<Prisma.PenugasanStatusScalarRelationFilter, Prisma.PenugasanStatusWhereInput>;
+    groupObj?: Prisma.XOR<Prisma.PenugasanGroupTypeScalarRelationFilter, Prisma.PenugasanGroupTypeWhereInput>;
+    historyListObj?: Prisma.PenugasanHistoryListRelationFilter;
+    penugasanPhoto?: Prisma.XOR<Prisma.PenugasanPhotoNullableScalarRelationFilter, Prisma.PenugasanPhotoWhereInput> | null;
+}, "uuid">;
+export type KegiatanMitraPenugasanOrderByWithAggregationInput = {
+    uuid?: Prisma.SortOrder;
+    bridge_uuid?: Prisma.SortOrder;
+    code?: Prisma.SortOrder;
+    group?: Prisma.SortOrder;
+    group_type_id?: Prisma.SortOrder;
+    group_desc?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+    unit?: Prisma.SortOrder;
+    status?: Prisma.SortOrder;
+    started_time?: Prisma.SortOrderInput | Prisma.SortOrder;
+    ended_time?: Prisma.SortOrderInput | Prisma.SortOrder;
+    location_latitude?: Prisma.SortOrderInput | Prisma.SortOrder;
+    location_longitude?: Prisma.SortOrderInput | Prisma.SortOrder;
+    notes?: Prisma.SortOrderInput | Prisma.SortOrder;
+    created_at?: Prisma.SortOrderInput | Prisma.SortOrder;
+    last_updated?: Prisma.SortOrderInput | Prisma.SortOrder;
+    _count?: Prisma.KegiatanMitraPenugasanCountOrderByAggregateInput;
+    _avg?: Prisma.KegiatanMitraPenugasanAvgOrderByAggregateInput;
+    _max?: Prisma.KegiatanMitraPenugasanMaxOrderByAggregateInput;
+    _min?: Prisma.KegiatanMitraPenugasanMinOrderByAggregateInput;
+    _sum?: Prisma.KegiatanMitraPenugasanSumOrderByAggregateInput;
+};
+export type KegiatanMitraPenugasanScalarWhereWithAggregatesInput = {
+    AND?: Prisma.KegiatanMitraPenugasanScalarWhereWithAggregatesInput | Prisma.KegiatanMitraPenugasanScalarWhereWithAggregatesInput[];
+    OR?: Prisma.KegiatanMitraPenugasanScalarWhereWithAggregatesInput[];
+    NOT?: Prisma.KegiatanMitraPenugasanScalarWhereWithAggregatesInput | Prisma.KegiatanMitraPenugasanScalarWhereWithAggregatesInput[];
+    uuid?: Prisma.StringWithAggregatesFilter<"KegiatanMitraPenugasan"> | string;
+    bridge_uuid?: Prisma.StringWithAggregatesFilter<"KegiatanMitraPenugasan"> | string;
+    code?: Prisma.StringWithAggregatesFilter<"KegiatanMitraPenugasan"> | string;
+    group?: Prisma.StringWithAggregatesFilter<"KegiatanMitraPenugasan"> | string;
+    group_type_id?: Prisma.IntWithAggregatesFilter<"KegiatanMitraPenugasan"> | number;
+    group_desc?: Prisma.StringWithAggregatesFilter<"KegiatanMitraPenugasan"> | string;
+    description?: Prisma.StringWithAggregatesFilter<"KegiatanMitraPenugasan"> | string;
+    unit?: Prisma.StringWithAggregatesFilter<"KegiatanMitraPenugasan"> | string;
+    status?: Prisma.IntWithAggregatesFilter<"KegiatanMitraPenugasan"> | number;
+    started_time?: Prisma.StringNullableWithAggregatesFilter<"KegiatanMitraPenugasan"> | string | null;
+    ended_time?: Prisma.StringNullableWithAggregatesFilter<"KegiatanMitraPenugasan"> | string | null;
+    location_latitude?: Prisma.StringNullableWithAggregatesFilter<"KegiatanMitraPenugasan"> | string | null;
+    location_longitude?: Prisma.StringNullableWithAggregatesFilter<"KegiatanMitraPenugasan"> | string | null;
+    notes?: Prisma.StringNullableWithAggregatesFilter<"KegiatanMitraPenugasan"> | string | null;
+    created_at?: Prisma.StringNullableWithAggregatesFilter<"KegiatanMitraPenugasan"> | string | null;
+    last_updated?: Prisma.StringNullableWithAggregatesFilter<"KegiatanMitraPenugasan"> | string | null;
+};
+export type KegiatanMitraPenugasanCreateInput = {
+    uuid?: string;
+    code: string;
+    group: string;
+    group_desc: string;
+    description: string;
+    unit: string;
+    started_time?: string | null;
+    ended_time?: string | null;
+    location_latitude?: string | null;
+    location_longitude?: string | null;
+    notes?: string | null;
+    created_at?: string | null;
+    last_updated?: string | null;
+    bridgeObj: Prisma.KegiatanMitraBridgeCreateNestedOneWithoutPenugasanObjInput;
+    statusObj: Prisma.PenugasanStatusCreateNestedOneWithoutPenugasanObjInput;
+    groupObj: Prisma.PenugasanGroupTypeCreateNestedOneWithoutPenugasanObjInput;
+    historyListObj?: Prisma.PenugasanHistoryCreateNestedManyWithoutPenugasanObjInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoCreateNestedOneWithoutPenugasanObjInput;
+};
+export type KegiatanMitraPenugasanUncheckedCreateInput = {
+    uuid?: string;
+    bridge_uuid: string;
+    code: string;
+    group: string;
+    group_type_id: number;
+    group_desc: string;
+    description: string;
+    unit: string;
+    status: number;
+    started_time?: string | null;
+    ended_time?: string | null;
+    location_latitude?: string | null;
+    location_longitude?: string | null;
+    notes?: string | null;
+    created_at?: string | null;
+    last_updated?: string | null;
+    historyListObj?: Prisma.PenugasanHistoryUncheckedCreateNestedManyWithoutPenugasanObjInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoUncheckedCreateNestedOneWithoutPenugasanObjInput;
+};
+export type KegiatanMitraPenugasanUpdateInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    bridgeObj?: Prisma.KegiatanMitraBridgeUpdateOneRequiredWithoutPenugasanObjNestedInput;
+    statusObj?: Prisma.PenugasanStatusUpdateOneRequiredWithoutPenugasanObjNestedInput;
+    groupObj?: Prisma.PenugasanGroupTypeUpdateOneRequiredWithoutPenugasanObjNestedInput;
+    historyListObj?: Prisma.PenugasanHistoryUpdateManyWithoutPenugasanObjNestedInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoUpdateOneWithoutPenugasanObjNestedInput;
+};
+export type KegiatanMitraPenugasanUncheckedUpdateInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    bridge_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_type_id?: Prisma.IntFieldUpdateOperationsInput | number;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.IntFieldUpdateOperationsInput | number;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    historyListObj?: Prisma.PenugasanHistoryUncheckedUpdateManyWithoutPenugasanObjNestedInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoUncheckedUpdateOneWithoutPenugasanObjNestedInput;
+};
+export type KegiatanMitraPenugasanCreateManyInput = {
+    uuid?: string;
+    bridge_uuid: string;
+    code: string;
+    group: string;
+    group_type_id: number;
+    group_desc: string;
+    description: string;
+    unit: string;
+    status: number;
+    started_time?: string | null;
+    ended_time?: string | null;
+    location_latitude?: string | null;
+    location_longitude?: string | null;
+    notes?: string | null;
+    created_at?: string | null;
+    last_updated?: string | null;
+};
+export type KegiatanMitraPenugasanUpdateManyMutationInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+};
+export type KegiatanMitraPenugasanUncheckedUpdateManyInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    bridge_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_type_id?: Prisma.IntFieldUpdateOperationsInput | number;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.IntFieldUpdateOperationsInput | number;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+};
+export type KegiatanMitraPenugasanListRelationFilter = {
+    every?: Prisma.KegiatanMitraPenugasanWhereInput;
+    some?: Prisma.KegiatanMitraPenugasanWhereInput;
+    none?: Prisma.KegiatanMitraPenugasanWhereInput;
+};
+export type KegiatanMitraPenugasanOrderByRelationAggregateInput = {
+    _count?: Prisma.SortOrder;
+};
+export type KegiatanMitraPenugasanCountOrderByAggregateInput = {
+    uuid?: Prisma.SortOrder;
+    bridge_uuid?: Prisma.SortOrder;
+    code?: Prisma.SortOrder;
+    group?: Prisma.SortOrder;
+    group_type_id?: Prisma.SortOrder;
+    group_desc?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+    unit?: Prisma.SortOrder;
+    status?: Prisma.SortOrder;
+    started_time?: Prisma.SortOrder;
+    ended_time?: Prisma.SortOrder;
+    location_latitude?: Prisma.SortOrder;
+    location_longitude?: Prisma.SortOrder;
+    notes?: Prisma.SortOrder;
+    created_at?: Prisma.SortOrder;
+    last_updated?: Prisma.SortOrder;
+};
+export type KegiatanMitraPenugasanAvgOrderByAggregateInput = {
+    group_type_id?: Prisma.SortOrder;
+    status?: Prisma.SortOrder;
+};
+export type KegiatanMitraPenugasanMaxOrderByAggregateInput = {
+    uuid?: Prisma.SortOrder;
+    bridge_uuid?: Prisma.SortOrder;
+    code?: Prisma.SortOrder;
+    group?: Prisma.SortOrder;
+    group_type_id?: Prisma.SortOrder;
+    group_desc?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+    unit?: Prisma.SortOrder;
+    status?: Prisma.SortOrder;
+    started_time?: Prisma.SortOrder;
+    ended_time?: Prisma.SortOrder;
+    location_latitude?: Prisma.SortOrder;
+    location_longitude?: Prisma.SortOrder;
+    notes?: Prisma.SortOrder;
+    created_at?: Prisma.SortOrder;
+    last_updated?: Prisma.SortOrder;
+};
+export type KegiatanMitraPenugasanMinOrderByAggregateInput = {
+    uuid?: Prisma.SortOrder;
+    bridge_uuid?: Prisma.SortOrder;
+    code?: Prisma.SortOrder;
+    group?: Prisma.SortOrder;
+    group_type_id?: Prisma.SortOrder;
+    group_desc?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+    unit?: Prisma.SortOrder;
+    status?: Prisma.SortOrder;
+    started_time?: Prisma.SortOrder;
+    ended_time?: Prisma.SortOrder;
+    location_latitude?: Prisma.SortOrder;
+    location_longitude?: Prisma.SortOrder;
+    notes?: Prisma.SortOrder;
+    created_at?: Prisma.SortOrder;
+    last_updated?: Prisma.SortOrder;
+};
+export type KegiatanMitraPenugasanSumOrderByAggregateInput = {
+    group_type_id?: Prisma.SortOrder;
+    status?: Prisma.SortOrder;
+};
+export type KegiatanMitraPenugasanScalarRelationFilter = {
+    is?: Prisma.KegiatanMitraPenugasanWhereInput;
+    isNot?: Prisma.KegiatanMitraPenugasanWhereInput;
+};
+export type KegiatanMitraPenugasanCreateNestedManyWithoutBridgeObjInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutBridgeObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutBridgeObjInput> | Prisma.KegiatanMitraPenugasanCreateWithoutBridgeObjInput[] | Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutBridgeObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutBridgeObjInput | Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutBridgeObjInput[];
+    createMany?: Prisma.KegiatanMitraPenugasanCreateManyBridgeObjInputEnvelope;
+    connect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+};
+export type KegiatanMitraPenugasanUncheckedCreateNestedManyWithoutBridgeObjInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutBridgeObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutBridgeObjInput> | Prisma.KegiatanMitraPenugasanCreateWithoutBridgeObjInput[] | Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutBridgeObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutBridgeObjInput | Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutBridgeObjInput[];
+    createMany?: Prisma.KegiatanMitraPenugasanCreateManyBridgeObjInputEnvelope;
+    connect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+};
+export type KegiatanMitraPenugasanUpdateManyWithoutBridgeObjNestedInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutBridgeObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutBridgeObjInput> | Prisma.KegiatanMitraPenugasanCreateWithoutBridgeObjInput[] | Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutBridgeObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutBridgeObjInput | Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutBridgeObjInput[];
+    upsert?: Prisma.KegiatanMitraPenugasanUpsertWithWhereUniqueWithoutBridgeObjInput | Prisma.KegiatanMitraPenugasanUpsertWithWhereUniqueWithoutBridgeObjInput[];
+    createMany?: Prisma.KegiatanMitraPenugasanCreateManyBridgeObjInputEnvelope;
+    set?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    disconnect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    delete?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    connect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    update?: Prisma.KegiatanMitraPenugasanUpdateWithWhereUniqueWithoutBridgeObjInput | Prisma.KegiatanMitraPenugasanUpdateWithWhereUniqueWithoutBridgeObjInput[];
+    updateMany?: Prisma.KegiatanMitraPenugasanUpdateManyWithWhereWithoutBridgeObjInput | Prisma.KegiatanMitraPenugasanUpdateManyWithWhereWithoutBridgeObjInput[];
+    deleteMany?: Prisma.KegiatanMitraPenugasanScalarWhereInput | Prisma.KegiatanMitraPenugasanScalarWhereInput[];
+};
+export type KegiatanMitraPenugasanUncheckedUpdateManyWithoutBridgeObjNestedInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutBridgeObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutBridgeObjInput> | Prisma.KegiatanMitraPenugasanCreateWithoutBridgeObjInput[] | Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutBridgeObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutBridgeObjInput | Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutBridgeObjInput[];
+    upsert?: Prisma.KegiatanMitraPenugasanUpsertWithWhereUniqueWithoutBridgeObjInput | Prisma.KegiatanMitraPenugasanUpsertWithWhereUniqueWithoutBridgeObjInput[];
+    createMany?: Prisma.KegiatanMitraPenugasanCreateManyBridgeObjInputEnvelope;
+    set?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    disconnect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    delete?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    connect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    update?: Prisma.KegiatanMitraPenugasanUpdateWithWhereUniqueWithoutBridgeObjInput | Prisma.KegiatanMitraPenugasanUpdateWithWhereUniqueWithoutBridgeObjInput[];
+    updateMany?: Prisma.KegiatanMitraPenugasanUpdateManyWithWhereWithoutBridgeObjInput | Prisma.KegiatanMitraPenugasanUpdateManyWithWhereWithoutBridgeObjInput[];
+    deleteMany?: Prisma.KegiatanMitraPenugasanScalarWhereInput | Prisma.KegiatanMitraPenugasanScalarWhereInput[];
+};
+export type KegiatanMitraPenugasanCreateNestedManyWithoutStatusObjInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutStatusObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutStatusObjInput> | Prisma.KegiatanMitraPenugasanCreateWithoutStatusObjInput[] | Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutStatusObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutStatusObjInput | Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutStatusObjInput[];
+    createMany?: Prisma.KegiatanMitraPenugasanCreateManyStatusObjInputEnvelope;
+    connect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+};
+export type KegiatanMitraPenugasanUncheckedCreateNestedManyWithoutStatusObjInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutStatusObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutStatusObjInput> | Prisma.KegiatanMitraPenugasanCreateWithoutStatusObjInput[] | Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutStatusObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutStatusObjInput | Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutStatusObjInput[];
+    createMany?: Prisma.KegiatanMitraPenugasanCreateManyStatusObjInputEnvelope;
+    connect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+};
+export type KegiatanMitraPenugasanUpdateManyWithoutStatusObjNestedInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutStatusObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutStatusObjInput> | Prisma.KegiatanMitraPenugasanCreateWithoutStatusObjInput[] | Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutStatusObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutStatusObjInput | Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutStatusObjInput[];
+    upsert?: Prisma.KegiatanMitraPenugasanUpsertWithWhereUniqueWithoutStatusObjInput | Prisma.KegiatanMitraPenugasanUpsertWithWhereUniqueWithoutStatusObjInput[];
+    createMany?: Prisma.KegiatanMitraPenugasanCreateManyStatusObjInputEnvelope;
+    set?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    disconnect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    delete?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    connect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    update?: Prisma.KegiatanMitraPenugasanUpdateWithWhereUniqueWithoutStatusObjInput | Prisma.KegiatanMitraPenugasanUpdateWithWhereUniqueWithoutStatusObjInput[];
+    updateMany?: Prisma.KegiatanMitraPenugasanUpdateManyWithWhereWithoutStatusObjInput | Prisma.KegiatanMitraPenugasanUpdateManyWithWhereWithoutStatusObjInput[];
+    deleteMany?: Prisma.KegiatanMitraPenugasanScalarWhereInput | Prisma.KegiatanMitraPenugasanScalarWhereInput[];
+};
+export type KegiatanMitraPenugasanUncheckedUpdateManyWithoutStatusObjNestedInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutStatusObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutStatusObjInput> | Prisma.KegiatanMitraPenugasanCreateWithoutStatusObjInput[] | Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutStatusObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutStatusObjInput | Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutStatusObjInput[];
+    upsert?: Prisma.KegiatanMitraPenugasanUpsertWithWhereUniqueWithoutStatusObjInput | Prisma.KegiatanMitraPenugasanUpsertWithWhereUniqueWithoutStatusObjInput[];
+    createMany?: Prisma.KegiatanMitraPenugasanCreateManyStatusObjInputEnvelope;
+    set?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    disconnect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    delete?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    connect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    update?: Prisma.KegiatanMitraPenugasanUpdateWithWhereUniqueWithoutStatusObjInput | Prisma.KegiatanMitraPenugasanUpdateWithWhereUniqueWithoutStatusObjInput[];
+    updateMany?: Prisma.KegiatanMitraPenugasanUpdateManyWithWhereWithoutStatusObjInput | Prisma.KegiatanMitraPenugasanUpdateManyWithWhereWithoutStatusObjInput[];
+    deleteMany?: Prisma.KegiatanMitraPenugasanScalarWhereInput | Prisma.KegiatanMitraPenugasanScalarWhereInput[];
+};
+export type KegiatanMitraPenugasanCreateNestedManyWithoutGroupObjInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutGroupObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutGroupObjInput> | Prisma.KegiatanMitraPenugasanCreateWithoutGroupObjInput[] | Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutGroupObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutGroupObjInput | Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutGroupObjInput[];
+    createMany?: Prisma.KegiatanMitraPenugasanCreateManyGroupObjInputEnvelope;
+    connect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+};
+export type KegiatanMitraPenugasanUncheckedCreateNestedManyWithoutGroupObjInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutGroupObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutGroupObjInput> | Prisma.KegiatanMitraPenugasanCreateWithoutGroupObjInput[] | Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutGroupObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutGroupObjInput | Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutGroupObjInput[];
+    createMany?: Prisma.KegiatanMitraPenugasanCreateManyGroupObjInputEnvelope;
+    connect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+};
+export type KegiatanMitraPenugasanUpdateManyWithoutGroupObjNestedInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutGroupObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutGroupObjInput> | Prisma.KegiatanMitraPenugasanCreateWithoutGroupObjInput[] | Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutGroupObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutGroupObjInput | Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutGroupObjInput[];
+    upsert?: Prisma.KegiatanMitraPenugasanUpsertWithWhereUniqueWithoutGroupObjInput | Prisma.KegiatanMitraPenugasanUpsertWithWhereUniqueWithoutGroupObjInput[];
+    createMany?: Prisma.KegiatanMitraPenugasanCreateManyGroupObjInputEnvelope;
+    set?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    disconnect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    delete?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    connect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    update?: Prisma.KegiatanMitraPenugasanUpdateWithWhereUniqueWithoutGroupObjInput | Prisma.KegiatanMitraPenugasanUpdateWithWhereUniqueWithoutGroupObjInput[];
+    updateMany?: Prisma.KegiatanMitraPenugasanUpdateManyWithWhereWithoutGroupObjInput | Prisma.KegiatanMitraPenugasanUpdateManyWithWhereWithoutGroupObjInput[];
+    deleteMany?: Prisma.KegiatanMitraPenugasanScalarWhereInput | Prisma.KegiatanMitraPenugasanScalarWhereInput[];
+};
+export type KegiatanMitraPenugasanUncheckedUpdateManyWithoutGroupObjNestedInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutGroupObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutGroupObjInput> | Prisma.KegiatanMitraPenugasanCreateWithoutGroupObjInput[] | Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutGroupObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutGroupObjInput | Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutGroupObjInput[];
+    upsert?: Prisma.KegiatanMitraPenugasanUpsertWithWhereUniqueWithoutGroupObjInput | Prisma.KegiatanMitraPenugasanUpsertWithWhereUniqueWithoutGroupObjInput[];
+    createMany?: Prisma.KegiatanMitraPenugasanCreateManyGroupObjInputEnvelope;
+    set?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    disconnect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    delete?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    connect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput | Prisma.KegiatanMitraPenugasanWhereUniqueInput[];
+    update?: Prisma.KegiatanMitraPenugasanUpdateWithWhereUniqueWithoutGroupObjInput | Prisma.KegiatanMitraPenugasanUpdateWithWhereUniqueWithoutGroupObjInput[];
+    updateMany?: Prisma.KegiatanMitraPenugasanUpdateManyWithWhereWithoutGroupObjInput | Prisma.KegiatanMitraPenugasanUpdateManyWithWhereWithoutGroupObjInput[];
+    deleteMany?: Prisma.KegiatanMitraPenugasanScalarWhereInput | Prisma.KegiatanMitraPenugasanScalarWhereInput[];
+};
+export type KegiatanMitraPenugasanCreateNestedOneWithoutHistoryListObjInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutHistoryListObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutHistoryListObjInput>;
+    connectOrCreate?: Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutHistoryListObjInput;
+    connect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+};
+export type KegiatanMitraPenugasanUpdateOneRequiredWithoutHistoryListObjNestedInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutHistoryListObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutHistoryListObjInput>;
+    connectOrCreate?: Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutHistoryListObjInput;
+    upsert?: Prisma.KegiatanMitraPenugasanUpsertWithoutHistoryListObjInput;
+    connect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    update?: Prisma.XOR<Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateToOneWithWhereWithoutHistoryListObjInput, Prisma.KegiatanMitraPenugasanUpdateWithoutHistoryListObjInput>, Prisma.KegiatanMitraPenugasanUncheckedUpdateWithoutHistoryListObjInput>;
+};
+export type KegiatanMitraPenugasanCreateNestedOneWithoutPenugasanPhotoInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutPenugasanPhotoInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutPenugasanPhotoInput>;
+    connectOrCreate?: Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutPenugasanPhotoInput;
+    connect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+};
+export type KegiatanMitraPenugasanUpdateOneRequiredWithoutPenugasanPhotoNestedInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutPenugasanPhotoInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutPenugasanPhotoInput>;
+    connectOrCreate?: Prisma.KegiatanMitraPenugasanCreateOrConnectWithoutPenugasanPhotoInput;
+    upsert?: Prisma.KegiatanMitraPenugasanUpsertWithoutPenugasanPhotoInput;
+    connect?: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    update?: Prisma.XOR<Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateToOneWithWhereWithoutPenugasanPhotoInput, Prisma.KegiatanMitraPenugasanUpdateWithoutPenugasanPhotoInput>, Prisma.KegiatanMitraPenugasanUncheckedUpdateWithoutPenugasanPhotoInput>;
+};
+export type KegiatanMitraPenugasanCreateWithoutBridgeObjInput = {
+    uuid?: string;
+    code: string;
+    group: string;
+    group_desc: string;
+    description: string;
+    unit: string;
+    started_time?: string | null;
+    ended_time?: string | null;
+    location_latitude?: string | null;
+    location_longitude?: string | null;
+    notes?: string | null;
+    created_at?: string | null;
+    last_updated?: string | null;
+    statusObj: Prisma.PenugasanStatusCreateNestedOneWithoutPenugasanObjInput;
+    groupObj: Prisma.PenugasanGroupTypeCreateNestedOneWithoutPenugasanObjInput;
+    historyListObj?: Prisma.PenugasanHistoryCreateNestedManyWithoutPenugasanObjInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoCreateNestedOneWithoutPenugasanObjInput;
+};
+export type KegiatanMitraPenugasanUncheckedCreateWithoutBridgeObjInput = {
+    uuid?: string;
+    code: string;
+    group: string;
+    group_type_id: number;
+    group_desc: string;
+    description: string;
+    unit: string;
+    status: number;
+    started_time?: string | null;
+    ended_time?: string | null;
+    location_latitude?: string | null;
+    location_longitude?: string | null;
+    notes?: string | null;
+    created_at?: string | null;
+    last_updated?: string | null;
+    historyListObj?: Prisma.PenugasanHistoryUncheckedCreateNestedManyWithoutPenugasanObjInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoUncheckedCreateNestedOneWithoutPenugasanObjInput;
+};
+export type KegiatanMitraPenugasanCreateOrConnectWithoutBridgeObjInput = {
+    where: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    create: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutBridgeObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutBridgeObjInput>;
+};
+export type KegiatanMitraPenugasanCreateManyBridgeObjInputEnvelope = {
+    data: Prisma.KegiatanMitraPenugasanCreateManyBridgeObjInput | Prisma.KegiatanMitraPenugasanCreateManyBridgeObjInput[];
+    skipDuplicates?: boolean;
+};
+export type KegiatanMitraPenugasanUpsertWithWhereUniqueWithoutBridgeObjInput = {
+    where: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    update: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateWithoutBridgeObjInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateWithoutBridgeObjInput>;
+    create: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutBridgeObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutBridgeObjInput>;
+};
+export type KegiatanMitraPenugasanUpdateWithWhereUniqueWithoutBridgeObjInput = {
+    where: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    data: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateWithoutBridgeObjInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateWithoutBridgeObjInput>;
+};
+export type KegiatanMitraPenugasanUpdateManyWithWhereWithoutBridgeObjInput = {
+    where: Prisma.KegiatanMitraPenugasanScalarWhereInput;
+    data: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateManyMutationInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateManyWithoutBridgeObjInput>;
+};
+export type KegiatanMitraPenugasanScalarWhereInput = {
+    AND?: Prisma.KegiatanMitraPenugasanScalarWhereInput | Prisma.KegiatanMitraPenugasanScalarWhereInput[];
+    OR?: Prisma.KegiatanMitraPenugasanScalarWhereInput[];
+    NOT?: Prisma.KegiatanMitraPenugasanScalarWhereInput | Prisma.KegiatanMitraPenugasanScalarWhereInput[];
+    uuid?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    bridge_uuid?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    code?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    group?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    group_type_id?: Prisma.IntFilter<"KegiatanMitraPenugasan"> | number;
+    group_desc?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    description?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    unit?: Prisma.StringFilter<"KegiatanMitraPenugasan"> | string;
+    status?: Prisma.IntFilter<"KegiatanMitraPenugasan"> | number;
+    started_time?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    ended_time?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    location_latitude?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    location_longitude?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    notes?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    created_at?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+    last_updated?: Prisma.StringNullableFilter<"KegiatanMitraPenugasan"> | string | null;
+};
+export type KegiatanMitraPenugasanCreateWithoutStatusObjInput = {
+    uuid?: string;
+    code: string;
+    group: string;
+    group_desc: string;
+    description: string;
+    unit: string;
+    started_time?: string | null;
+    ended_time?: string | null;
+    location_latitude?: string | null;
+    location_longitude?: string | null;
+    notes?: string | null;
+    created_at?: string | null;
+    last_updated?: string | null;
+    bridgeObj: Prisma.KegiatanMitraBridgeCreateNestedOneWithoutPenugasanObjInput;
+    groupObj: Prisma.PenugasanGroupTypeCreateNestedOneWithoutPenugasanObjInput;
+    historyListObj?: Prisma.PenugasanHistoryCreateNestedManyWithoutPenugasanObjInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoCreateNestedOneWithoutPenugasanObjInput;
+};
+export type KegiatanMitraPenugasanUncheckedCreateWithoutStatusObjInput = {
+    uuid?: string;
+    bridge_uuid: string;
+    code: string;
+    group: string;
+    group_type_id: number;
+    group_desc: string;
+    description: string;
+    unit: string;
+    started_time?: string | null;
+    ended_time?: string | null;
+    location_latitude?: string | null;
+    location_longitude?: string | null;
+    notes?: string | null;
+    created_at?: string | null;
+    last_updated?: string | null;
+    historyListObj?: Prisma.PenugasanHistoryUncheckedCreateNestedManyWithoutPenugasanObjInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoUncheckedCreateNestedOneWithoutPenugasanObjInput;
+};
+export type KegiatanMitraPenugasanCreateOrConnectWithoutStatusObjInput = {
+    where: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    create: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutStatusObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutStatusObjInput>;
+};
+export type KegiatanMitraPenugasanCreateManyStatusObjInputEnvelope = {
+    data: Prisma.KegiatanMitraPenugasanCreateManyStatusObjInput | Prisma.KegiatanMitraPenugasanCreateManyStatusObjInput[];
+    skipDuplicates?: boolean;
+};
+export type KegiatanMitraPenugasanUpsertWithWhereUniqueWithoutStatusObjInput = {
+    where: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    update: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateWithoutStatusObjInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateWithoutStatusObjInput>;
+    create: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutStatusObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutStatusObjInput>;
+};
+export type KegiatanMitraPenugasanUpdateWithWhereUniqueWithoutStatusObjInput = {
+    where: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    data: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateWithoutStatusObjInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateWithoutStatusObjInput>;
+};
+export type KegiatanMitraPenugasanUpdateManyWithWhereWithoutStatusObjInput = {
+    where: Prisma.KegiatanMitraPenugasanScalarWhereInput;
+    data: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateManyMutationInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateManyWithoutStatusObjInput>;
+};
+export type KegiatanMitraPenugasanCreateWithoutGroupObjInput = {
+    uuid?: string;
+    code: string;
+    group: string;
+    group_desc: string;
+    description: string;
+    unit: string;
+    started_time?: string | null;
+    ended_time?: string | null;
+    location_latitude?: string | null;
+    location_longitude?: string | null;
+    notes?: string | null;
+    created_at?: string | null;
+    last_updated?: string | null;
+    bridgeObj: Prisma.KegiatanMitraBridgeCreateNestedOneWithoutPenugasanObjInput;
+    statusObj: Prisma.PenugasanStatusCreateNestedOneWithoutPenugasanObjInput;
+    historyListObj?: Prisma.PenugasanHistoryCreateNestedManyWithoutPenugasanObjInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoCreateNestedOneWithoutPenugasanObjInput;
+};
+export type KegiatanMitraPenugasanUncheckedCreateWithoutGroupObjInput = {
+    uuid?: string;
+    bridge_uuid: string;
+    code: string;
+    group: string;
+    group_desc: string;
+    description: string;
+    unit: string;
+    status: number;
+    started_time?: string | null;
+    ended_time?: string | null;
+    location_latitude?: string | null;
+    location_longitude?: string | null;
+    notes?: string | null;
+    created_at?: string | null;
+    last_updated?: string | null;
+    historyListObj?: Prisma.PenugasanHistoryUncheckedCreateNestedManyWithoutPenugasanObjInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoUncheckedCreateNestedOneWithoutPenugasanObjInput;
+};
+export type KegiatanMitraPenugasanCreateOrConnectWithoutGroupObjInput = {
+    where: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    create: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutGroupObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutGroupObjInput>;
+};
+export type KegiatanMitraPenugasanCreateManyGroupObjInputEnvelope = {
+    data: Prisma.KegiatanMitraPenugasanCreateManyGroupObjInput | Prisma.KegiatanMitraPenugasanCreateManyGroupObjInput[];
+    skipDuplicates?: boolean;
+};
+export type KegiatanMitraPenugasanUpsertWithWhereUniqueWithoutGroupObjInput = {
+    where: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    update: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateWithoutGroupObjInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateWithoutGroupObjInput>;
+    create: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutGroupObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutGroupObjInput>;
+};
+export type KegiatanMitraPenugasanUpdateWithWhereUniqueWithoutGroupObjInput = {
+    where: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    data: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateWithoutGroupObjInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateWithoutGroupObjInput>;
+};
+export type KegiatanMitraPenugasanUpdateManyWithWhereWithoutGroupObjInput = {
+    where: Prisma.KegiatanMitraPenugasanScalarWhereInput;
+    data: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateManyMutationInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateManyWithoutGroupObjInput>;
+};
+export type KegiatanMitraPenugasanCreateWithoutHistoryListObjInput = {
+    uuid?: string;
+    code: string;
+    group: string;
+    group_desc: string;
+    description: string;
+    unit: string;
+    started_time?: string | null;
+    ended_time?: string | null;
+    location_latitude?: string | null;
+    location_longitude?: string | null;
+    notes?: string | null;
+    created_at?: string | null;
+    last_updated?: string | null;
+    bridgeObj: Prisma.KegiatanMitraBridgeCreateNestedOneWithoutPenugasanObjInput;
+    statusObj: Prisma.PenugasanStatusCreateNestedOneWithoutPenugasanObjInput;
+    groupObj: Prisma.PenugasanGroupTypeCreateNestedOneWithoutPenugasanObjInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoCreateNestedOneWithoutPenugasanObjInput;
+};
+export type KegiatanMitraPenugasanUncheckedCreateWithoutHistoryListObjInput = {
+    uuid?: string;
+    bridge_uuid: string;
+    code: string;
+    group: string;
+    group_type_id: number;
+    group_desc: string;
+    description: string;
+    unit: string;
+    status: number;
+    started_time?: string | null;
+    ended_time?: string | null;
+    location_latitude?: string | null;
+    location_longitude?: string | null;
+    notes?: string | null;
+    created_at?: string | null;
+    last_updated?: string | null;
+    penugasanPhoto?: Prisma.PenugasanPhotoUncheckedCreateNestedOneWithoutPenugasanObjInput;
+};
+export type KegiatanMitraPenugasanCreateOrConnectWithoutHistoryListObjInput = {
+    where: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    create: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutHistoryListObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutHistoryListObjInput>;
+};
+export type KegiatanMitraPenugasanUpsertWithoutHistoryListObjInput = {
+    update: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateWithoutHistoryListObjInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateWithoutHistoryListObjInput>;
+    create: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutHistoryListObjInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutHistoryListObjInput>;
+    where?: Prisma.KegiatanMitraPenugasanWhereInput;
+};
+export type KegiatanMitraPenugasanUpdateToOneWithWhereWithoutHistoryListObjInput = {
+    where?: Prisma.KegiatanMitraPenugasanWhereInput;
+    data: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateWithoutHistoryListObjInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateWithoutHistoryListObjInput>;
+};
+export type KegiatanMitraPenugasanUpdateWithoutHistoryListObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    bridgeObj?: Prisma.KegiatanMitraBridgeUpdateOneRequiredWithoutPenugasanObjNestedInput;
+    statusObj?: Prisma.PenugasanStatusUpdateOneRequiredWithoutPenugasanObjNestedInput;
+    groupObj?: Prisma.PenugasanGroupTypeUpdateOneRequiredWithoutPenugasanObjNestedInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoUpdateOneWithoutPenugasanObjNestedInput;
+};
+export type KegiatanMitraPenugasanUncheckedUpdateWithoutHistoryListObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    bridge_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_type_id?: Prisma.IntFieldUpdateOperationsInput | number;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.IntFieldUpdateOperationsInput | number;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    penugasanPhoto?: Prisma.PenugasanPhotoUncheckedUpdateOneWithoutPenugasanObjNestedInput;
+};
+export type KegiatanMitraPenugasanCreateWithoutPenugasanPhotoInput = {
+    uuid?: string;
+    code: string;
+    group: string;
+    group_desc: string;
+    description: string;
+    unit: string;
+    started_time?: string | null;
+    ended_time?: string | null;
+    location_latitude?: string | null;
+    location_longitude?: string | null;
+    notes?: string | null;
+    created_at?: string | null;
+    last_updated?: string | null;
+    bridgeObj: Prisma.KegiatanMitraBridgeCreateNestedOneWithoutPenugasanObjInput;
+    statusObj: Prisma.PenugasanStatusCreateNestedOneWithoutPenugasanObjInput;
+    groupObj: Prisma.PenugasanGroupTypeCreateNestedOneWithoutPenugasanObjInput;
+    historyListObj?: Prisma.PenugasanHistoryCreateNestedManyWithoutPenugasanObjInput;
+};
+export type KegiatanMitraPenugasanUncheckedCreateWithoutPenugasanPhotoInput = {
+    uuid?: string;
+    bridge_uuid: string;
+    code: string;
+    group: string;
+    group_type_id: number;
+    group_desc: string;
+    description: string;
+    unit: string;
+    status: number;
+    started_time?: string | null;
+    ended_time?: string | null;
+    location_latitude?: string | null;
+    location_longitude?: string | null;
+    notes?: string | null;
+    created_at?: string | null;
+    last_updated?: string | null;
+    historyListObj?: Prisma.PenugasanHistoryUncheckedCreateNestedManyWithoutPenugasanObjInput;
+};
+export type KegiatanMitraPenugasanCreateOrConnectWithoutPenugasanPhotoInput = {
+    where: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    create: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutPenugasanPhotoInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutPenugasanPhotoInput>;
+};
+export type KegiatanMitraPenugasanUpsertWithoutPenugasanPhotoInput = {
+    update: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateWithoutPenugasanPhotoInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateWithoutPenugasanPhotoInput>;
+    create: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateWithoutPenugasanPhotoInput, Prisma.KegiatanMitraPenugasanUncheckedCreateWithoutPenugasanPhotoInput>;
+    where?: Prisma.KegiatanMitraPenugasanWhereInput;
+};
+export type KegiatanMitraPenugasanUpdateToOneWithWhereWithoutPenugasanPhotoInput = {
+    where?: Prisma.KegiatanMitraPenugasanWhereInput;
+    data: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateWithoutPenugasanPhotoInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateWithoutPenugasanPhotoInput>;
+};
+export type KegiatanMitraPenugasanUpdateWithoutPenugasanPhotoInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    bridgeObj?: Prisma.KegiatanMitraBridgeUpdateOneRequiredWithoutPenugasanObjNestedInput;
+    statusObj?: Prisma.PenugasanStatusUpdateOneRequiredWithoutPenugasanObjNestedInput;
+    groupObj?: Prisma.PenugasanGroupTypeUpdateOneRequiredWithoutPenugasanObjNestedInput;
+    historyListObj?: Prisma.PenugasanHistoryUpdateManyWithoutPenugasanObjNestedInput;
+};
+export type KegiatanMitraPenugasanUncheckedUpdateWithoutPenugasanPhotoInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    bridge_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_type_id?: Prisma.IntFieldUpdateOperationsInput | number;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.IntFieldUpdateOperationsInput | number;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    historyListObj?: Prisma.PenugasanHistoryUncheckedUpdateManyWithoutPenugasanObjNestedInput;
+};
+export type KegiatanMitraPenugasanCreateManyBridgeObjInput = {
+    uuid?: string;
+    code: string;
+    group: string;
+    group_type_id: number;
+    group_desc: string;
+    description: string;
+    unit: string;
+    status: number;
+    started_time?: string | null;
+    ended_time?: string | null;
+    location_latitude?: string | null;
+    location_longitude?: string | null;
+    notes?: string | null;
+    created_at?: string | null;
+    last_updated?: string | null;
+};
+export type KegiatanMitraPenugasanUpdateWithoutBridgeObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    statusObj?: Prisma.PenugasanStatusUpdateOneRequiredWithoutPenugasanObjNestedInput;
+    groupObj?: Prisma.PenugasanGroupTypeUpdateOneRequiredWithoutPenugasanObjNestedInput;
+    historyListObj?: Prisma.PenugasanHistoryUpdateManyWithoutPenugasanObjNestedInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoUpdateOneWithoutPenugasanObjNestedInput;
+};
+export type KegiatanMitraPenugasanUncheckedUpdateWithoutBridgeObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_type_id?: Prisma.IntFieldUpdateOperationsInput | number;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.IntFieldUpdateOperationsInput | number;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    historyListObj?: Prisma.PenugasanHistoryUncheckedUpdateManyWithoutPenugasanObjNestedInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoUncheckedUpdateOneWithoutPenugasanObjNestedInput;
+};
+export type KegiatanMitraPenugasanUncheckedUpdateManyWithoutBridgeObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_type_id?: Prisma.IntFieldUpdateOperationsInput | number;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.IntFieldUpdateOperationsInput | number;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+};
+export type KegiatanMitraPenugasanCreateManyStatusObjInput = {
+    uuid?: string;
+    bridge_uuid: string;
+    code: string;
+    group: string;
+    group_type_id: number;
+    group_desc: string;
+    description: string;
+    unit: string;
+    started_time?: string | null;
+    ended_time?: string | null;
+    location_latitude?: string | null;
+    location_longitude?: string | null;
+    notes?: string | null;
+    created_at?: string | null;
+    last_updated?: string | null;
+};
+export type KegiatanMitraPenugasanUpdateWithoutStatusObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    bridgeObj?: Prisma.KegiatanMitraBridgeUpdateOneRequiredWithoutPenugasanObjNestedInput;
+    groupObj?: Prisma.PenugasanGroupTypeUpdateOneRequiredWithoutPenugasanObjNestedInput;
+    historyListObj?: Prisma.PenugasanHistoryUpdateManyWithoutPenugasanObjNestedInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoUpdateOneWithoutPenugasanObjNestedInput;
+};
+export type KegiatanMitraPenugasanUncheckedUpdateWithoutStatusObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    bridge_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_type_id?: Prisma.IntFieldUpdateOperationsInput | number;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    historyListObj?: Prisma.PenugasanHistoryUncheckedUpdateManyWithoutPenugasanObjNestedInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoUncheckedUpdateOneWithoutPenugasanObjNestedInput;
+};
+export type KegiatanMitraPenugasanUncheckedUpdateManyWithoutStatusObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    bridge_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_type_id?: Prisma.IntFieldUpdateOperationsInput | number;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+};
+export type KegiatanMitraPenugasanCreateManyGroupObjInput = {
+    uuid?: string;
+    bridge_uuid: string;
+    code: string;
+    group: string;
+    group_desc: string;
+    description: string;
+    unit: string;
+    status: number;
+    started_time?: string | null;
+    ended_time?: string | null;
+    location_latitude?: string | null;
+    location_longitude?: string | null;
+    notes?: string | null;
+    created_at?: string | null;
+    last_updated?: string | null;
+};
+export type KegiatanMitraPenugasanUpdateWithoutGroupObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    bridgeObj?: Prisma.KegiatanMitraBridgeUpdateOneRequiredWithoutPenugasanObjNestedInput;
+    statusObj?: Prisma.PenugasanStatusUpdateOneRequiredWithoutPenugasanObjNestedInput;
+    historyListObj?: Prisma.PenugasanHistoryUpdateManyWithoutPenugasanObjNestedInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoUpdateOneWithoutPenugasanObjNestedInput;
+};
+export type KegiatanMitraPenugasanUncheckedUpdateWithoutGroupObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    bridge_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.IntFieldUpdateOperationsInput | number;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    historyListObj?: Prisma.PenugasanHistoryUncheckedUpdateManyWithoutPenugasanObjNestedInput;
+    penugasanPhoto?: Prisma.PenugasanPhotoUncheckedUpdateOneWithoutPenugasanObjNestedInput;
+};
+export type KegiatanMitraPenugasanUncheckedUpdateManyWithoutGroupObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    bridge_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    code?: Prisma.StringFieldUpdateOperationsInput | string;
+    group?: Prisma.StringFieldUpdateOperationsInput | string;
+    group_desc?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    unit?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.IntFieldUpdateOperationsInput | number;
+    started_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    ended_time?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    location_longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    created_at?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+};
+/**
+ * Count Type KegiatanMitraPenugasanCountOutputType
+ */
+export type KegiatanMitraPenugasanCountOutputType = {
+    historyListObj: number;
+};
+export type KegiatanMitraPenugasanCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    historyListObj?: boolean | KegiatanMitraPenugasanCountOutputTypeCountHistoryListObjArgs;
+};
+/**
+ * KegiatanMitraPenugasanCountOutputType without action
+ */
+export type KegiatanMitraPenugasanCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraPenugasanCountOutputType
+     */
+    select?: Prisma.KegiatanMitraPenugasanCountOutputTypeSelect<ExtArgs> | null;
+};
+/**
+ * KegiatanMitraPenugasanCountOutputType without action
+ */
+export type KegiatanMitraPenugasanCountOutputTypeCountHistoryListObjArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.PenugasanHistoryWhereInput;
+};
+export type KegiatanMitraPenugasanSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    uuid?: boolean;
+    bridge_uuid?: boolean;
+    code?: boolean;
+    group?: boolean;
+    group_type_id?: boolean;
+    group_desc?: boolean;
+    description?: boolean;
+    unit?: boolean;
+    status?: boolean;
+    started_time?: boolean;
+    ended_time?: boolean;
+    location_latitude?: boolean;
+    location_longitude?: boolean;
+    notes?: boolean;
+    created_at?: boolean;
+    last_updated?: boolean;
+    bridgeObj?: boolean | Prisma.KegiatanMitraBridgeDefaultArgs<ExtArgs>;
+    statusObj?: boolean | Prisma.PenugasanStatusDefaultArgs<ExtArgs>;
+    groupObj?: boolean | Prisma.PenugasanGroupTypeDefaultArgs<ExtArgs>;
+    historyListObj?: boolean | Prisma.KegiatanMitraPenugasan$historyListObjArgs<ExtArgs>;
+    penugasanPhoto?: boolean | Prisma.KegiatanMitraPenugasan$penugasanPhotoArgs<ExtArgs>;
+    _count?: boolean | Prisma.KegiatanMitraPenugasanCountOutputTypeDefaultArgs<ExtArgs>;
+}, ExtArgs["result"]["kegiatanMitraPenugasan"]>;
+export type KegiatanMitraPenugasanSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    uuid?: boolean;
+    bridge_uuid?: boolean;
+    code?: boolean;
+    group?: boolean;
+    group_type_id?: boolean;
+    group_desc?: boolean;
+    description?: boolean;
+    unit?: boolean;
+    status?: boolean;
+    started_time?: boolean;
+    ended_time?: boolean;
+    location_latitude?: boolean;
+    location_longitude?: boolean;
+    notes?: boolean;
+    created_at?: boolean;
+    last_updated?: boolean;
+    bridgeObj?: boolean | Prisma.KegiatanMitraBridgeDefaultArgs<ExtArgs>;
+    statusObj?: boolean | Prisma.PenugasanStatusDefaultArgs<ExtArgs>;
+    groupObj?: boolean | Prisma.PenugasanGroupTypeDefaultArgs<ExtArgs>;
+}, ExtArgs["result"]["kegiatanMitraPenugasan"]>;
+export type KegiatanMitraPenugasanSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    uuid?: boolean;
+    bridge_uuid?: boolean;
+    code?: boolean;
+    group?: boolean;
+    group_type_id?: boolean;
+    group_desc?: boolean;
+    description?: boolean;
+    unit?: boolean;
+    status?: boolean;
+    started_time?: boolean;
+    ended_time?: boolean;
+    location_latitude?: boolean;
+    location_longitude?: boolean;
+    notes?: boolean;
+    created_at?: boolean;
+    last_updated?: boolean;
+    bridgeObj?: boolean | Prisma.KegiatanMitraBridgeDefaultArgs<ExtArgs>;
+    statusObj?: boolean | Prisma.PenugasanStatusDefaultArgs<ExtArgs>;
+    groupObj?: boolean | Prisma.PenugasanGroupTypeDefaultArgs<ExtArgs>;
+}, ExtArgs["result"]["kegiatanMitraPenugasan"]>;
+export type KegiatanMitraPenugasanSelectScalar = {
+    uuid?: boolean;
+    bridge_uuid?: boolean;
+    code?: boolean;
+    group?: boolean;
+    group_type_id?: boolean;
+    group_desc?: boolean;
+    description?: boolean;
+    unit?: boolean;
+    status?: boolean;
+    started_time?: boolean;
+    ended_time?: boolean;
+    location_latitude?: boolean;
+    location_longitude?: boolean;
+    notes?: boolean;
+    created_at?: boolean;
+    last_updated?: boolean;
+};
+export type KegiatanMitraPenugasanOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"uuid" | "bridge_uuid" | "code" | "group" | "group_type_id" | "group_desc" | "description" | "unit" | "status" | "started_time" | "ended_time" | "location_latitude" | "location_longitude" | "notes" | "created_at" | "last_updated", ExtArgs["result"]["kegiatanMitraPenugasan"]>;
+export type KegiatanMitraPenugasanInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    bridgeObj?: boolean | Prisma.KegiatanMitraBridgeDefaultArgs<ExtArgs>;
+    statusObj?: boolean | Prisma.PenugasanStatusDefaultArgs<ExtArgs>;
+    groupObj?: boolean | Prisma.PenugasanGroupTypeDefaultArgs<ExtArgs>;
+    historyListObj?: boolean | Prisma.KegiatanMitraPenugasan$historyListObjArgs<ExtArgs>;
+    penugasanPhoto?: boolean | Prisma.KegiatanMitraPenugasan$penugasanPhotoArgs<ExtArgs>;
+    _count?: boolean | Prisma.KegiatanMitraPenugasanCountOutputTypeDefaultArgs<ExtArgs>;
+};
+export type KegiatanMitraPenugasanIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    bridgeObj?: boolean | Prisma.KegiatanMitraBridgeDefaultArgs<ExtArgs>;
+    statusObj?: boolean | Prisma.PenugasanStatusDefaultArgs<ExtArgs>;
+    groupObj?: boolean | Prisma.PenugasanGroupTypeDefaultArgs<ExtArgs>;
+};
+export type KegiatanMitraPenugasanIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    bridgeObj?: boolean | Prisma.KegiatanMitraBridgeDefaultArgs<ExtArgs>;
+    statusObj?: boolean | Prisma.PenugasanStatusDefaultArgs<ExtArgs>;
+    groupObj?: boolean | Prisma.PenugasanGroupTypeDefaultArgs<ExtArgs>;
+};
+export type $KegiatanMitraPenugasanPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    name: "KegiatanMitraPenugasan";
+    objects: {
+        bridgeObj: Prisma.$KegiatanMitraBridgePayload<ExtArgs>;
+        statusObj: Prisma.$PenugasanStatusPayload<ExtArgs>;
+        groupObj: Prisma.$PenugasanGroupTypePayload<ExtArgs>;
+        historyListObj: Prisma.$PenugasanHistoryPayload<ExtArgs>[];
+        penugasanPhoto: Prisma.$PenugasanPhotoPayload<ExtArgs> | null;
+    };
+    scalars: runtime.Types.Extensions.GetPayloadResult<{
+        uuid: string;
+        bridge_uuid: string;
+        code: string;
+        group: string;
+        group_type_id: number;
+        group_desc: string;
+        description: string;
+        unit: string;
+        status: number;
+        started_time: string | null;
+        ended_time: string | null;
+        location_latitude: string | null;
+        location_longitude: string | null;
+        notes: string | null;
+        created_at: string | null;
+        last_updated: string | null;
+    }, ExtArgs["result"]["kegiatanMitraPenugasan"]>;
+    composites: {};
+};
+export type KegiatanMitraPenugasanGetPayload<S extends boolean | null | undefined | KegiatanMitraPenugasanDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$KegiatanMitraPenugasanPayload, S>;
+export type KegiatanMitraPenugasanCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<KegiatanMitraPenugasanFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: KegiatanMitraPenugasanCountAggregateInputType | true;
+};
+export interface KegiatanMitraPenugasanDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: {
+        types: Prisma.TypeMap<ExtArgs>['model']['KegiatanMitraPenugasan'];
+        meta: {
+            name: 'KegiatanMitraPenugasan';
+        };
+    };
+    /**
+     * Find zero or one KegiatanMitraPenugasan that matches the filter.
+     * @param {KegiatanMitraPenugasanFindUniqueArgs} args - Arguments to find a KegiatanMitraPenugasan
+     * @example
+     * // Get one KegiatanMitraPenugasan
+     * const kegiatanMitraPenugasan = await prisma.kegiatanMitraPenugasan.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends KegiatanMitraPenugasanFindUniqueArgs>(args: Prisma.SelectSubset<T, KegiatanMitraPenugasanFindUniqueArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraPenugasanClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find one KegiatanMitraPenugasan that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {KegiatanMitraPenugasanFindUniqueOrThrowArgs} args - Arguments to find a KegiatanMitraPenugasan
+     * @example
+     * // Get one KegiatanMitraPenugasan
+     * const kegiatanMitraPenugasan = await prisma.kegiatanMitraPenugasan.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends KegiatanMitraPenugasanFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, KegiatanMitraPenugasanFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraPenugasanClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find the first KegiatanMitraPenugasan that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanMitraPenugasanFindFirstArgs} args - Arguments to find a KegiatanMitraPenugasan
+     * @example
+     * // Get one KegiatanMitraPenugasan
+     * const kegiatanMitraPenugasan = await prisma.kegiatanMitraPenugasan.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends KegiatanMitraPenugasanFindFirstArgs>(args?: Prisma.SelectSubset<T, KegiatanMitraPenugasanFindFirstArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraPenugasanClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find the first KegiatanMitraPenugasan that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanMitraPenugasanFindFirstOrThrowArgs} args - Arguments to find a KegiatanMitraPenugasan
+     * @example
+     * // Get one KegiatanMitraPenugasan
+     * const kegiatanMitraPenugasan = await prisma.kegiatanMitraPenugasan.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends KegiatanMitraPenugasanFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, KegiatanMitraPenugasanFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraPenugasanClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find zero or more KegiatanMitraPenugasans that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanMitraPenugasanFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all KegiatanMitraPenugasans
+     * const kegiatanMitraPenugasans = await prisma.kegiatanMitraPenugasan.findMany()
+     *
+     * // Get first 10 KegiatanMitraPenugasans
+     * const kegiatanMitraPenugasans = await prisma.kegiatanMitraPenugasan.findMany({ take: 10 })
+     *
+     * // Only select the `uuid`
+     * const kegiatanMitraPenugasanWithUuidOnly = await prisma.kegiatanMitraPenugasan.findMany({ select: { uuid: true } })
+     *
+     */
+    findMany<T extends KegiatanMitraPenugasanFindManyArgs>(args?: Prisma.SelectSubset<T, KegiatanMitraPenugasanFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
+    /**
+     * Create a KegiatanMitraPenugasan.
+     * @param {KegiatanMitraPenugasanCreateArgs} args - Arguments to create a KegiatanMitraPenugasan.
+     * @example
+     * // Create one KegiatanMitraPenugasan
+     * const KegiatanMitraPenugasan = await prisma.kegiatanMitraPenugasan.create({
+     *   data: {
+     *     // ... data to create a KegiatanMitraPenugasan
+     *   }
+     * })
+     *
+     */
+    create<T extends KegiatanMitraPenugasanCreateArgs>(args: Prisma.SelectSubset<T, KegiatanMitraPenugasanCreateArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraPenugasanClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Create many KegiatanMitraPenugasans.
+     * @param {KegiatanMitraPenugasanCreateManyArgs} args - Arguments to create many KegiatanMitraPenugasans.
+     * @example
+     * // Create many KegiatanMitraPenugasans
+     * const kegiatanMitraPenugasan = await prisma.kegiatanMitraPenugasan.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     */
+    createMany<T extends KegiatanMitraPenugasanCreateManyArgs>(args?: Prisma.SelectSubset<T, KegiatanMitraPenugasanCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Create many KegiatanMitraPenugasans and returns the data saved in the database.
+     * @param {KegiatanMitraPenugasanCreateManyAndReturnArgs} args - Arguments to create many KegiatanMitraPenugasans.
+     * @example
+     * // Create many KegiatanMitraPenugasans
+     * const kegiatanMitraPenugasan = await prisma.kegiatanMitraPenugasan.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Create many KegiatanMitraPenugasans and only return the `uuid`
+     * const kegiatanMitraPenugasanWithUuidOnly = await prisma.kegiatanMitraPenugasan.createManyAndReturn({
+     *   select: { uuid: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    createManyAndReturn<T extends KegiatanMitraPenugasanCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, KegiatanMitraPenugasanCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
+    /**
+     * Delete a KegiatanMitraPenugasan.
+     * @param {KegiatanMitraPenugasanDeleteArgs} args - Arguments to delete one KegiatanMitraPenugasan.
+     * @example
+     * // Delete one KegiatanMitraPenugasan
+     * const KegiatanMitraPenugasan = await prisma.kegiatanMitraPenugasan.delete({
+     *   where: {
+     *     // ... filter to delete one KegiatanMitraPenugasan
+     *   }
+     * })
+     *
+     */
+    delete<T extends KegiatanMitraPenugasanDeleteArgs>(args: Prisma.SelectSubset<T, KegiatanMitraPenugasanDeleteArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraPenugasanClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Update one KegiatanMitraPenugasan.
+     * @param {KegiatanMitraPenugasanUpdateArgs} args - Arguments to update one KegiatanMitraPenugasan.
+     * @example
+     * // Update one KegiatanMitraPenugasan
+     * const kegiatanMitraPenugasan = await prisma.kegiatanMitraPenugasan.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    update<T extends KegiatanMitraPenugasanUpdateArgs>(args: Prisma.SelectSubset<T, KegiatanMitraPenugasanUpdateArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraPenugasanClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Delete zero or more KegiatanMitraPenugasans.
+     * @param {KegiatanMitraPenugasanDeleteManyArgs} args - Arguments to filter KegiatanMitraPenugasans to delete.
+     * @example
+     * // Delete a few KegiatanMitraPenugasans
+     * const { count } = await prisma.kegiatanMitraPenugasan.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     *
+     */
+    deleteMany<T extends KegiatanMitraPenugasanDeleteManyArgs>(args?: Prisma.SelectSubset<T, KegiatanMitraPenugasanDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Update zero or more KegiatanMitraPenugasans.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanMitraPenugasanUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many KegiatanMitraPenugasans
+     * const kegiatanMitraPenugasan = await prisma.kegiatanMitraPenugasan.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    updateMany<T extends KegiatanMitraPenugasanUpdateManyArgs>(args: Prisma.SelectSubset<T, KegiatanMitraPenugasanUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Update zero or more KegiatanMitraPenugasans and returns the data updated in the database.
+     * @param {KegiatanMitraPenugasanUpdateManyAndReturnArgs} args - Arguments to update many KegiatanMitraPenugasans.
+     * @example
+     * // Update many KegiatanMitraPenugasans
+     * const kegiatanMitraPenugasan = await prisma.kegiatanMitraPenugasan.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Update zero or more KegiatanMitraPenugasans and only return the `uuid`
+     * const kegiatanMitraPenugasanWithUuidOnly = await prisma.kegiatanMitraPenugasan.updateManyAndReturn({
+     *   select: { uuid: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    updateManyAndReturn<T extends KegiatanMitraPenugasanUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, KegiatanMitraPenugasanUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
+    /**
+     * Create or update one KegiatanMitraPenugasan.
+     * @param {KegiatanMitraPenugasanUpsertArgs} args - Arguments to update or create a KegiatanMitraPenugasan.
+     * @example
+     * // Update or create a KegiatanMitraPenugasan
+     * const kegiatanMitraPenugasan = await prisma.kegiatanMitraPenugasan.upsert({
+     *   create: {
+     *     // ... data to create a KegiatanMitraPenugasan
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the KegiatanMitraPenugasan we want to update
+     *   }
+     * })
+     */
+    upsert<T extends KegiatanMitraPenugasanUpsertArgs>(args: Prisma.SelectSubset<T, KegiatanMitraPenugasanUpsertArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraPenugasanClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Count the number of KegiatanMitraPenugasans.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanMitraPenugasanCountArgs} args - Arguments to filter KegiatanMitraPenugasans to count.
+     * @example
+     * // Count the number of KegiatanMitraPenugasans
+     * const count = await prisma.kegiatanMitraPenugasan.count({
+     *   where: {
+     *     // ... the filter for the KegiatanMitraPenugasans we want to count
+     *   }
+     * })
+    **/
+    count<T extends KegiatanMitraPenugasanCountArgs>(args?: Prisma.Subset<T, KegiatanMitraPenugasanCountArgs>): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<'select', any> ? T['select'] extends true ? number : Prisma.GetScalarType<T['select'], KegiatanMitraPenugasanCountAggregateOutputType> : number>;
+    /**
+     * Allows you to perform aggregations operations on a KegiatanMitraPenugasan.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanMitraPenugasanAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends KegiatanMitraPenugasanAggregateArgs>(args: Prisma.Subset<T, KegiatanMitraPenugasanAggregateArgs>): Prisma.PrismaPromise<GetKegiatanMitraPenugasanAggregateType<T>>;
+    /**
+     * Group by KegiatanMitraPenugasan.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanMitraPenugasanGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+    **/
+    groupBy<T extends KegiatanMitraPenugasanGroupByArgs, HasSelectOrTake extends Prisma.Or<Prisma.Extends<'skip', Prisma.Keys<T>>, Prisma.Extends<'take', Prisma.Keys<T>>>, OrderByArg extends Prisma.True extends HasSelectOrTake ? {
+        orderBy: KegiatanMitraPenugasanGroupByArgs['orderBy'];
+    } : {
+        orderBy?: KegiatanMitraPenugasanGroupByArgs['orderBy'];
+    }, OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>, ByFields extends Prisma.MaybeTupleToUnion<T['by']>, ByValid extends Prisma.Has<ByFields, OrderFields>, HavingFields extends Prisma.GetHavingFields<T['having']>, HavingValid extends Prisma.Has<ByFields, HavingFields>, ByEmpty extends T['by'] extends never[] ? Prisma.True : Prisma.False, InputErrors extends ByEmpty extends Prisma.True ? `Error: "by" must not be empty.` : HavingValid extends Prisma.False ? {
+        [P in HavingFields]: P extends ByFields ? never : P extends string ? `Error: Field "${P}" used in "having" needs to be provided in "by".` : [
+            Error,
+            'Field ',
+            P,
+            ` in "having" needs to be provided in "by"`
+        ];
+    }[HavingFields] : 'take' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "take", you also need to provide "orderBy"' : 'skip' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "skip", you also need to provide "orderBy"' : ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields]>(args: Prisma.SubsetIntersection<T, KegiatanMitraPenugasanGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetKegiatanMitraPenugasanGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the KegiatanMitraPenugasan model
+     */
+    readonly fields: KegiatanMitraPenugasanFieldRefs;
+}
+/**
+ * The delegate class that acts as a "Promise-like" for KegiatanMitraPenugasan.
+ * Why is this prefixed with `Prisma__`?
+ * Because we want to prevent naming conflicts as mentioned in
+ * https://github.com/prisma/prisma-client-js/issues/707
+ */
+export interface Prisma__KegiatanMitraPenugasanClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise";
+    bridgeObj<T extends Prisma.KegiatanMitraBridgeDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.KegiatanMitraBridgeDefaultArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraBridgeClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraBridgePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
+    statusObj<T extends Prisma.PenugasanStatusDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PenugasanStatusDefaultArgs<ExtArgs>>): Prisma.Prisma__PenugasanStatusClient<runtime.Types.Result.GetResult<Prisma.$PenugasanStatusPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
+    groupObj<T extends Prisma.PenugasanGroupTypeDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PenugasanGroupTypeDefaultArgs<ExtArgs>>): Prisma.Prisma__PenugasanGroupTypeClient<runtime.Types.Result.GetResult<Prisma.$PenugasanGroupTypePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
+    historyListObj<T extends Prisma.KegiatanMitraPenugasan$historyListObjArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.KegiatanMitraPenugasan$historyListObjArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PenugasanHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
+    penugasanPhoto<T extends Prisma.KegiatanMitraPenugasan$penugasanPhotoArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.KegiatanMitraPenugasan$penugasanPhotoArgs<ExtArgs>>): Prisma.Prisma__PenugasanPhotoClient<runtime.Types.Result.GetResult<Prisma.$PenugasanPhotoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
+}
+/**
+ * Fields of the KegiatanMitraPenugasan model
+ */
+export interface KegiatanMitraPenugasanFieldRefs {
+    readonly uuid: Prisma.FieldRef<"KegiatanMitraPenugasan", 'String'>;
+    readonly bridge_uuid: Prisma.FieldRef<"KegiatanMitraPenugasan", 'String'>;
+    readonly code: Prisma.FieldRef<"KegiatanMitraPenugasan", 'String'>;
+    readonly group: Prisma.FieldRef<"KegiatanMitraPenugasan", 'String'>;
+    readonly group_type_id: Prisma.FieldRef<"KegiatanMitraPenugasan", 'Int'>;
+    readonly group_desc: Prisma.FieldRef<"KegiatanMitraPenugasan", 'String'>;
+    readonly description: Prisma.FieldRef<"KegiatanMitraPenugasan", 'String'>;
+    readonly unit: Prisma.FieldRef<"KegiatanMitraPenugasan", 'String'>;
+    readonly status: Prisma.FieldRef<"KegiatanMitraPenugasan", 'Int'>;
+    readonly started_time: Prisma.FieldRef<"KegiatanMitraPenugasan", 'String'>;
+    readonly ended_time: Prisma.FieldRef<"KegiatanMitraPenugasan", 'String'>;
+    readonly location_latitude: Prisma.FieldRef<"KegiatanMitraPenugasan", 'String'>;
+    readonly location_longitude: Prisma.FieldRef<"KegiatanMitraPenugasan", 'String'>;
+    readonly notes: Prisma.FieldRef<"KegiatanMitraPenugasan", 'String'>;
+    readonly created_at: Prisma.FieldRef<"KegiatanMitraPenugasan", 'String'>;
+    readonly last_updated: Prisma.FieldRef<"KegiatanMitraPenugasan", 'String'>;
+}
+/**
+ * KegiatanMitraPenugasan findUnique
+ */
+export type KegiatanMitraPenugasanFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraPenugasan
+     */
+    select?: Prisma.KegiatanMitraPenugasanSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraPenugasan
+     */
+    omit?: Prisma.KegiatanMitraPenugasanOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraPenugasanInclude<ExtArgs> | null;
+    /**
+     * Filter, which KegiatanMitraPenugasan to fetch.
+     */
+    where: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+};
+/**
+ * KegiatanMitraPenugasan findUniqueOrThrow
+ */
+export type KegiatanMitraPenugasanFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraPenugasan
+     */
+    select?: Prisma.KegiatanMitraPenugasanSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraPenugasan
+     */
+    omit?: Prisma.KegiatanMitraPenugasanOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraPenugasanInclude<ExtArgs> | null;
+    /**
+     * Filter, which KegiatanMitraPenugasan to fetch.
+     */
+    where: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+};
+/**
+ * KegiatanMitraPenugasan findFirst
+ */
+export type KegiatanMitraPenugasanFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraPenugasan
+     */
+    select?: Prisma.KegiatanMitraPenugasanSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraPenugasan
+     */
+    omit?: Prisma.KegiatanMitraPenugasanOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraPenugasanInclude<ExtArgs> | null;
+    /**
+     * Filter, which KegiatanMitraPenugasan to fetch.
+     */
+    where?: Prisma.KegiatanMitraPenugasanWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of KegiatanMitraPenugasans to fetch.
+     */
+    orderBy?: Prisma.KegiatanMitraPenugasanOrderByWithRelationInput | Prisma.KegiatanMitraPenugasanOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for KegiatanMitraPenugasans.
+     */
+    cursor?: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` KegiatanMitraPenugasans from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` KegiatanMitraPenugasans.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of KegiatanMitraPenugasans.
+     */
+    distinct?: Prisma.KegiatanMitraPenugasanScalarFieldEnum | Prisma.KegiatanMitraPenugasanScalarFieldEnum[];
+};
+/**
+ * KegiatanMitraPenugasan findFirstOrThrow
+ */
+export type KegiatanMitraPenugasanFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraPenugasan
+     */
+    select?: Prisma.KegiatanMitraPenugasanSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraPenugasan
+     */
+    omit?: Prisma.KegiatanMitraPenugasanOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraPenugasanInclude<ExtArgs> | null;
+    /**
+     * Filter, which KegiatanMitraPenugasan to fetch.
+     */
+    where?: Prisma.KegiatanMitraPenugasanWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of KegiatanMitraPenugasans to fetch.
+     */
+    orderBy?: Prisma.KegiatanMitraPenugasanOrderByWithRelationInput | Prisma.KegiatanMitraPenugasanOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for KegiatanMitraPenugasans.
+     */
+    cursor?: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` KegiatanMitraPenugasans from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` KegiatanMitraPenugasans.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of KegiatanMitraPenugasans.
+     */
+    distinct?: Prisma.KegiatanMitraPenugasanScalarFieldEnum | Prisma.KegiatanMitraPenugasanScalarFieldEnum[];
+};
+/**
+ * KegiatanMitraPenugasan findMany
+ */
+export type KegiatanMitraPenugasanFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraPenugasan
+     */
+    select?: Prisma.KegiatanMitraPenugasanSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraPenugasan
+     */
+    omit?: Prisma.KegiatanMitraPenugasanOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraPenugasanInclude<ExtArgs> | null;
+    /**
+     * Filter, which KegiatanMitraPenugasans to fetch.
+     */
+    where?: Prisma.KegiatanMitraPenugasanWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of KegiatanMitraPenugasans to fetch.
+     */
+    orderBy?: Prisma.KegiatanMitraPenugasanOrderByWithRelationInput | Prisma.KegiatanMitraPenugasanOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for listing KegiatanMitraPenugasans.
+     */
+    cursor?: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` KegiatanMitraPenugasans from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` KegiatanMitraPenugasans.
+     */
+    skip?: number;
+    distinct?: Prisma.KegiatanMitraPenugasanScalarFieldEnum | Prisma.KegiatanMitraPenugasanScalarFieldEnum[];
+};
+/**
+ * KegiatanMitraPenugasan create
+ */
+export type KegiatanMitraPenugasanCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraPenugasan
+     */
+    select?: Prisma.KegiatanMitraPenugasanSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraPenugasan
+     */
+    omit?: Prisma.KegiatanMitraPenugasanOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraPenugasanInclude<ExtArgs> | null;
+    /**
+     * The data needed to create a KegiatanMitraPenugasan.
+     */
+    data: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateInput, Prisma.KegiatanMitraPenugasanUncheckedCreateInput>;
+};
+/**
+ * KegiatanMitraPenugasan createMany
+ */
+export type KegiatanMitraPenugasanCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many KegiatanMitraPenugasans.
+     */
+    data: Prisma.KegiatanMitraPenugasanCreateManyInput | Prisma.KegiatanMitraPenugasanCreateManyInput[];
+    skipDuplicates?: boolean;
+};
+/**
+ * KegiatanMitraPenugasan createManyAndReturn
+ */
+export type KegiatanMitraPenugasanCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraPenugasan
+     */
+    select?: Prisma.KegiatanMitraPenugasanSelectCreateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraPenugasan
+     */
+    omit?: Prisma.KegiatanMitraPenugasanOmit<ExtArgs> | null;
+    /**
+     * The data used to create many KegiatanMitraPenugasans.
+     */
+    data: Prisma.KegiatanMitraPenugasanCreateManyInput | Prisma.KegiatanMitraPenugasanCreateManyInput[];
+    skipDuplicates?: boolean;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraPenugasanIncludeCreateManyAndReturn<ExtArgs> | null;
+};
+/**
+ * KegiatanMitraPenugasan update
+ */
+export type KegiatanMitraPenugasanUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraPenugasan
+     */
+    select?: Prisma.KegiatanMitraPenugasanSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraPenugasan
+     */
+    omit?: Prisma.KegiatanMitraPenugasanOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraPenugasanInclude<ExtArgs> | null;
+    /**
+     * The data needed to update a KegiatanMitraPenugasan.
+     */
+    data: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateInput>;
+    /**
+     * Choose, which KegiatanMitraPenugasan to update.
+     */
+    where: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+};
+/**
+ * KegiatanMitraPenugasan updateMany
+ */
+export type KegiatanMitraPenugasanUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * The data used to update KegiatanMitraPenugasans.
+     */
+    data: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateManyMutationInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateManyInput>;
+    /**
+     * Filter which KegiatanMitraPenugasans to update
+     */
+    where?: Prisma.KegiatanMitraPenugasanWhereInput;
+    /**
+     * Limit how many KegiatanMitraPenugasans to update.
+     */
+    limit?: number;
+};
+/**
+ * KegiatanMitraPenugasan updateManyAndReturn
+ */
+export type KegiatanMitraPenugasanUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraPenugasan
+     */
+    select?: Prisma.KegiatanMitraPenugasanSelectUpdateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraPenugasan
+     */
+    omit?: Prisma.KegiatanMitraPenugasanOmit<ExtArgs> | null;
+    /**
+     * The data used to update KegiatanMitraPenugasans.
+     */
+    data: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateManyMutationInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateManyInput>;
+    /**
+     * Filter which KegiatanMitraPenugasans to update
+     */
+    where?: Prisma.KegiatanMitraPenugasanWhereInput;
+    /**
+     * Limit how many KegiatanMitraPenugasans to update.
+     */
+    limit?: number;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraPenugasanIncludeUpdateManyAndReturn<ExtArgs> | null;
+};
+/**
+ * KegiatanMitraPenugasan upsert
+ */
+export type KegiatanMitraPenugasanUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraPenugasan
+     */
+    select?: Prisma.KegiatanMitraPenugasanSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraPenugasan
+     */
+    omit?: Prisma.KegiatanMitraPenugasanOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraPenugasanInclude<ExtArgs> | null;
+    /**
+     * The filter to search for the KegiatanMitraPenugasan to update in case it exists.
+     */
+    where: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    /**
+     * In case the KegiatanMitraPenugasan found by the `where` argument doesn't exist, create a new KegiatanMitraPenugasan with this data.
+     */
+    create: Prisma.XOR<Prisma.KegiatanMitraPenugasanCreateInput, Prisma.KegiatanMitraPenugasanUncheckedCreateInput>;
+    /**
+     * In case the KegiatanMitraPenugasan was found with the provided `where` argument, update it with this data.
+     */
+    update: Prisma.XOR<Prisma.KegiatanMitraPenugasanUpdateInput, Prisma.KegiatanMitraPenugasanUncheckedUpdateInput>;
+};
+/**
+ * KegiatanMitraPenugasan delete
+ */
+export type KegiatanMitraPenugasanDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraPenugasan
+     */
+    select?: Prisma.KegiatanMitraPenugasanSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraPenugasan
+     */
+    omit?: Prisma.KegiatanMitraPenugasanOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraPenugasanInclude<ExtArgs> | null;
+    /**
+     * Filter which KegiatanMitraPenugasan to delete.
+     */
+    where: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+};
+/**
+ * KegiatanMitraPenugasan deleteMany
+ */
+export type KegiatanMitraPenugasanDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Filter which KegiatanMitraPenugasans to delete
+     */
+    where?: Prisma.KegiatanMitraPenugasanWhereInput;
+    /**
+     * Limit how many KegiatanMitraPenugasans to delete.
+     */
+    limit?: number;
+};
+/**
+ * KegiatanMitraPenugasan.historyListObj
+ */
+export type KegiatanMitraPenugasan$historyListObjArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanHistory
+     */
+    select?: Prisma.PenugasanHistorySelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanHistory
+     */
+    omit?: Prisma.PenugasanHistoryOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanHistoryInclude<ExtArgs> | null;
+    where?: Prisma.PenugasanHistoryWhereInput;
+    orderBy?: Prisma.PenugasanHistoryOrderByWithRelationInput | Prisma.PenugasanHistoryOrderByWithRelationInput[];
+    cursor?: Prisma.PenugasanHistoryWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.PenugasanHistoryScalarFieldEnum | Prisma.PenugasanHistoryScalarFieldEnum[];
+};
+/**
+ * KegiatanMitraPenugasan.penugasanPhoto
+ */
+export type KegiatanMitraPenugasan$penugasanPhotoArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanPhoto
+     */
+    select?: Prisma.PenugasanPhotoSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanPhoto
+     */
+    omit?: Prisma.PenugasanPhotoOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanPhotoInclude<ExtArgs> | null;
+    where?: Prisma.PenugasanPhotoWhereInput;
+};
+/**
+ * KegiatanMitraPenugasan without action
+ */
+export type KegiatanMitraPenugasanDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraPenugasan
+     */
+    select?: Prisma.KegiatanMitraPenugasanSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraPenugasan
+     */
+    omit?: Prisma.KegiatanMitraPenugasanOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraPenugasanInclude<ExtArgs> | null;
+};
+export {};
+//# sourceMappingURL=KegiatanMitraPenugasan.d.ts.map

@@ -1,0 +1,1105 @@
+import type * as runtime from "@prisma/client/runtime/client";
+import type * as Prisma from "../internal/prismaNamespace";
+/**
+ * Model KegiatanStatus
+ *
+ */
+export type KegiatanStatusModel = runtime.Types.Result.DefaultSelection<Prisma.$KegiatanStatusPayload>;
+export type AggregateKegiatanStatus = {
+    _count: KegiatanStatusCountAggregateOutputType | null;
+    _avg: KegiatanStatusAvgAggregateOutputType | null;
+    _sum: KegiatanStatusSumAggregateOutputType | null;
+    _min: KegiatanStatusMinAggregateOutputType | null;
+    _max: KegiatanStatusMaxAggregateOutputType | null;
+};
+export type KegiatanStatusAvgAggregateOutputType = {
+    id: number | null;
+};
+export type KegiatanStatusSumAggregateOutputType = {
+    id: number | null;
+};
+export type KegiatanStatusMinAggregateOutputType = {
+    id: number | null;
+    description: string | null;
+};
+export type KegiatanStatusMaxAggregateOutputType = {
+    id: number | null;
+    description: string | null;
+};
+export type KegiatanStatusCountAggregateOutputType = {
+    id: number;
+    description: number;
+    _all: number;
+};
+export type KegiatanStatusAvgAggregateInputType = {
+    id?: true;
+};
+export type KegiatanStatusSumAggregateInputType = {
+    id?: true;
+};
+export type KegiatanStatusMinAggregateInputType = {
+    id?: true;
+    description?: true;
+};
+export type KegiatanStatusMaxAggregateInputType = {
+    id?: true;
+    description?: true;
+};
+export type KegiatanStatusCountAggregateInputType = {
+    id?: true;
+    description?: true;
+    _all?: true;
+};
+export type KegiatanStatusAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Filter which KegiatanStatus to aggregate.
+     */
+    where?: Prisma.KegiatanStatusWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of KegiatanStatuses to fetch.
+     */
+    orderBy?: Prisma.KegiatanStatusOrderByWithRelationInput | Prisma.KegiatanStatusOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the start position
+     */
+    cursor?: Prisma.KegiatanStatusWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` KegiatanStatuses from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` KegiatanStatuses.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned KegiatanStatuses
+    **/
+    _count?: true | KegiatanStatusCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to average
+    **/
+    _avg?: KegiatanStatusAvgAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to sum
+    **/
+    _sum?: KegiatanStatusSumAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+    **/
+    _min?: KegiatanStatusMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+    **/
+    _max?: KegiatanStatusMaxAggregateInputType;
+};
+export type GetKegiatanStatusAggregateType<T extends KegiatanStatusAggregateArgs> = {
+    [P in keyof T & keyof AggregateKegiatanStatus]: P extends '_count' | 'count' ? T[P] extends true ? number : Prisma.GetScalarType<T[P], AggregateKegiatanStatus[P]> : Prisma.GetScalarType<T[P], AggregateKegiatanStatus[P]>;
+};
+export type KegiatanStatusGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.KegiatanStatusWhereInput;
+    orderBy?: Prisma.KegiatanStatusOrderByWithAggregationInput | Prisma.KegiatanStatusOrderByWithAggregationInput[];
+    by: Prisma.KegiatanStatusScalarFieldEnum[] | Prisma.KegiatanStatusScalarFieldEnum;
+    having?: Prisma.KegiatanStatusScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: KegiatanStatusCountAggregateInputType | true;
+    _avg?: KegiatanStatusAvgAggregateInputType;
+    _sum?: KegiatanStatusSumAggregateInputType;
+    _min?: KegiatanStatusMinAggregateInputType;
+    _max?: KegiatanStatusMaxAggregateInputType;
+};
+export type KegiatanStatusGroupByOutputType = {
+    id: number;
+    description: string;
+    _count: KegiatanStatusCountAggregateOutputType | null;
+    _avg: KegiatanStatusAvgAggregateOutputType | null;
+    _sum: KegiatanStatusSumAggregateOutputType | null;
+    _min: KegiatanStatusMinAggregateOutputType | null;
+    _max: KegiatanStatusMaxAggregateOutputType | null;
+};
+type GetKegiatanStatusGroupByPayload<T extends KegiatanStatusGroupByArgs> = Prisma.PrismaPromise<Array<Prisma.PickEnumerable<KegiatanStatusGroupByOutputType, T['by']> & {
+    [P in ((keyof T) & (keyof KegiatanStatusGroupByOutputType))]: P extends '_count' ? T[P] extends boolean ? number : Prisma.GetScalarType<T[P], KegiatanStatusGroupByOutputType[P]> : Prisma.GetScalarType<T[P], KegiatanStatusGroupByOutputType[P]>;
+}>>;
+export type KegiatanStatusWhereInput = {
+    AND?: Prisma.KegiatanStatusWhereInput | Prisma.KegiatanStatusWhereInput[];
+    OR?: Prisma.KegiatanStatusWhereInput[];
+    NOT?: Prisma.KegiatanStatusWhereInput | Prisma.KegiatanStatusWhereInput[];
+    id?: Prisma.IntFilter<"KegiatanStatus"> | number;
+    description?: Prisma.StringFilter<"KegiatanStatus"> | string;
+    kegiatanObj?: Prisma.KegiatanListRelationFilter;
+};
+export type KegiatanStatusOrderByWithRelationInput = {
+    id?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+    kegiatanObj?: Prisma.KegiatanOrderByRelationAggregateInput;
+};
+export type KegiatanStatusWhereUniqueInput = Prisma.AtLeast<{
+    id?: number;
+    AND?: Prisma.KegiatanStatusWhereInput | Prisma.KegiatanStatusWhereInput[];
+    OR?: Prisma.KegiatanStatusWhereInput[];
+    NOT?: Prisma.KegiatanStatusWhereInput | Prisma.KegiatanStatusWhereInput[];
+    description?: Prisma.StringFilter<"KegiatanStatus"> | string;
+    kegiatanObj?: Prisma.KegiatanListRelationFilter;
+}, "id">;
+export type KegiatanStatusOrderByWithAggregationInput = {
+    id?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+    _count?: Prisma.KegiatanStatusCountOrderByAggregateInput;
+    _avg?: Prisma.KegiatanStatusAvgOrderByAggregateInput;
+    _max?: Prisma.KegiatanStatusMaxOrderByAggregateInput;
+    _min?: Prisma.KegiatanStatusMinOrderByAggregateInput;
+    _sum?: Prisma.KegiatanStatusSumOrderByAggregateInput;
+};
+export type KegiatanStatusScalarWhereWithAggregatesInput = {
+    AND?: Prisma.KegiatanStatusScalarWhereWithAggregatesInput | Prisma.KegiatanStatusScalarWhereWithAggregatesInput[];
+    OR?: Prisma.KegiatanStatusScalarWhereWithAggregatesInput[];
+    NOT?: Prisma.KegiatanStatusScalarWhereWithAggregatesInput | Prisma.KegiatanStatusScalarWhereWithAggregatesInput[];
+    id?: Prisma.IntWithAggregatesFilter<"KegiatanStatus"> | number;
+    description?: Prisma.StringWithAggregatesFilter<"KegiatanStatus"> | string;
+};
+export type KegiatanStatusCreateInput = {
+    id: number;
+    description: string;
+    kegiatanObj?: Prisma.KegiatanCreateNestedManyWithoutStatusObjInput;
+};
+export type KegiatanStatusUncheckedCreateInput = {
+    id: number;
+    description: string;
+    kegiatanObj?: Prisma.KegiatanUncheckedCreateNestedManyWithoutStatusObjInput;
+};
+export type KegiatanStatusUpdateInput = {
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    kegiatanObj?: Prisma.KegiatanUpdateManyWithoutStatusObjNestedInput;
+};
+export type KegiatanStatusUncheckedUpdateInput = {
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    kegiatanObj?: Prisma.KegiatanUncheckedUpdateManyWithoutStatusObjNestedInput;
+};
+export type KegiatanStatusCreateManyInput = {
+    id: number;
+    description: string;
+};
+export type KegiatanStatusUpdateManyMutationInput = {
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+};
+export type KegiatanStatusUncheckedUpdateManyInput = {
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+};
+export type KegiatanStatusCountOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+};
+export type KegiatanStatusAvgOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+};
+export type KegiatanStatusMaxOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+};
+export type KegiatanStatusMinOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+};
+export type KegiatanStatusSumOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+};
+export type KegiatanStatusScalarRelationFilter = {
+    is?: Prisma.KegiatanStatusWhereInput;
+    isNot?: Prisma.KegiatanStatusWhereInput;
+};
+export type IntFieldUpdateOperationsInput = {
+    set?: number;
+    increment?: number;
+    decrement?: number;
+    multiply?: number;
+    divide?: number;
+};
+export type KegiatanStatusCreateNestedOneWithoutKegiatanObjInput = {
+    create?: Prisma.XOR<Prisma.KegiatanStatusCreateWithoutKegiatanObjInput, Prisma.KegiatanStatusUncheckedCreateWithoutKegiatanObjInput>;
+    connectOrCreate?: Prisma.KegiatanStatusCreateOrConnectWithoutKegiatanObjInput;
+    connect?: Prisma.KegiatanStatusWhereUniqueInput;
+};
+export type KegiatanStatusUpdateOneRequiredWithoutKegiatanObjNestedInput = {
+    create?: Prisma.XOR<Prisma.KegiatanStatusCreateWithoutKegiatanObjInput, Prisma.KegiatanStatusUncheckedCreateWithoutKegiatanObjInput>;
+    connectOrCreate?: Prisma.KegiatanStatusCreateOrConnectWithoutKegiatanObjInput;
+    upsert?: Prisma.KegiatanStatusUpsertWithoutKegiatanObjInput;
+    connect?: Prisma.KegiatanStatusWhereUniqueInput;
+    update?: Prisma.XOR<Prisma.XOR<Prisma.KegiatanStatusUpdateToOneWithWhereWithoutKegiatanObjInput, Prisma.KegiatanStatusUpdateWithoutKegiatanObjInput>, Prisma.KegiatanStatusUncheckedUpdateWithoutKegiatanObjInput>;
+};
+export type KegiatanStatusCreateWithoutKegiatanObjInput = {
+    id: number;
+    description: string;
+};
+export type KegiatanStatusUncheckedCreateWithoutKegiatanObjInput = {
+    id: number;
+    description: string;
+};
+export type KegiatanStatusCreateOrConnectWithoutKegiatanObjInput = {
+    where: Prisma.KegiatanStatusWhereUniqueInput;
+    create: Prisma.XOR<Prisma.KegiatanStatusCreateWithoutKegiatanObjInput, Prisma.KegiatanStatusUncheckedCreateWithoutKegiatanObjInput>;
+};
+export type KegiatanStatusUpsertWithoutKegiatanObjInput = {
+    update: Prisma.XOR<Prisma.KegiatanStatusUpdateWithoutKegiatanObjInput, Prisma.KegiatanStatusUncheckedUpdateWithoutKegiatanObjInput>;
+    create: Prisma.XOR<Prisma.KegiatanStatusCreateWithoutKegiatanObjInput, Prisma.KegiatanStatusUncheckedCreateWithoutKegiatanObjInput>;
+    where?: Prisma.KegiatanStatusWhereInput;
+};
+export type KegiatanStatusUpdateToOneWithWhereWithoutKegiatanObjInput = {
+    where?: Prisma.KegiatanStatusWhereInput;
+    data: Prisma.XOR<Prisma.KegiatanStatusUpdateWithoutKegiatanObjInput, Prisma.KegiatanStatusUncheckedUpdateWithoutKegiatanObjInput>;
+};
+export type KegiatanStatusUpdateWithoutKegiatanObjInput = {
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+};
+export type KegiatanStatusUncheckedUpdateWithoutKegiatanObjInput = {
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+};
+/**
+ * Count Type KegiatanStatusCountOutputType
+ */
+export type KegiatanStatusCountOutputType = {
+    kegiatanObj: number;
+};
+export type KegiatanStatusCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    kegiatanObj?: boolean | KegiatanStatusCountOutputTypeCountKegiatanObjArgs;
+};
+/**
+ * KegiatanStatusCountOutputType without action
+ */
+export type KegiatanStatusCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanStatusCountOutputType
+     */
+    select?: Prisma.KegiatanStatusCountOutputTypeSelect<ExtArgs> | null;
+};
+/**
+ * KegiatanStatusCountOutputType without action
+ */
+export type KegiatanStatusCountOutputTypeCountKegiatanObjArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.KegiatanWhereInput;
+};
+export type KegiatanStatusSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    id?: boolean;
+    description?: boolean;
+    kegiatanObj?: boolean | Prisma.KegiatanStatus$kegiatanObjArgs<ExtArgs>;
+    _count?: boolean | Prisma.KegiatanStatusCountOutputTypeDefaultArgs<ExtArgs>;
+}, ExtArgs["result"]["kegiatanStatus"]>;
+export type KegiatanStatusSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    id?: boolean;
+    description?: boolean;
+}, ExtArgs["result"]["kegiatanStatus"]>;
+export type KegiatanStatusSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    id?: boolean;
+    description?: boolean;
+}, ExtArgs["result"]["kegiatanStatus"]>;
+export type KegiatanStatusSelectScalar = {
+    id?: boolean;
+    description?: boolean;
+};
+export type KegiatanStatusOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "description", ExtArgs["result"]["kegiatanStatus"]>;
+export type KegiatanStatusInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    kegiatanObj?: boolean | Prisma.KegiatanStatus$kegiatanObjArgs<ExtArgs>;
+    _count?: boolean | Prisma.KegiatanStatusCountOutputTypeDefaultArgs<ExtArgs>;
+};
+export type KegiatanStatusIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {};
+export type KegiatanStatusIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {};
+export type $KegiatanStatusPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    name: "KegiatanStatus";
+    objects: {
+        kegiatanObj: Prisma.$KegiatanPayload<ExtArgs>[];
+    };
+    scalars: runtime.Types.Extensions.GetPayloadResult<{
+        id: number;
+        description: string;
+    }, ExtArgs["result"]["kegiatanStatus"]>;
+    composites: {};
+};
+export type KegiatanStatusGetPayload<S extends boolean | null | undefined | KegiatanStatusDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$KegiatanStatusPayload, S>;
+export type KegiatanStatusCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<KegiatanStatusFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: KegiatanStatusCountAggregateInputType | true;
+};
+export interface KegiatanStatusDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: {
+        types: Prisma.TypeMap<ExtArgs>['model']['KegiatanStatus'];
+        meta: {
+            name: 'KegiatanStatus';
+        };
+    };
+    /**
+     * Find zero or one KegiatanStatus that matches the filter.
+     * @param {KegiatanStatusFindUniqueArgs} args - Arguments to find a KegiatanStatus
+     * @example
+     * // Get one KegiatanStatus
+     * const kegiatanStatus = await prisma.kegiatanStatus.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends KegiatanStatusFindUniqueArgs>(args: Prisma.SelectSubset<T, KegiatanStatusFindUniqueArgs<ExtArgs>>): Prisma.Prisma__KegiatanStatusClient<runtime.Types.Result.GetResult<Prisma.$KegiatanStatusPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find one KegiatanStatus that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {KegiatanStatusFindUniqueOrThrowArgs} args - Arguments to find a KegiatanStatus
+     * @example
+     * // Get one KegiatanStatus
+     * const kegiatanStatus = await prisma.kegiatanStatus.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends KegiatanStatusFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, KegiatanStatusFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__KegiatanStatusClient<runtime.Types.Result.GetResult<Prisma.$KegiatanStatusPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find the first KegiatanStatus that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanStatusFindFirstArgs} args - Arguments to find a KegiatanStatus
+     * @example
+     * // Get one KegiatanStatus
+     * const kegiatanStatus = await prisma.kegiatanStatus.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends KegiatanStatusFindFirstArgs>(args?: Prisma.SelectSubset<T, KegiatanStatusFindFirstArgs<ExtArgs>>): Prisma.Prisma__KegiatanStatusClient<runtime.Types.Result.GetResult<Prisma.$KegiatanStatusPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find the first KegiatanStatus that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanStatusFindFirstOrThrowArgs} args - Arguments to find a KegiatanStatus
+     * @example
+     * // Get one KegiatanStatus
+     * const kegiatanStatus = await prisma.kegiatanStatus.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends KegiatanStatusFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, KegiatanStatusFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__KegiatanStatusClient<runtime.Types.Result.GetResult<Prisma.$KegiatanStatusPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find zero or more KegiatanStatuses that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanStatusFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all KegiatanStatuses
+     * const kegiatanStatuses = await prisma.kegiatanStatus.findMany()
+     *
+     * // Get first 10 KegiatanStatuses
+     * const kegiatanStatuses = await prisma.kegiatanStatus.findMany({ take: 10 })
+     *
+     * // Only select the `id`
+     * const kegiatanStatusWithIdOnly = await prisma.kegiatanStatus.findMany({ select: { id: true } })
+     *
+     */
+    findMany<T extends KegiatanStatusFindManyArgs>(args?: Prisma.SelectSubset<T, KegiatanStatusFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$KegiatanStatusPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
+    /**
+     * Create a KegiatanStatus.
+     * @param {KegiatanStatusCreateArgs} args - Arguments to create a KegiatanStatus.
+     * @example
+     * // Create one KegiatanStatus
+     * const KegiatanStatus = await prisma.kegiatanStatus.create({
+     *   data: {
+     *     // ... data to create a KegiatanStatus
+     *   }
+     * })
+     *
+     */
+    create<T extends KegiatanStatusCreateArgs>(args: Prisma.SelectSubset<T, KegiatanStatusCreateArgs<ExtArgs>>): Prisma.Prisma__KegiatanStatusClient<runtime.Types.Result.GetResult<Prisma.$KegiatanStatusPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Create many KegiatanStatuses.
+     * @param {KegiatanStatusCreateManyArgs} args - Arguments to create many KegiatanStatuses.
+     * @example
+     * // Create many KegiatanStatuses
+     * const kegiatanStatus = await prisma.kegiatanStatus.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     */
+    createMany<T extends KegiatanStatusCreateManyArgs>(args?: Prisma.SelectSubset<T, KegiatanStatusCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Create many KegiatanStatuses and returns the data saved in the database.
+     * @param {KegiatanStatusCreateManyAndReturnArgs} args - Arguments to create many KegiatanStatuses.
+     * @example
+     * // Create many KegiatanStatuses
+     * const kegiatanStatus = await prisma.kegiatanStatus.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Create many KegiatanStatuses and only return the `id`
+     * const kegiatanStatusWithIdOnly = await prisma.kegiatanStatus.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    createManyAndReturn<T extends KegiatanStatusCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, KegiatanStatusCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$KegiatanStatusPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
+    /**
+     * Delete a KegiatanStatus.
+     * @param {KegiatanStatusDeleteArgs} args - Arguments to delete one KegiatanStatus.
+     * @example
+     * // Delete one KegiatanStatus
+     * const KegiatanStatus = await prisma.kegiatanStatus.delete({
+     *   where: {
+     *     // ... filter to delete one KegiatanStatus
+     *   }
+     * })
+     *
+     */
+    delete<T extends KegiatanStatusDeleteArgs>(args: Prisma.SelectSubset<T, KegiatanStatusDeleteArgs<ExtArgs>>): Prisma.Prisma__KegiatanStatusClient<runtime.Types.Result.GetResult<Prisma.$KegiatanStatusPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Update one KegiatanStatus.
+     * @param {KegiatanStatusUpdateArgs} args - Arguments to update one KegiatanStatus.
+     * @example
+     * // Update one KegiatanStatus
+     * const kegiatanStatus = await prisma.kegiatanStatus.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    update<T extends KegiatanStatusUpdateArgs>(args: Prisma.SelectSubset<T, KegiatanStatusUpdateArgs<ExtArgs>>): Prisma.Prisma__KegiatanStatusClient<runtime.Types.Result.GetResult<Prisma.$KegiatanStatusPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Delete zero or more KegiatanStatuses.
+     * @param {KegiatanStatusDeleteManyArgs} args - Arguments to filter KegiatanStatuses to delete.
+     * @example
+     * // Delete a few KegiatanStatuses
+     * const { count } = await prisma.kegiatanStatus.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     *
+     */
+    deleteMany<T extends KegiatanStatusDeleteManyArgs>(args?: Prisma.SelectSubset<T, KegiatanStatusDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Update zero or more KegiatanStatuses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanStatusUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many KegiatanStatuses
+     * const kegiatanStatus = await prisma.kegiatanStatus.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    updateMany<T extends KegiatanStatusUpdateManyArgs>(args: Prisma.SelectSubset<T, KegiatanStatusUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Update zero or more KegiatanStatuses and returns the data updated in the database.
+     * @param {KegiatanStatusUpdateManyAndReturnArgs} args - Arguments to update many KegiatanStatuses.
+     * @example
+     * // Update many KegiatanStatuses
+     * const kegiatanStatus = await prisma.kegiatanStatus.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Update zero or more KegiatanStatuses and only return the `id`
+     * const kegiatanStatusWithIdOnly = await prisma.kegiatanStatus.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    updateManyAndReturn<T extends KegiatanStatusUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, KegiatanStatusUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$KegiatanStatusPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
+    /**
+     * Create or update one KegiatanStatus.
+     * @param {KegiatanStatusUpsertArgs} args - Arguments to update or create a KegiatanStatus.
+     * @example
+     * // Update or create a KegiatanStatus
+     * const kegiatanStatus = await prisma.kegiatanStatus.upsert({
+     *   create: {
+     *     // ... data to create a KegiatanStatus
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the KegiatanStatus we want to update
+     *   }
+     * })
+     */
+    upsert<T extends KegiatanStatusUpsertArgs>(args: Prisma.SelectSubset<T, KegiatanStatusUpsertArgs<ExtArgs>>): Prisma.Prisma__KegiatanStatusClient<runtime.Types.Result.GetResult<Prisma.$KegiatanStatusPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Count the number of KegiatanStatuses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanStatusCountArgs} args - Arguments to filter KegiatanStatuses to count.
+     * @example
+     * // Count the number of KegiatanStatuses
+     * const count = await prisma.kegiatanStatus.count({
+     *   where: {
+     *     // ... the filter for the KegiatanStatuses we want to count
+     *   }
+     * })
+    **/
+    count<T extends KegiatanStatusCountArgs>(args?: Prisma.Subset<T, KegiatanStatusCountArgs>): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<'select', any> ? T['select'] extends true ? number : Prisma.GetScalarType<T['select'], KegiatanStatusCountAggregateOutputType> : number>;
+    /**
+     * Allows you to perform aggregations operations on a KegiatanStatus.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanStatusAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends KegiatanStatusAggregateArgs>(args: Prisma.Subset<T, KegiatanStatusAggregateArgs>): Prisma.PrismaPromise<GetKegiatanStatusAggregateType<T>>;
+    /**
+     * Group by KegiatanStatus.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanStatusGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+    **/
+    groupBy<T extends KegiatanStatusGroupByArgs, HasSelectOrTake extends Prisma.Or<Prisma.Extends<'skip', Prisma.Keys<T>>, Prisma.Extends<'take', Prisma.Keys<T>>>, OrderByArg extends Prisma.True extends HasSelectOrTake ? {
+        orderBy: KegiatanStatusGroupByArgs['orderBy'];
+    } : {
+        orderBy?: KegiatanStatusGroupByArgs['orderBy'];
+    }, OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>, ByFields extends Prisma.MaybeTupleToUnion<T['by']>, ByValid extends Prisma.Has<ByFields, OrderFields>, HavingFields extends Prisma.GetHavingFields<T['having']>, HavingValid extends Prisma.Has<ByFields, HavingFields>, ByEmpty extends T['by'] extends never[] ? Prisma.True : Prisma.False, InputErrors extends ByEmpty extends Prisma.True ? `Error: "by" must not be empty.` : HavingValid extends Prisma.False ? {
+        [P in HavingFields]: P extends ByFields ? never : P extends string ? `Error: Field "${P}" used in "having" needs to be provided in "by".` : [
+            Error,
+            'Field ',
+            P,
+            ` in "having" needs to be provided in "by"`
+        ];
+    }[HavingFields] : 'take' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "take", you also need to provide "orderBy"' : 'skip' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "skip", you also need to provide "orderBy"' : ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields]>(args: Prisma.SubsetIntersection<T, KegiatanStatusGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetKegiatanStatusGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the KegiatanStatus model
+     */
+    readonly fields: KegiatanStatusFieldRefs;
+}
+/**
+ * The delegate class that acts as a "Promise-like" for KegiatanStatus.
+ * Why is this prefixed with `Prisma__`?
+ * Because we want to prevent naming conflicts as mentioned in
+ * https://github.com/prisma/prisma-client-js/issues/707
+ */
+export interface Prisma__KegiatanStatusClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise";
+    kegiatanObj<T extends Prisma.KegiatanStatus$kegiatanObjArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.KegiatanStatus$kegiatanObjArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$KegiatanPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
+}
+/**
+ * Fields of the KegiatanStatus model
+ */
+export interface KegiatanStatusFieldRefs {
+    readonly id: Prisma.FieldRef<"KegiatanStatus", 'Int'>;
+    readonly description: Prisma.FieldRef<"KegiatanStatus", 'String'>;
+}
+/**
+ * KegiatanStatus findUnique
+ */
+export type KegiatanStatusFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanStatus
+     */
+    select?: Prisma.KegiatanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanStatus
+     */
+    omit?: Prisma.KegiatanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanStatusInclude<ExtArgs> | null;
+    /**
+     * Filter, which KegiatanStatus to fetch.
+     */
+    where: Prisma.KegiatanStatusWhereUniqueInput;
+};
+/**
+ * KegiatanStatus findUniqueOrThrow
+ */
+export type KegiatanStatusFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanStatus
+     */
+    select?: Prisma.KegiatanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanStatus
+     */
+    omit?: Prisma.KegiatanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanStatusInclude<ExtArgs> | null;
+    /**
+     * Filter, which KegiatanStatus to fetch.
+     */
+    where: Prisma.KegiatanStatusWhereUniqueInput;
+};
+/**
+ * KegiatanStatus findFirst
+ */
+export type KegiatanStatusFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanStatus
+     */
+    select?: Prisma.KegiatanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanStatus
+     */
+    omit?: Prisma.KegiatanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanStatusInclude<ExtArgs> | null;
+    /**
+     * Filter, which KegiatanStatus to fetch.
+     */
+    where?: Prisma.KegiatanStatusWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of KegiatanStatuses to fetch.
+     */
+    orderBy?: Prisma.KegiatanStatusOrderByWithRelationInput | Prisma.KegiatanStatusOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for KegiatanStatuses.
+     */
+    cursor?: Prisma.KegiatanStatusWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` KegiatanStatuses from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` KegiatanStatuses.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of KegiatanStatuses.
+     */
+    distinct?: Prisma.KegiatanStatusScalarFieldEnum | Prisma.KegiatanStatusScalarFieldEnum[];
+};
+/**
+ * KegiatanStatus findFirstOrThrow
+ */
+export type KegiatanStatusFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanStatus
+     */
+    select?: Prisma.KegiatanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanStatus
+     */
+    omit?: Prisma.KegiatanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanStatusInclude<ExtArgs> | null;
+    /**
+     * Filter, which KegiatanStatus to fetch.
+     */
+    where?: Prisma.KegiatanStatusWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of KegiatanStatuses to fetch.
+     */
+    orderBy?: Prisma.KegiatanStatusOrderByWithRelationInput | Prisma.KegiatanStatusOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for KegiatanStatuses.
+     */
+    cursor?: Prisma.KegiatanStatusWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` KegiatanStatuses from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` KegiatanStatuses.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of KegiatanStatuses.
+     */
+    distinct?: Prisma.KegiatanStatusScalarFieldEnum | Prisma.KegiatanStatusScalarFieldEnum[];
+};
+/**
+ * KegiatanStatus findMany
+ */
+export type KegiatanStatusFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanStatus
+     */
+    select?: Prisma.KegiatanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanStatus
+     */
+    omit?: Prisma.KegiatanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanStatusInclude<ExtArgs> | null;
+    /**
+     * Filter, which KegiatanStatuses to fetch.
+     */
+    where?: Prisma.KegiatanStatusWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of KegiatanStatuses to fetch.
+     */
+    orderBy?: Prisma.KegiatanStatusOrderByWithRelationInput | Prisma.KegiatanStatusOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for listing KegiatanStatuses.
+     */
+    cursor?: Prisma.KegiatanStatusWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` KegiatanStatuses from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` KegiatanStatuses.
+     */
+    skip?: number;
+    distinct?: Prisma.KegiatanStatusScalarFieldEnum | Prisma.KegiatanStatusScalarFieldEnum[];
+};
+/**
+ * KegiatanStatus create
+ */
+export type KegiatanStatusCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanStatus
+     */
+    select?: Prisma.KegiatanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanStatus
+     */
+    omit?: Prisma.KegiatanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanStatusInclude<ExtArgs> | null;
+    /**
+     * The data needed to create a KegiatanStatus.
+     */
+    data: Prisma.XOR<Prisma.KegiatanStatusCreateInput, Prisma.KegiatanStatusUncheckedCreateInput>;
+};
+/**
+ * KegiatanStatus createMany
+ */
+export type KegiatanStatusCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many KegiatanStatuses.
+     */
+    data: Prisma.KegiatanStatusCreateManyInput | Prisma.KegiatanStatusCreateManyInput[];
+    skipDuplicates?: boolean;
+};
+/**
+ * KegiatanStatus createManyAndReturn
+ */
+export type KegiatanStatusCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanStatus
+     */
+    select?: Prisma.KegiatanStatusSelectCreateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanStatus
+     */
+    omit?: Prisma.KegiatanStatusOmit<ExtArgs> | null;
+    /**
+     * The data used to create many KegiatanStatuses.
+     */
+    data: Prisma.KegiatanStatusCreateManyInput | Prisma.KegiatanStatusCreateManyInput[];
+    skipDuplicates?: boolean;
+};
+/**
+ * KegiatanStatus update
+ */
+export type KegiatanStatusUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanStatus
+     */
+    select?: Prisma.KegiatanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanStatus
+     */
+    omit?: Prisma.KegiatanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanStatusInclude<ExtArgs> | null;
+    /**
+     * The data needed to update a KegiatanStatus.
+     */
+    data: Prisma.XOR<Prisma.KegiatanStatusUpdateInput, Prisma.KegiatanStatusUncheckedUpdateInput>;
+    /**
+     * Choose, which KegiatanStatus to update.
+     */
+    where: Prisma.KegiatanStatusWhereUniqueInput;
+};
+/**
+ * KegiatanStatus updateMany
+ */
+export type KegiatanStatusUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * The data used to update KegiatanStatuses.
+     */
+    data: Prisma.XOR<Prisma.KegiatanStatusUpdateManyMutationInput, Prisma.KegiatanStatusUncheckedUpdateManyInput>;
+    /**
+     * Filter which KegiatanStatuses to update
+     */
+    where?: Prisma.KegiatanStatusWhereInput;
+    /**
+     * Limit how many KegiatanStatuses to update.
+     */
+    limit?: number;
+};
+/**
+ * KegiatanStatus updateManyAndReturn
+ */
+export type KegiatanStatusUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanStatus
+     */
+    select?: Prisma.KegiatanStatusSelectUpdateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanStatus
+     */
+    omit?: Prisma.KegiatanStatusOmit<ExtArgs> | null;
+    /**
+     * The data used to update KegiatanStatuses.
+     */
+    data: Prisma.XOR<Prisma.KegiatanStatusUpdateManyMutationInput, Prisma.KegiatanStatusUncheckedUpdateManyInput>;
+    /**
+     * Filter which KegiatanStatuses to update
+     */
+    where?: Prisma.KegiatanStatusWhereInput;
+    /**
+     * Limit how many KegiatanStatuses to update.
+     */
+    limit?: number;
+};
+/**
+ * KegiatanStatus upsert
+ */
+export type KegiatanStatusUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanStatus
+     */
+    select?: Prisma.KegiatanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanStatus
+     */
+    omit?: Prisma.KegiatanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanStatusInclude<ExtArgs> | null;
+    /**
+     * The filter to search for the KegiatanStatus to update in case it exists.
+     */
+    where: Prisma.KegiatanStatusWhereUniqueInput;
+    /**
+     * In case the KegiatanStatus found by the `where` argument doesn't exist, create a new KegiatanStatus with this data.
+     */
+    create: Prisma.XOR<Prisma.KegiatanStatusCreateInput, Prisma.KegiatanStatusUncheckedCreateInput>;
+    /**
+     * In case the KegiatanStatus was found with the provided `where` argument, update it with this data.
+     */
+    update: Prisma.XOR<Prisma.KegiatanStatusUpdateInput, Prisma.KegiatanStatusUncheckedUpdateInput>;
+};
+/**
+ * KegiatanStatus delete
+ */
+export type KegiatanStatusDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanStatus
+     */
+    select?: Prisma.KegiatanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanStatus
+     */
+    omit?: Prisma.KegiatanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanStatusInclude<ExtArgs> | null;
+    /**
+     * Filter which KegiatanStatus to delete.
+     */
+    where: Prisma.KegiatanStatusWhereUniqueInput;
+};
+/**
+ * KegiatanStatus deleteMany
+ */
+export type KegiatanStatusDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Filter which KegiatanStatuses to delete
+     */
+    where?: Prisma.KegiatanStatusWhereInput;
+    /**
+     * Limit how many KegiatanStatuses to delete.
+     */
+    limit?: number;
+};
+/**
+ * KegiatanStatus.kegiatanObj
+ */
+export type KegiatanStatus$kegiatanObjArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Kegiatan
+     */
+    select?: Prisma.KegiatanSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Kegiatan
+     */
+    omit?: Prisma.KegiatanOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanInclude<ExtArgs> | null;
+    where?: Prisma.KegiatanWhereInput;
+    orderBy?: Prisma.KegiatanOrderByWithRelationInput | Prisma.KegiatanOrderByWithRelationInput[];
+    cursor?: Prisma.KegiatanWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.KegiatanScalarFieldEnum | Prisma.KegiatanScalarFieldEnum[];
+};
+/**
+ * KegiatanStatus without action
+ */
+export type KegiatanStatusDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanStatus
+     */
+    select?: Prisma.KegiatanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanStatus
+     */
+    omit?: Prisma.KegiatanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanStatusInclude<ExtArgs> | null;
+};
+export {};
+//# sourceMappingURL=KegiatanStatus.d.ts.map

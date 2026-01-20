@@ -1,0 +1,1256 @@
+import type * as runtime from "@prisma/client/runtime/client";
+import type * as Prisma from "../internal/prismaNamespace";
+/**
+ * Model PenugasanPhoto
+ *
+ */
+export type PenugasanPhotoModel = runtime.Types.Result.DefaultSelection<Prisma.$PenugasanPhotoPayload>;
+export type AggregatePenugasanPhoto = {
+    _count: PenugasanPhotoCountAggregateOutputType | null;
+    _min: PenugasanPhotoMinAggregateOutputType | null;
+    _max: PenugasanPhotoMaxAggregateOutputType | null;
+};
+export type PenugasanPhotoMinAggregateOutputType = {
+    uuid: string | null;
+    kmp_uuid: string | null;
+    photo1_loc: string | null;
+    photo1_ext: string | null;
+    photo2_loc: string | null;
+    photo2_ext: string | null;
+    photo3_loc: string | null;
+    photo3_ext: string | null;
+    last_updated: string | null;
+};
+export type PenugasanPhotoMaxAggregateOutputType = {
+    uuid: string | null;
+    kmp_uuid: string | null;
+    photo1_loc: string | null;
+    photo1_ext: string | null;
+    photo2_loc: string | null;
+    photo2_ext: string | null;
+    photo3_loc: string | null;
+    photo3_ext: string | null;
+    last_updated: string | null;
+};
+export type PenugasanPhotoCountAggregateOutputType = {
+    uuid: number;
+    kmp_uuid: number;
+    photo1_loc: number;
+    photo1_ext: number;
+    photo2_loc: number;
+    photo2_ext: number;
+    photo3_loc: number;
+    photo3_ext: number;
+    last_updated: number;
+    _all: number;
+};
+export type PenugasanPhotoMinAggregateInputType = {
+    uuid?: true;
+    kmp_uuid?: true;
+    photo1_loc?: true;
+    photo1_ext?: true;
+    photo2_loc?: true;
+    photo2_ext?: true;
+    photo3_loc?: true;
+    photo3_ext?: true;
+    last_updated?: true;
+};
+export type PenugasanPhotoMaxAggregateInputType = {
+    uuid?: true;
+    kmp_uuid?: true;
+    photo1_loc?: true;
+    photo1_ext?: true;
+    photo2_loc?: true;
+    photo2_ext?: true;
+    photo3_loc?: true;
+    photo3_ext?: true;
+    last_updated?: true;
+};
+export type PenugasanPhotoCountAggregateInputType = {
+    uuid?: true;
+    kmp_uuid?: true;
+    photo1_loc?: true;
+    photo1_ext?: true;
+    photo2_loc?: true;
+    photo2_ext?: true;
+    photo3_loc?: true;
+    photo3_ext?: true;
+    last_updated?: true;
+    _all?: true;
+};
+export type PenugasanPhotoAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Filter which PenugasanPhoto to aggregate.
+     */
+    where?: Prisma.PenugasanPhotoWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of PenugasanPhotos to fetch.
+     */
+    orderBy?: Prisma.PenugasanPhotoOrderByWithRelationInput | Prisma.PenugasanPhotoOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the start position
+     */
+    cursor?: Prisma.PenugasanPhotoWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` PenugasanPhotos from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` PenugasanPhotos.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned PenugasanPhotos
+    **/
+    _count?: true | PenugasanPhotoCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+    **/
+    _min?: PenugasanPhotoMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+    **/
+    _max?: PenugasanPhotoMaxAggregateInputType;
+};
+export type GetPenugasanPhotoAggregateType<T extends PenugasanPhotoAggregateArgs> = {
+    [P in keyof T & keyof AggregatePenugasanPhoto]: P extends '_count' | 'count' ? T[P] extends true ? number : Prisma.GetScalarType<T[P], AggregatePenugasanPhoto[P]> : Prisma.GetScalarType<T[P], AggregatePenugasanPhoto[P]>;
+};
+export type PenugasanPhotoGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.PenugasanPhotoWhereInput;
+    orderBy?: Prisma.PenugasanPhotoOrderByWithAggregationInput | Prisma.PenugasanPhotoOrderByWithAggregationInput[];
+    by: Prisma.PenugasanPhotoScalarFieldEnum[] | Prisma.PenugasanPhotoScalarFieldEnum;
+    having?: Prisma.PenugasanPhotoScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: PenugasanPhotoCountAggregateInputType | true;
+    _min?: PenugasanPhotoMinAggregateInputType;
+    _max?: PenugasanPhotoMaxAggregateInputType;
+};
+export type PenugasanPhotoGroupByOutputType = {
+    uuid: string;
+    kmp_uuid: string;
+    photo1_loc: string | null;
+    photo1_ext: string | null;
+    photo2_loc: string | null;
+    photo2_ext: string | null;
+    photo3_loc: string | null;
+    photo3_ext: string | null;
+    last_updated: string;
+    _count: PenugasanPhotoCountAggregateOutputType | null;
+    _min: PenugasanPhotoMinAggregateOutputType | null;
+    _max: PenugasanPhotoMaxAggregateOutputType | null;
+};
+type GetPenugasanPhotoGroupByPayload<T extends PenugasanPhotoGroupByArgs> = Prisma.PrismaPromise<Array<Prisma.PickEnumerable<PenugasanPhotoGroupByOutputType, T['by']> & {
+    [P in ((keyof T) & (keyof PenugasanPhotoGroupByOutputType))]: P extends '_count' ? T[P] extends boolean ? number : Prisma.GetScalarType<T[P], PenugasanPhotoGroupByOutputType[P]> : Prisma.GetScalarType<T[P], PenugasanPhotoGroupByOutputType[P]>;
+}>>;
+export type PenugasanPhotoWhereInput = {
+    AND?: Prisma.PenugasanPhotoWhereInput | Prisma.PenugasanPhotoWhereInput[];
+    OR?: Prisma.PenugasanPhotoWhereInput[];
+    NOT?: Prisma.PenugasanPhotoWhereInput | Prisma.PenugasanPhotoWhereInput[];
+    uuid?: Prisma.StringFilter<"PenugasanPhoto"> | string;
+    kmp_uuid?: Prisma.StringFilter<"PenugasanPhoto"> | string;
+    photo1_loc?: Prisma.StringNullableFilter<"PenugasanPhoto"> | string | null;
+    photo1_ext?: Prisma.StringNullableFilter<"PenugasanPhoto"> | string | null;
+    photo2_loc?: Prisma.StringNullableFilter<"PenugasanPhoto"> | string | null;
+    photo2_ext?: Prisma.StringNullableFilter<"PenugasanPhoto"> | string | null;
+    photo3_loc?: Prisma.StringNullableFilter<"PenugasanPhoto"> | string | null;
+    photo3_ext?: Prisma.StringNullableFilter<"PenugasanPhoto"> | string | null;
+    last_updated?: Prisma.StringFilter<"PenugasanPhoto"> | string;
+    penugasanObj?: Prisma.XOR<Prisma.KegiatanMitraPenugasanScalarRelationFilter, Prisma.KegiatanMitraPenugasanWhereInput>;
+};
+export type PenugasanPhotoOrderByWithRelationInput = {
+    uuid?: Prisma.SortOrder;
+    kmp_uuid?: Prisma.SortOrder;
+    photo1_loc?: Prisma.SortOrderInput | Prisma.SortOrder;
+    photo1_ext?: Prisma.SortOrderInput | Prisma.SortOrder;
+    photo2_loc?: Prisma.SortOrderInput | Prisma.SortOrder;
+    photo2_ext?: Prisma.SortOrderInput | Prisma.SortOrder;
+    photo3_loc?: Prisma.SortOrderInput | Prisma.SortOrder;
+    photo3_ext?: Prisma.SortOrderInput | Prisma.SortOrder;
+    last_updated?: Prisma.SortOrder;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanOrderByWithRelationInput;
+};
+export type PenugasanPhotoWhereUniqueInput = Prisma.AtLeast<{
+    uuid?: string;
+    kmp_uuid?: string;
+    AND?: Prisma.PenugasanPhotoWhereInput | Prisma.PenugasanPhotoWhereInput[];
+    OR?: Prisma.PenugasanPhotoWhereInput[];
+    NOT?: Prisma.PenugasanPhotoWhereInput | Prisma.PenugasanPhotoWhereInput[];
+    photo1_loc?: Prisma.StringNullableFilter<"PenugasanPhoto"> | string | null;
+    photo1_ext?: Prisma.StringNullableFilter<"PenugasanPhoto"> | string | null;
+    photo2_loc?: Prisma.StringNullableFilter<"PenugasanPhoto"> | string | null;
+    photo2_ext?: Prisma.StringNullableFilter<"PenugasanPhoto"> | string | null;
+    photo3_loc?: Prisma.StringNullableFilter<"PenugasanPhoto"> | string | null;
+    photo3_ext?: Prisma.StringNullableFilter<"PenugasanPhoto"> | string | null;
+    last_updated?: Prisma.StringFilter<"PenugasanPhoto"> | string;
+    penugasanObj?: Prisma.XOR<Prisma.KegiatanMitraPenugasanScalarRelationFilter, Prisma.KegiatanMitraPenugasanWhereInput>;
+}, "uuid" | "kmp_uuid">;
+export type PenugasanPhotoOrderByWithAggregationInput = {
+    uuid?: Prisma.SortOrder;
+    kmp_uuid?: Prisma.SortOrder;
+    photo1_loc?: Prisma.SortOrderInput | Prisma.SortOrder;
+    photo1_ext?: Prisma.SortOrderInput | Prisma.SortOrder;
+    photo2_loc?: Prisma.SortOrderInput | Prisma.SortOrder;
+    photo2_ext?: Prisma.SortOrderInput | Prisma.SortOrder;
+    photo3_loc?: Prisma.SortOrderInput | Prisma.SortOrder;
+    photo3_ext?: Prisma.SortOrderInput | Prisma.SortOrder;
+    last_updated?: Prisma.SortOrder;
+    _count?: Prisma.PenugasanPhotoCountOrderByAggregateInput;
+    _max?: Prisma.PenugasanPhotoMaxOrderByAggregateInput;
+    _min?: Prisma.PenugasanPhotoMinOrderByAggregateInput;
+};
+export type PenugasanPhotoScalarWhereWithAggregatesInput = {
+    AND?: Prisma.PenugasanPhotoScalarWhereWithAggregatesInput | Prisma.PenugasanPhotoScalarWhereWithAggregatesInput[];
+    OR?: Prisma.PenugasanPhotoScalarWhereWithAggregatesInput[];
+    NOT?: Prisma.PenugasanPhotoScalarWhereWithAggregatesInput | Prisma.PenugasanPhotoScalarWhereWithAggregatesInput[];
+    uuid?: Prisma.StringWithAggregatesFilter<"PenugasanPhoto"> | string;
+    kmp_uuid?: Prisma.StringWithAggregatesFilter<"PenugasanPhoto"> | string;
+    photo1_loc?: Prisma.StringNullableWithAggregatesFilter<"PenugasanPhoto"> | string | null;
+    photo1_ext?: Prisma.StringNullableWithAggregatesFilter<"PenugasanPhoto"> | string | null;
+    photo2_loc?: Prisma.StringNullableWithAggregatesFilter<"PenugasanPhoto"> | string | null;
+    photo2_ext?: Prisma.StringNullableWithAggregatesFilter<"PenugasanPhoto"> | string | null;
+    photo3_loc?: Prisma.StringNullableWithAggregatesFilter<"PenugasanPhoto"> | string | null;
+    photo3_ext?: Prisma.StringNullableWithAggregatesFilter<"PenugasanPhoto"> | string | null;
+    last_updated?: Prisma.StringWithAggregatesFilter<"PenugasanPhoto"> | string;
+};
+export type PenugasanPhotoCreateInput = {
+    uuid?: string;
+    photo1_loc?: string | null;
+    photo1_ext?: string | null;
+    photo2_loc?: string | null;
+    photo2_ext?: string | null;
+    photo3_loc?: string | null;
+    photo3_ext?: string | null;
+    last_updated: string;
+    penugasanObj: Prisma.KegiatanMitraPenugasanCreateNestedOneWithoutPenugasanPhotoInput;
+};
+export type PenugasanPhotoUncheckedCreateInput = {
+    uuid?: string;
+    kmp_uuid: string;
+    photo1_loc?: string | null;
+    photo1_ext?: string | null;
+    photo2_loc?: string | null;
+    photo2_ext?: string | null;
+    photo3_loc?: string | null;
+    photo3_ext?: string | null;
+    last_updated: string;
+};
+export type PenugasanPhotoUpdateInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    photo1_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo1_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo2_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo2_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo3_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo3_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.StringFieldUpdateOperationsInput | string;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUpdateOneRequiredWithoutPenugasanPhotoNestedInput;
+};
+export type PenugasanPhotoUncheckedUpdateInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    kmp_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    photo1_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo1_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo2_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo2_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo3_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo3_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.StringFieldUpdateOperationsInput | string;
+};
+export type PenugasanPhotoCreateManyInput = {
+    uuid?: string;
+    kmp_uuid: string;
+    photo1_loc?: string | null;
+    photo1_ext?: string | null;
+    photo2_loc?: string | null;
+    photo2_ext?: string | null;
+    photo3_loc?: string | null;
+    photo3_ext?: string | null;
+    last_updated: string;
+};
+export type PenugasanPhotoUpdateManyMutationInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    photo1_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo1_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo2_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo2_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo3_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo3_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.StringFieldUpdateOperationsInput | string;
+};
+export type PenugasanPhotoUncheckedUpdateManyInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    kmp_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    photo1_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo1_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo2_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo2_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo3_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo3_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.StringFieldUpdateOperationsInput | string;
+};
+export type PenugasanPhotoNullableScalarRelationFilter = {
+    is?: Prisma.PenugasanPhotoWhereInput | null;
+    isNot?: Prisma.PenugasanPhotoWhereInput | null;
+};
+export type PenugasanPhotoCountOrderByAggregateInput = {
+    uuid?: Prisma.SortOrder;
+    kmp_uuid?: Prisma.SortOrder;
+    photo1_loc?: Prisma.SortOrder;
+    photo1_ext?: Prisma.SortOrder;
+    photo2_loc?: Prisma.SortOrder;
+    photo2_ext?: Prisma.SortOrder;
+    photo3_loc?: Prisma.SortOrder;
+    photo3_ext?: Prisma.SortOrder;
+    last_updated?: Prisma.SortOrder;
+};
+export type PenugasanPhotoMaxOrderByAggregateInput = {
+    uuid?: Prisma.SortOrder;
+    kmp_uuid?: Prisma.SortOrder;
+    photo1_loc?: Prisma.SortOrder;
+    photo1_ext?: Prisma.SortOrder;
+    photo2_loc?: Prisma.SortOrder;
+    photo2_ext?: Prisma.SortOrder;
+    photo3_loc?: Prisma.SortOrder;
+    photo3_ext?: Prisma.SortOrder;
+    last_updated?: Prisma.SortOrder;
+};
+export type PenugasanPhotoMinOrderByAggregateInput = {
+    uuid?: Prisma.SortOrder;
+    kmp_uuid?: Prisma.SortOrder;
+    photo1_loc?: Prisma.SortOrder;
+    photo1_ext?: Prisma.SortOrder;
+    photo2_loc?: Prisma.SortOrder;
+    photo2_ext?: Prisma.SortOrder;
+    photo3_loc?: Prisma.SortOrder;
+    photo3_ext?: Prisma.SortOrder;
+    last_updated?: Prisma.SortOrder;
+};
+export type PenugasanPhotoCreateNestedOneWithoutPenugasanObjInput = {
+    create?: Prisma.XOR<Prisma.PenugasanPhotoCreateWithoutPenugasanObjInput, Prisma.PenugasanPhotoUncheckedCreateWithoutPenugasanObjInput>;
+    connectOrCreate?: Prisma.PenugasanPhotoCreateOrConnectWithoutPenugasanObjInput;
+    connect?: Prisma.PenugasanPhotoWhereUniqueInput;
+};
+export type PenugasanPhotoUncheckedCreateNestedOneWithoutPenugasanObjInput = {
+    create?: Prisma.XOR<Prisma.PenugasanPhotoCreateWithoutPenugasanObjInput, Prisma.PenugasanPhotoUncheckedCreateWithoutPenugasanObjInput>;
+    connectOrCreate?: Prisma.PenugasanPhotoCreateOrConnectWithoutPenugasanObjInput;
+    connect?: Prisma.PenugasanPhotoWhereUniqueInput;
+};
+export type PenugasanPhotoUpdateOneWithoutPenugasanObjNestedInput = {
+    create?: Prisma.XOR<Prisma.PenugasanPhotoCreateWithoutPenugasanObjInput, Prisma.PenugasanPhotoUncheckedCreateWithoutPenugasanObjInput>;
+    connectOrCreate?: Prisma.PenugasanPhotoCreateOrConnectWithoutPenugasanObjInput;
+    upsert?: Prisma.PenugasanPhotoUpsertWithoutPenugasanObjInput;
+    disconnect?: Prisma.PenugasanPhotoWhereInput | boolean;
+    delete?: Prisma.PenugasanPhotoWhereInput | boolean;
+    connect?: Prisma.PenugasanPhotoWhereUniqueInput;
+    update?: Prisma.XOR<Prisma.XOR<Prisma.PenugasanPhotoUpdateToOneWithWhereWithoutPenugasanObjInput, Prisma.PenugasanPhotoUpdateWithoutPenugasanObjInput>, Prisma.PenugasanPhotoUncheckedUpdateWithoutPenugasanObjInput>;
+};
+export type PenugasanPhotoUncheckedUpdateOneWithoutPenugasanObjNestedInput = {
+    create?: Prisma.XOR<Prisma.PenugasanPhotoCreateWithoutPenugasanObjInput, Prisma.PenugasanPhotoUncheckedCreateWithoutPenugasanObjInput>;
+    connectOrCreate?: Prisma.PenugasanPhotoCreateOrConnectWithoutPenugasanObjInput;
+    upsert?: Prisma.PenugasanPhotoUpsertWithoutPenugasanObjInput;
+    disconnect?: Prisma.PenugasanPhotoWhereInput | boolean;
+    delete?: Prisma.PenugasanPhotoWhereInput | boolean;
+    connect?: Prisma.PenugasanPhotoWhereUniqueInput;
+    update?: Prisma.XOR<Prisma.XOR<Prisma.PenugasanPhotoUpdateToOneWithWhereWithoutPenugasanObjInput, Prisma.PenugasanPhotoUpdateWithoutPenugasanObjInput>, Prisma.PenugasanPhotoUncheckedUpdateWithoutPenugasanObjInput>;
+};
+export type PenugasanPhotoCreateWithoutPenugasanObjInput = {
+    uuid?: string;
+    photo1_loc?: string | null;
+    photo1_ext?: string | null;
+    photo2_loc?: string | null;
+    photo2_ext?: string | null;
+    photo3_loc?: string | null;
+    photo3_ext?: string | null;
+    last_updated: string;
+};
+export type PenugasanPhotoUncheckedCreateWithoutPenugasanObjInput = {
+    uuid?: string;
+    photo1_loc?: string | null;
+    photo1_ext?: string | null;
+    photo2_loc?: string | null;
+    photo2_ext?: string | null;
+    photo3_loc?: string | null;
+    photo3_ext?: string | null;
+    last_updated: string;
+};
+export type PenugasanPhotoCreateOrConnectWithoutPenugasanObjInput = {
+    where: Prisma.PenugasanPhotoWhereUniqueInput;
+    create: Prisma.XOR<Prisma.PenugasanPhotoCreateWithoutPenugasanObjInput, Prisma.PenugasanPhotoUncheckedCreateWithoutPenugasanObjInput>;
+};
+export type PenugasanPhotoUpsertWithoutPenugasanObjInput = {
+    update: Prisma.XOR<Prisma.PenugasanPhotoUpdateWithoutPenugasanObjInput, Prisma.PenugasanPhotoUncheckedUpdateWithoutPenugasanObjInput>;
+    create: Prisma.XOR<Prisma.PenugasanPhotoCreateWithoutPenugasanObjInput, Prisma.PenugasanPhotoUncheckedCreateWithoutPenugasanObjInput>;
+    where?: Prisma.PenugasanPhotoWhereInput;
+};
+export type PenugasanPhotoUpdateToOneWithWhereWithoutPenugasanObjInput = {
+    where?: Prisma.PenugasanPhotoWhereInput;
+    data: Prisma.XOR<Prisma.PenugasanPhotoUpdateWithoutPenugasanObjInput, Prisma.PenugasanPhotoUncheckedUpdateWithoutPenugasanObjInput>;
+};
+export type PenugasanPhotoUpdateWithoutPenugasanObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    photo1_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo1_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo2_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo2_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo3_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo3_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.StringFieldUpdateOperationsInput | string;
+};
+export type PenugasanPhotoUncheckedUpdateWithoutPenugasanObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    photo1_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo1_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo2_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo2_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo3_loc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    photo3_ext?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    last_updated?: Prisma.StringFieldUpdateOperationsInput | string;
+};
+export type PenugasanPhotoSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    uuid?: boolean;
+    kmp_uuid?: boolean;
+    photo1_loc?: boolean;
+    photo1_ext?: boolean;
+    photo2_loc?: boolean;
+    photo2_ext?: boolean;
+    photo3_loc?: boolean;
+    photo3_ext?: boolean;
+    last_updated?: boolean;
+    penugasanObj?: boolean | Prisma.KegiatanMitraPenugasanDefaultArgs<ExtArgs>;
+}, ExtArgs["result"]["penugasanPhoto"]>;
+export type PenugasanPhotoSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    uuid?: boolean;
+    kmp_uuid?: boolean;
+    photo1_loc?: boolean;
+    photo1_ext?: boolean;
+    photo2_loc?: boolean;
+    photo2_ext?: boolean;
+    photo3_loc?: boolean;
+    photo3_ext?: boolean;
+    last_updated?: boolean;
+    penugasanObj?: boolean | Prisma.KegiatanMitraPenugasanDefaultArgs<ExtArgs>;
+}, ExtArgs["result"]["penugasanPhoto"]>;
+export type PenugasanPhotoSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    uuid?: boolean;
+    kmp_uuid?: boolean;
+    photo1_loc?: boolean;
+    photo1_ext?: boolean;
+    photo2_loc?: boolean;
+    photo2_ext?: boolean;
+    photo3_loc?: boolean;
+    photo3_ext?: boolean;
+    last_updated?: boolean;
+    penugasanObj?: boolean | Prisma.KegiatanMitraPenugasanDefaultArgs<ExtArgs>;
+}, ExtArgs["result"]["penugasanPhoto"]>;
+export type PenugasanPhotoSelectScalar = {
+    uuid?: boolean;
+    kmp_uuid?: boolean;
+    photo1_loc?: boolean;
+    photo1_ext?: boolean;
+    photo2_loc?: boolean;
+    photo2_ext?: boolean;
+    photo3_loc?: boolean;
+    photo3_ext?: boolean;
+    last_updated?: boolean;
+};
+export type PenugasanPhotoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"uuid" | "kmp_uuid" | "photo1_loc" | "photo1_ext" | "photo2_loc" | "photo2_ext" | "photo3_loc" | "photo3_ext" | "last_updated", ExtArgs["result"]["penugasanPhoto"]>;
+export type PenugasanPhotoInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    penugasanObj?: boolean | Prisma.KegiatanMitraPenugasanDefaultArgs<ExtArgs>;
+};
+export type PenugasanPhotoIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    penugasanObj?: boolean | Prisma.KegiatanMitraPenugasanDefaultArgs<ExtArgs>;
+};
+export type PenugasanPhotoIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    penugasanObj?: boolean | Prisma.KegiatanMitraPenugasanDefaultArgs<ExtArgs>;
+};
+export type $PenugasanPhotoPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    name: "PenugasanPhoto";
+    objects: {
+        penugasanObj: Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>;
+    };
+    scalars: runtime.Types.Extensions.GetPayloadResult<{
+        uuid: string;
+        kmp_uuid: string;
+        photo1_loc: string | null;
+        photo1_ext: string | null;
+        photo2_loc: string | null;
+        photo2_ext: string | null;
+        photo3_loc: string | null;
+        photo3_ext: string | null;
+        last_updated: string;
+    }, ExtArgs["result"]["penugasanPhoto"]>;
+    composites: {};
+};
+export type PenugasanPhotoGetPayload<S extends boolean | null | undefined | PenugasanPhotoDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$PenugasanPhotoPayload, S>;
+export type PenugasanPhotoCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<PenugasanPhotoFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: PenugasanPhotoCountAggregateInputType | true;
+};
+export interface PenugasanPhotoDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: {
+        types: Prisma.TypeMap<ExtArgs>['model']['PenugasanPhoto'];
+        meta: {
+            name: 'PenugasanPhoto';
+        };
+    };
+    /**
+     * Find zero or one PenugasanPhoto that matches the filter.
+     * @param {PenugasanPhotoFindUniqueArgs} args - Arguments to find a PenugasanPhoto
+     * @example
+     * // Get one PenugasanPhoto
+     * const penugasanPhoto = await prisma.penugasanPhoto.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends PenugasanPhotoFindUniqueArgs>(args: Prisma.SelectSubset<T, PenugasanPhotoFindUniqueArgs<ExtArgs>>): Prisma.Prisma__PenugasanPhotoClient<runtime.Types.Result.GetResult<Prisma.$PenugasanPhotoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find one PenugasanPhoto that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {PenugasanPhotoFindUniqueOrThrowArgs} args - Arguments to find a PenugasanPhoto
+     * @example
+     * // Get one PenugasanPhoto
+     * const penugasanPhoto = await prisma.penugasanPhoto.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends PenugasanPhotoFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, PenugasanPhotoFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__PenugasanPhotoClient<runtime.Types.Result.GetResult<Prisma.$PenugasanPhotoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find the first PenugasanPhoto that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PenugasanPhotoFindFirstArgs} args - Arguments to find a PenugasanPhoto
+     * @example
+     * // Get one PenugasanPhoto
+     * const penugasanPhoto = await prisma.penugasanPhoto.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends PenugasanPhotoFindFirstArgs>(args?: Prisma.SelectSubset<T, PenugasanPhotoFindFirstArgs<ExtArgs>>): Prisma.Prisma__PenugasanPhotoClient<runtime.Types.Result.GetResult<Prisma.$PenugasanPhotoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find the first PenugasanPhoto that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PenugasanPhotoFindFirstOrThrowArgs} args - Arguments to find a PenugasanPhoto
+     * @example
+     * // Get one PenugasanPhoto
+     * const penugasanPhoto = await prisma.penugasanPhoto.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends PenugasanPhotoFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, PenugasanPhotoFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__PenugasanPhotoClient<runtime.Types.Result.GetResult<Prisma.$PenugasanPhotoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find zero or more PenugasanPhotos that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PenugasanPhotoFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all PenugasanPhotos
+     * const penugasanPhotos = await prisma.penugasanPhoto.findMany()
+     *
+     * // Get first 10 PenugasanPhotos
+     * const penugasanPhotos = await prisma.penugasanPhoto.findMany({ take: 10 })
+     *
+     * // Only select the `uuid`
+     * const penugasanPhotoWithUuidOnly = await prisma.penugasanPhoto.findMany({ select: { uuid: true } })
+     *
+     */
+    findMany<T extends PenugasanPhotoFindManyArgs>(args?: Prisma.SelectSubset<T, PenugasanPhotoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PenugasanPhotoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
+    /**
+     * Create a PenugasanPhoto.
+     * @param {PenugasanPhotoCreateArgs} args - Arguments to create a PenugasanPhoto.
+     * @example
+     * // Create one PenugasanPhoto
+     * const PenugasanPhoto = await prisma.penugasanPhoto.create({
+     *   data: {
+     *     // ... data to create a PenugasanPhoto
+     *   }
+     * })
+     *
+     */
+    create<T extends PenugasanPhotoCreateArgs>(args: Prisma.SelectSubset<T, PenugasanPhotoCreateArgs<ExtArgs>>): Prisma.Prisma__PenugasanPhotoClient<runtime.Types.Result.GetResult<Prisma.$PenugasanPhotoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Create many PenugasanPhotos.
+     * @param {PenugasanPhotoCreateManyArgs} args - Arguments to create many PenugasanPhotos.
+     * @example
+     * // Create many PenugasanPhotos
+     * const penugasanPhoto = await prisma.penugasanPhoto.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     */
+    createMany<T extends PenugasanPhotoCreateManyArgs>(args?: Prisma.SelectSubset<T, PenugasanPhotoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Create many PenugasanPhotos and returns the data saved in the database.
+     * @param {PenugasanPhotoCreateManyAndReturnArgs} args - Arguments to create many PenugasanPhotos.
+     * @example
+     * // Create many PenugasanPhotos
+     * const penugasanPhoto = await prisma.penugasanPhoto.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Create many PenugasanPhotos and only return the `uuid`
+     * const penugasanPhotoWithUuidOnly = await prisma.penugasanPhoto.createManyAndReturn({
+     *   select: { uuid: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    createManyAndReturn<T extends PenugasanPhotoCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, PenugasanPhotoCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PenugasanPhotoPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
+    /**
+     * Delete a PenugasanPhoto.
+     * @param {PenugasanPhotoDeleteArgs} args - Arguments to delete one PenugasanPhoto.
+     * @example
+     * // Delete one PenugasanPhoto
+     * const PenugasanPhoto = await prisma.penugasanPhoto.delete({
+     *   where: {
+     *     // ... filter to delete one PenugasanPhoto
+     *   }
+     * })
+     *
+     */
+    delete<T extends PenugasanPhotoDeleteArgs>(args: Prisma.SelectSubset<T, PenugasanPhotoDeleteArgs<ExtArgs>>): Prisma.Prisma__PenugasanPhotoClient<runtime.Types.Result.GetResult<Prisma.$PenugasanPhotoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Update one PenugasanPhoto.
+     * @param {PenugasanPhotoUpdateArgs} args - Arguments to update one PenugasanPhoto.
+     * @example
+     * // Update one PenugasanPhoto
+     * const penugasanPhoto = await prisma.penugasanPhoto.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    update<T extends PenugasanPhotoUpdateArgs>(args: Prisma.SelectSubset<T, PenugasanPhotoUpdateArgs<ExtArgs>>): Prisma.Prisma__PenugasanPhotoClient<runtime.Types.Result.GetResult<Prisma.$PenugasanPhotoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Delete zero or more PenugasanPhotos.
+     * @param {PenugasanPhotoDeleteManyArgs} args - Arguments to filter PenugasanPhotos to delete.
+     * @example
+     * // Delete a few PenugasanPhotos
+     * const { count } = await prisma.penugasanPhoto.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     *
+     */
+    deleteMany<T extends PenugasanPhotoDeleteManyArgs>(args?: Prisma.SelectSubset<T, PenugasanPhotoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Update zero or more PenugasanPhotos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PenugasanPhotoUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many PenugasanPhotos
+     * const penugasanPhoto = await prisma.penugasanPhoto.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    updateMany<T extends PenugasanPhotoUpdateManyArgs>(args: Prisma.SelectSubset<T, PenugasanPhotoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Update zero or more PenugasanPhotos and returns the data updated in the database.
+     * @param {PenugasanPhotoUpdateManyAndReturnArgs} args - Arguments to update many PenugasanPhotos.
+     * @example
+     * // Update many PenugasanPhotos
+     * const penugasanPhoto = await prisma.penugasanPhoto.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Update zero or more PenugasanPhotos and only return the `uuid`
+     * const penugasanPhotoWithUuidOnly = await prisma.penugasanPhoto.updateManyAndReturn({
+     *   select: { uuid: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    updateManyAndReturn<T extends PenugasanPhotoUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, PenugasanPhotoUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PenugasanPhotoPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
+    /**
+     * Create or update one PenugasanPhoto.
+     * @param {PenugasanPhotoUpsertArgs} args - Arguments to update or create a PenugasanPhoto.
+     * @example
+     * // Update or create a PenugasanPhoto
+     * const penugasanPhoto = await prisma.penugasanPhoto.upsert({
+     *   create: {
+     *     // ... data to create a PenugasanPhoto
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the PenugasanPhoto we want to update
+     *   }
+     * })
+     */
+    upsert<T extends PenugasanPhotoUpsertArgs>(args: Prisma.SelectSubset<T, PenugasanPhotoUpsertArgs<ExtArgs>>): Prisma.Prisma__PenugasanPhotoClient<runtime.Types.Result.GetResult<Prisma.$PenugasanPhotoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Count the number of PenugasanPhotos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PenugasanPhotoCountArgs} args - Arguments to filter PenugasanPhotos to count.
+     * @example
+     * // Count the number of PenugasanPhotos
+     * const count = await prisma.penugasanPhoto.count({
+     *   where: {
+     *     // ... the filter for the PenugasanPhotos we want to count
+     *   }
+     * })
+    **/
+    count<T extends PenugasanPhotoCountArgs>(args?: Prisma.Subset<T, PenugasanPhotoCountArgs>): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<'select', any> ? T['select'] extends true ? number : Prisma.GetScalarType<T['select'], PenugasanPhotoCountAggregateOutputType> : number>;
+    /**
+     * Allows you to perform aggregations operations on a PenugasanPhoto.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PenugasanPhotoAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends PenugasanPhotoAggregateArgs>(args: Prisma.Subset<T, PenugasanPhotoAggregateArgs>): Prisma.PrismaPromise<GetPenugasanPhotoAggregateType<T>>;
+    /**
+     * Group by PenugasanPhoto.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PenugasanPhotoGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+    **/
+    groupBy<T extends PenugasanPhotoGroupByArgs, HasSelectOrTake extends Prisma.Or<Prisma.Extends<'skip', Prisma.Keys<T>>, Prisma.Extends<'take', Prisma.Keys<T>>>, OrderByArg extends Prisma.True extends HasSelectOrTake ? {
+        orderBy: PenugasanPhotoGroupByArgs['orderBy'];
+    } : {
+        orderBy?: PenugasanPhotoGroupByArgs['orderBy'];
+    }, OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>, ByFields extends Prisma.MaybeTupleToUnion<T['by']>, ByValid extends Prisma.Has<ByFields, OrderFields>, HavingFields extends Prisma.GetHavingFields<T['having']>, HavingValid extends Prisma.Has<ByFields, HavingFields>, ByEmpty extends T['by'] extends never[] ? Prisma.True : Prisma.False, InputErrors extends ByEmpty extends Prisma.True ? `Error: "by" must not be empty.` : HavingValid extends Prisma.False ? {
+        [P in HavingFields]: P extends ByFields ? never : P extends string ? `Error: Field "${P}" used in "having" needs to be provided in "by".` : [
+            Error,
+            'Field ',
+            P,
+            ` in "having" needs to be provided in "by"`
+        ];
+    }[HavingFields] : 'take' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "take", you also need to provide "orderBy"' : 'skip' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "skip", you also need to provide "orderBy"' : ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields]>(args: Prisma.SubsetIntersection<T, PenugasanPhotoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPenugasanPhotoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the PenugasanPhoto model
+     */
+    readonly fields: PenugasanPhotoFieldRefs;
+}
+/**
+ * The delegate class that acts as a "Promise-like" for PenugasanPhoto.
+ * Why is this prefixed with `Prisma__`?
+ * Because we want to prevent naming conflicts as mentioned in
+ * https://github.com/prisma/prisma-client-js/issues/707
+ */
+export interface Prisma__PenugasanPhotoClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise";
+    penugasanObj<T extends Prisma.KegiatanMitraPenugasanDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.KegiatanMitraPenugasanDefaultArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraPenugasanClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
+}
+/**
+ * Fields of the PenugasanPhoto model
+ */
+export interface PenugasanPhotoFieldRefs {
+    readonly uuid: Prisma.FieldRef<"PenugasanPhoto", 'String'>;
+    readonly kmp_uuid: Prisma.FieldRef<"PenugasanPhoto", 'String'>;
+    readonly photo1_loc: Prisma.FieldRef<"PenugasanPhoto", 'String'>;
+    readonly photo1_ext: Prisma.FieldRef<"PenugasanPhoto", 'String'>;
+    readonly photo2_loc: Prisma.FieldRef<"PenugasanPhoto", 'String'>;
+    readonly photo2_ext: Prisma.FieldRef<"PenugasanPhoto", 'String'>;
+    readonly photo3_loc: Prisma.FieldRef<"PenugasanPhoto", 'String'>;
+    readonly photo3_ext: Prisma.FieldRef<"PenugasanPhoto", 'String'>;
+    readonly last_updated: Prisma.FieldRef<"PenugasanPhoto", 'String'>;
+}
+/**
+ * PenugasanPhoto findUnique
+ */
+export type PenugasanPhotoFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanPhoto
+     */
+    select?: Prisma.PenugasanPhotoSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanPhoto
+     */
+    omit?: Prisma.PenugasanPhotoOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanPhotoInclude<ExtArgs> | null;
+    /**
+     * Filter, which PenugasanPhoto to fetch.
+     */
+    where: Prisma.PenugasanPhotoWhereUniqueInput;
+};
+/**
+ * PenugasanPhoto findUniqueOrThrow
+ */
+export type PenugasanPhotoFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanPhoto
+     */
+    select?: Prisma.PenugasanPhotoSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanPhoto
+     */
+    omit?: Prisma.PenugasanPhotoOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanPhotoInclude<ExtArgs> | null;
+    /**
+     * Filter, which PenugasanPhoto to fetch.
+     */
+    where: Prisma.PenugasanPhotoWhereUniqueInput;
+};
+/**
+ * PenugasanPhoto findFirst
+ */
+export type PenugasanPhotoFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanPhoto
+     */
+    select?: Prisma.PenugasanPhotoSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanPhoto
+     */
+    omit?: Prisma.PenugasanPhotoOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanPhotoInclude<ExtArgs> | null;
+    /**
+     * Filter, which PenugasanPhoto to fetch.
+     */
+    where?: Prisma.PenugasanPhotoWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of PenugasanPhotos to fetch.
+     */
+    orderBy?: Prisma.PenugasanPhotoOrderByWithRelationInput | Prisma.PenugasanPhotoOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for PenugasanPhotos.
+     */
+    cursor?: Prisma.PenugasanPhotoWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` PenugasanPhotos from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` PenugasanPhotos.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of PenugasanPhotos.
+     */
+    distinct?: Prisma.PenugasanPhotoScalarFieldEnum | Prisma.PenugasanPhotoScalarFieldEnum[];
+};
+/**
+ * PenugasanPhoto findFirstOrThrow
+ */
+export type PenugasanPhotoFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanPhoto
+     */
+    select?: Prisma.PenugasanPhotoSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanPhoto
+     */
+    omit?: Prisma.PenugasanPhotoOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanPhotoInclude<ExtArgs> | null;
+    /**
+     * Filter, which PenugasanPhoto to fetch.
+     */
+    where?: Prisma.PenugasanPhotoWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of PenugasanPhotos to fetch.
+     */
+    orderBy?: Prisma.PenugasanPhotoOrderByWithRelationInput | Prisma.PenugasanPhotoOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for PenugasanPhotos.
+     */
+    cursor?: Prisma.PenugasanPhotoWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` PenugasanPhotos from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` PenugasanPhotos.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of PenugasanPhotos.
+     */
+    distinct?: Prisma.PenugasanPhotoScalarFieldEnum | Prisma.PenugasanPhotoScalarFieldEnum[];
+};
+/**
+ * PenugasanPhoto findMany
+ */
+export type PenugasanPhotoFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanPhoto
+     */
+    select?: Prisma.PenugasanPhotoSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanPhoto
+     */
+    omit?: Prisma.PenugasanPhotoOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanPhotoInclude<ExtArgs> | null;
+    /**
+     * Filter, which PenugasanPhotos to fetch.
+     */
+    where?: Prisma.PenugasanPhotoWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of PenugasanPhotos to fetch.
+     */
+    orderBy?: Prisma.PenugasanPhotoOrderByWithRelationInput | Prisma.PenugasanPhotoOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for listing PenugasanPhotos.
+     */
+    cursor?: Prisma.PenugasanPhotoWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` PenugasanPhotos from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` PenugasanPhotos.
+     */
+    skip?: number;
+    distinct?: Prisma.PenugasanPhotoScalarFieldEnum | Prisma.PenugasanPhotoScalarFieldEnum[];
+};
+/**
+ * PenugasanPhoto create
+ */
+export type PenugasanPhotoCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanPhoto
+     */
+    select?: Prisma.PenugasanPhotoSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanPhoto
+     */
+    omit?: Prisma.PenugasanPhotoOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanPhotoInclude<ExtArgs> | null;
+    /**
+     * The data needed to create a PenugasanPhoto.
+     */
+    data: Prisma.XOR<Prisma.PenugasanPhotoCreateInput, Prisma.PenugasanPhotoUncheckedCreateInput>;
+};
+/**
+ * PenugasanPhoto createMany
+ */
+export type PenugasanPhotoCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many PenugasanPhotos.
+     */
+    data: Prisma.PenugasanPhotoCreateManyInput | Prisma.PenugasanPhotoCreateManyInput[];
+    skipDuplicates?: boolean;
+};
+/**
+ * PenugasanPhoto createManyAndReturn
+ */
+export type PenugasanPhotoCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanPhoto
+     */
+    select?: Prisma.PenugasanPhotoSelectCreateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanPhoto
+     */
+    omit?: Prisma.PenugasanPhotoOmit<ExtArgs> | null;
+    /**
+     * The data used to create many PenugasanPhotos.
+     */
+    data: Prisma.PenugasanPhotoCreateManyInput | Prisma.PenugasanPhotoCreateManyInput[];
+    skipDuplicates?: boolean;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanPhotoIncludeCreateManyAndReturn<ExtArgs> | null;
+};
+/**
+ * PenugasanPhoto update
+ */
+export type PenugasanPhotoUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanPhoto
+     */
+    select?: Prisma.PenugasanPhotoSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanPhoto
+     */
+    omit?: Prisma.PenugasanPhotoOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanPhotoInclude<ExtArgs> | null;
+    /**
+     * The data needed to update a PenugasanPhoto.
+     */
+    data: Prisma.XOR<Prisma.PenugasanPhotoUpdateInput, Prisma.PenugasanPhotoUncheckedUpdateInput>;
+    /**
+     * Choose, which PenugasanPhoto to update.
+     */
+    where: Prisma.PenugasanPhotoWhereUniqueInput;
+};
+/**
+ * PenugasanPhoto updateMany
+ */
+export type PenugasanPhotoUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * The data used to update PenugasanPhotos.
+     */
+    data: Prisma.XOR<Prisma.PenugasanPhotoUpdateManyMutationInput, Prisma.PenugasanPhotoUncheckedUpdateManyInput>;
+    /**
+     * Filter which PenugasanPhotos to update
+     */
+    where?: Prisma.PenugasanPhotoWhereInput;
+    /**
+     * Limit how many PenugasanPhotos to update.
+     */
+    limit?: number;
+};
+/**
+ * PenugasanPhoto updateManyAndReturn
+ */
+export type PenugasanPhotoUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanPhoto
+     */
+    select?: Prisma.PenugasanPhotoSelectUpdateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanPhoto
+     */
+    omit?: Prisma.PenugasanPhotoOmit<ExtArgs> | null;
+    /**
+     * The data used to update PenugasanPhotos.
+     */
+    data: Prisma.XOR<Prisma.PenugasanPhotoUpdateManyMutationInput, Prisma.PenugasanPhotoUncheckedUpdateManyInput>;
+    /**
+     * Filter which PenugasanPhotos to update
+     */
+    where?: Prisma.PenugasanPhotoWhereInput;
+    /**
+     * Limit how many PenugasanPhotos to update.
+     */
+    limit?: number;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanPhotoIncludeUpdateManyAndReturn<ExtArgs> | null;
+};
+/**
+ * PenugasanPhoto upsert
+ */
+export type PenugasanPhotoUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanPhoto
+     */
+    select?: Prisma.PenugasanPhotoSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanPhoto
+     */
+    omit?: Prisma.PenugasanPhotoOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanPhotoInclude<ExtArgs> | null;
+    /**
+     * The filter to search for the PenugasanPhoto to update in case it exists.
+     */
+    where: Prisma.PenugasanPhotoWhereUniqueInput;
+    /**
+     * In case the PenugasanPhoto found by the `where` argument doesn't exist, create a new PenugasanPhoto with this data.
+     */
+    create: Prisma.XOR<Prisma.PenugasanPhotoCreateInput, Prisma.PenugasanPhotoUncheckedCreateInput>;
+    /**
+     * In case the PenugasanPhoto was found with the provided `where` argument, update it with this data.
+     */
+    update: Prisma.XOR<Prisma.PenugasanPhotoUpdateInput, Prisma.PenugasanPhotoUncheckedUpdateInput>;
+};
+/**
+ * PenugasanPhoto delete
+ */
+export type PenugasanPhotoDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanPhoto
+     */
+    select?: Prisma.PenugasanPhotoSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanPhoto
+     */
+    omit?: Prisma.PenugasanPhotoOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanPhotoInclude<ExtArgs> | null;
+    /**
+     * Filter which PenugasanPhoto to delete.
+     */
+    where: Prisma.PenugasanPhotoWhereUniqueInput;
+};
+/**
+ * PenugasanPhoto deleteMany
+ */
+export type PenugasanPhotoDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Filter which PenugasanPhotos to delete
+     */
+    where?: Prisma.PenugasanPhotoWhereInput;
+    /**
+     * Limit how many PenugasanPhotos to delete.
+     */
+    limit?: number;
+};
+/**
+ * PenugasanPhoto without action
+ */
+export type PenugasanPhotoDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanPhoto
+     */
+    select?: Prisma.PenugasanPhotoSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanPhoto
+     */
+    omit?: Prisma.PenugasanPhotoOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanPhotoInclude<ExtArgs> | null;
+};
+export {};
+//# sourceMappingURL=PenugasanPhoto.d.ts.map

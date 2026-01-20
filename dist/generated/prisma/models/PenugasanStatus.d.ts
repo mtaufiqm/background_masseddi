@@ -1,0 +1,1189 @@
+import type * as runtime from "@prisma/client/runtime/client";
+import type * as Prisma from "../internal/prismaNamespace";
+/**
+ * Model PenugasanStatus
+ *
+ */
+export type PenugasanStatusModel = runtime.Types.Result.DefaultSelection<Prisma.$PenugasanStatusPayload>;
+export type AggregatePenugasanStatus = {
+    _count: PenugasanStatusCountAggregateOutputType | null;
+    _avg: PenugasanStatusAvgAggregateOutputType | null;
+    _sum: PenugasanStatusSumAggregateOutputType | null;
+    _min: PenugasanStatusMinAggregateOutputType | null;
+    _max: PenugasanStatusMaxAggregateOutputType | null;
+};
+export type PenugasanStatusAvgAggregateOutputType = {
+    id: number | null;
+};
+export type PenugasanStatusSumAggregateOutputType = {
+    id: number | null;
+};
+export type PenugasanStatusMinAggregateOutputType = {
+    id: number | null;
+    description: string | null;
+};
+export type PenugasanStatusMaxAggregateOutputType = {
+    id: number | null;
+    description: string | null;
+};
+export type PenugasanStatusCountAggregateOutputType = {
+    id: number;
+    description: number;
+    _all: number;
+};
+export type PenugasanStatusAvgAggregateInputType = {
+    id?: true;
+};
+export type PenugasanStatusSumAggregateInputType = {
+    id?: true;
+};
+export type PenugasanStatusMinAggregateInputType = {
+    id?: true;
+    description?: true;
+};
+export type PenugasanStatusMaxAggregateInputType = {
+    id?: true;
+    description?: true;
+};
+export type PenugasanStatusCountAggregateInputType = {
+    id?: true;
+    description?: true;
+    _all?: true;
+};
+export type PenugasanStatusAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Filter which PenugasanStatus to aggregate.
+     */
+    where?: Prisma.PenugasanStatusWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of PenugasanStatuses to fetch.
+     */
+    orderBy?: Prisma.PenugasanStatusOrderByWithRelationInput | Prisma.PenugasanStatusOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the start position
+     */
+    cursor?: Prisma.PenugasanStatusWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` PenugasanStatuses from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` PenugasanStatuses.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned PenugasanStatuses
+    **/
+    _count?: true | PenugasanStatusCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to average
+    **/
+    _avg?: PenugasanStatusAvgAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to sum
+    **/
+    _sum?: PenugasanStatusSumAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+    **/
+    _min?: PenugasanStatusMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+    **/
+    _max?: PenugasanStatusMaxAggregateInputType;
+};
+export type GetPenugasanStatusAggregateType<T extends PenugasanStatusAggregateArgs> = {
+    [P in keyof T & keyof AggregatePenugasanStatus]: P extends '_count' | 'count' ? T[P] extends true ? number : Prisma.GetScalarType<T[P], AggregatePenugasanStatus[P]> : Prisma.GetScalarType<T[P], AggregatePenugasanStatus[P]>;
+};
+export type PenugasanStatusGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.PenugasanStatusWhereInput;
+    orderBy?: Prisma.PenugasanStatusOrderByWithAggregationInput | Prisma.PenugasanStatusOrderByWithAggregationInput[];
+    by: Prisma.PenugasanStatusScalarFieldEnum[] | Prisma.PenugasanStatusScalarFieldEnum;
+    having?: Prisma.PenugasanStatusScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: PenugasanStatusCountAggregateInputType | true;
+    _avg?: PenugasanStatusAvgAggregateInputType;
+    _sum?: PenugasanStatusSumAggregateInputType;
+    _min?: PenugasanStatusMinAggregateInputType;
+    _max?: PenugasanStatusMaxAggregateInputType;
+};
+export type PenugasanStatusGroupByOutputType = {
+    id: number;
+    description: string;
+    _count: PenugasanStatusCountAggregateOutputType | null;
+    _avg: PenugasanStatusAvgAggregateOutputType | null;
+    _sum: PenugasanStatusSumAggregateOutputType | null;
+    _min: PenugasanStatusMinAggregateOutputType | null;
+    _max: PenugasanStatusMaxAggregateOutputType | null;
+};
+type GetPenugasanStatusGroupByPayload<T extends PenugasanStatusGroupByArgs> = Prisma.PrismaPromise<Array<Prisma.PickEnumerable<PenugasanStatusGroupByOutputType, T['by']> & {
+    [P in ((keyof T) & (keyof PenugasanStatusGroupByOutputType))]: P extends '_count' ? T[P] extends boolean ? number : Prisma.GetScalarType<T[P], PenugasanStatusGroupByOutputType[P]> : Prisma.GetScalarType<T[P], PenugasanStatusGroupByOutputType[P]>;
+}>>;
+export type PenugasanStatusWhereInput = {
+    AND?: Prisma.PenugasanStatusWhereInput | Prisma.PenugasanStatusWhereInput[];
+    OR?: Prisma.PenugasanStatusWhereInput[];
+    NOT?: Prisma.PenugasanStatusWhereInput | Prisma.PenugasanStatusWhereInput[];
+    id?: Prisma.IntFilter<"PenugasanStatus"> | number;
+    description?: Prisma.StringFilter<"PenugasanStatus"> | string;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanListRelationFilter;
+    penugasanHistoryObj?: Prisma.PenugasanHistoryListRelationFilter;
+};
+export type PenugasanStatusOrderByWithRelationInput = {
+    id?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanOrderByRelationAggregateInput;
+    penugasanHistoryObj?: Prisma.PenugasanHistoryOrderByRelationAggregateInput;
+};
+export type PenugasanStatusWhereUniqueInput = Prisma.AtLeast<{
+    id?: number;
+    AND?: Prisma.PenugasanStatusWhereInput | Prisma.PenugasanStatusWhereInput[];
+    OR?: Prisma.PenugasanStatusWhereInput[];
+    NOT?: Prisma.PenugasanStatusWhereInput | Prisma.PenugasanStatusWhereInput[];
+    description?: Prisma.StringFilter<"PenugasanStatus"> | string;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanListRelationFilter;
+    penugasanHistoryObj?: Prisma.PenugasanHistoryListRelationFilter;
+}, "id">;
+export type PenugasanStatusOrderByWithAggregationInput = {
+    id?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+    _count?: Prisma.PenugasanStatusCountOrderByAggregateInput;
+    _avg?: Prisma.PenugasanStatusAvgOrderByAggregateInput;
+    _max?: Prisma.PenugasanStatusMaxOrderByAggregateInput;
+    _min?: Prisma.PenugasanStatusMinOrderByAggregateInput;
+    _sum?: Prisma.PenugasanStatusSumOrderByAggregateInput;
+};
+export type PenugasanStatusScalarWhereWithAggregatesInput = {
+    AND?: Prisma.PenugasanStatusScalarWhereWithAggregatesInput | Prisma.PenugasanStatusScalarWhereWithAggregatesInput[];
+    OR?: Prisma.PenugasanStatusScalarWhereWithAggregatesInput[];
+    NOT?: Prisma.PenugasanStatusScalarWhereWithAggregatesInput | Prisma.PenugasanStatusScalarWhereWithAggregatesInput[];
+    id?: Prisma.IntWithAggregatesFilter<"PenugasanStatus"> | number;
+    description?: Prisma.StringWithAggregatesFilter<"PenugasanStatus"> | string;
+};
+export type PenugasanStatusCreateInput = {
+    id: number;
+    description: string;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanCreateNestedManyWithoutStatusObjInput;
+    penugasanHistoryObj?: Prisma.PenugasanHistoryCreateNestedManyWithoutStatusObjInput;
+};
+export type PenugasanStatusUncheckedCreateInput = {
+    id: number;
+    description: string;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUncheckedCreateNestedManyWithoutStatusObjInput;
+    penugasanHistoryObj?: Prisma.PenugasanHistoryUncheckedCreateNestedManyWithoutStatusObjInput;
+};
+export type PenugasanStatusUpdateInput = {
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUpdateManyWithoutStatusObjNestedInput;
+    penugasanHistoryObj?: Prisma.PenugasanHistoryUpdateManyWithoutStatusObjNestedInput;
+};
+export type PenugasanStatusUncheckedUpdateInput = {
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUncheckedUpdateManyWithoutStatusObjNestedInput;
+    penugasanHistoryObj?: Prisma.PenugasanHistoryUncheckedUpdateManyWithoutStatusObjNestedInput;
+};
+export type PenugasanStatusCreateManyInput = {
+    id: number;
+    description: string;
+};
+export type PenugasanStatusUpdateManyMutationInput = {
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+};
+export type PenugasanStatusUncheckedUpdateManyInput = {
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+};
+export type PenugasanStatusScalarRelationFilter = {
+    is?: Prisma.PenugasanStatusWhereInput;
+    isNot?: Prisma.PenugasanStatusWhereInput;
+};
+export type PenugasanStatusCountOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+};
+export type PenugasanStatusAvgOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+};
+export type PenugasanStatusMaxOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+};
+export type PenugasanStatusMinOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+};
+export type PenugasanStatusSumOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+};
+export type PenugasanStatusCreateNestedOneWithoutPenugasanObjInput = {
+    create?: Prisma.XOR<Prisma.PenugasanStatusCreateWithoutPenugasanObjInput, Prisma.PenugasanStatusUncheckedCreateWithoutPenugasanObjInput>;
+    connectOrCreate?: Prisma.PenugasanStatusCreateOrConnectWithoutPenugasanObjInput;
+    connect?: Prisma.PenugasanStatusWhereUniqueInput;
+};
+export type PenugasanStatusUpdateOneRequiredWithoutPenugasanObjNestedInput = {
+    create?: Prisma.XOR<Prisma.PenugasanStatusCreateWithoutPenugasanObjInput, Prisma.PenugasanStatusUncheckedCreateWithoutPenugasanObjInput>;
+    connectOrCreate?: Prisma.PenugasanStatusCreateOrConnectWithoutPenugasanObjInput;
+    upsert?: Prisma.PenugasanStatusUpsertWithoutPenugasanObjInput;
+    connect?: Prisma.PenugasanStatusWhereUniqueInput;
+    update?: Prisma.XOR<Prisma.XOR<Prisma.PenugasanStatusUpdateToOneWithWhereWithoutPenugasanObjInput, Prisma.PenugasanStatusUpdateWithoutPenugasanObjInput>, Prisma.PenugasanStatusUncheckedUpdateWithoutPenugasanObjInput>;
+};
+export type PenugasanStatusCreateNestedOneWithoutPenugasanHistoryObjInput = {
+    create?: Prisma.XOR<Prisma.PenugasanStatusCreateWithoutPenugasanHistoryObjInput, Prisma.PenugasanStatusUncheckedCreateWithoutPenugasanHistoryObjInput>;
+    connectOrCreate?: Prisma.PenugasanStatusCreateOrConnectWithoutPenugasanHistoryObjInput;
+    connect?: Prisma.PenugasanStatusWhereUniqueInput;
+};
+export type PenugasanStatusUpdateOneRequiredWithoutPenugasanHistoryObjNestedInput = {
+    create?: Prisma.XOR<Prisma.PenugasanStatusCreateWithoutPenugasanHistoryObjInput, Prisma.PenugasanStatusUncheckedCreateWithoutPenugasanHistoryObjInput>;
+    connectOrCreate?: Prisma.PenugasanStatusCreateOrConnectWithoutPenugasanHistoryObjInput;
+    upsert?: Prisma.PenugasanStatusUpsertWithoutPenugasanHistoryObjInput;
+    connect?: Prisma.PenugasanStatusWhereUniqueInput;
+    update?: Prisma.XOR<Prisma.XOR<Prisma.PenugasanStatusUpdateToOneWithWhereWithoutPenugasanHistoryObjInput, Prisma.PenugasanStatusUpdateWithoutPenugasanHistoryObjInput>, Prisma.PenugasanStatusUncheckedUpdateWithoutPenugasanHistoryObjInput>;
+};
+export type PenugasanStatusCreateWithoutPenugasanObjInput = {
+    id: number;
+    description: string;
+    penugasanHistoryObj?: Prisma.PenugasanHistoryCreateNestedManyWithoutStatusObjInput;
+};
+export type PenugasanStatusUncheckedCreateWithoutPenugasanObjInput = {
+    id: number;
+    description: string;
+    penugasanHistoryObj?: Prisma.PenugasanHistoryUncheckedCreateNestedManyWithoutStatusObjInput;
+};
+export type PenugasanStatusCreateOrConnectWithoutPenugasanObjInput = {
+    where: Prisma.PenugasanStatusWhereUniqueInput;
+    create: Prisma.XOR<Prisma.PenugasanStatusCreateWithoutPenugasanObjInput, Prisma.PenugasanStatusUncheckedCreateWithoutPenugasanObjInput>;
+};
+export type PenugasanStatusUpsertWithoutPenugasanObjInput = {
+    update: Prisma.XOR<Prisma.PenugasanStatusUpdateWithoutPenugasanObjInput, Prisma.PenugasanStatusUncheckedUpdateWithoutPenugasanObjInput>;
+    create: Prisma.XOR<Prisma.PenugasanStatusCreateWithoutPenugasanObjInput, Prisma.PenugasanStatusUncheckedCreateWithoutPenugasanObjInput>;
+    where?: Prisma.PenugasanStatusWhereInput;
+};
+export type PenugasanStatusUpdateToOneWithWhereWithoutPenugasanObjInput = {
+    where?: Prisma.PenugasanStatusWhereInput;
+    data: Prisma.XOR<Prisma.PenugasanStatusUpdateWithoutPenugasanObjInput, Prisma.PenugasanStatusUncheckedUpdateWithoutPenugasanObjInput>;
+};
+export type PenugasanStatusUpdateWithoutPenugasanObjInput = {
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    penugasanHistoryObj?: Prisma.PenugasanHistoryUpdateManyWithoutStatusObjNestedInput;
+};
+export type PenugasanStatusUncheckedUpdateWithoutPenugasanObjInput = {
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    penugasanHistoryObj?: Prisma.PenugasanHistoryUncheckedUpdateManyWithoutStatusObjNestedInput;
+};
+export type PenugasanStatusCreateWithoutPenugasanHistoryObjInput = {
+    id: number;
+    description: string;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanCreateNestedManyWithoutStatusObjInput;
+};
+export type PenugasanStatusUncheckedCreateWithoutPenugasanHistoryObjInput = {
+    id: number;
+    description: string;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUncheckedCreateNestedManyWithoutStatusObjInput;
+};
+export type PenugasanStatusCreateOrConnectWithoutPenugasanHistoryObjInput = {
+    where: Prisma.PenugasanStatusWhereUniqueInput;
+    create: Prisma.XOR<Prisma.PenugasanStatusCreateWithoutPenugasanHistoryObjInput, Prisma.PenugasanStatusUncheckedCreateWithoutPenugasanHistoryObjInput>;
+};
+export type PenugasanStatusUpsertWithoutPenugasanHistoryObjInput = {
+    update: Prisma.XOR<Prisma.PenugasanStatusUpdateWithoutPenugasanHistoryObjInput, Prisma.PenugasanStatusUncheckedUpdateWithoutPenugasanHistoryObjInput>;
+    create: Prisma.XOR<Prisma.PenugasanStatusCreateWithoutPenugasanHistoryObjInput, Prisma.PenugasanStatusUncheckedCreateWithoutPenugasanHistoryObjInput>;
+    where?: Prisma.PenugasanStatusWhereInput;
+};
+export type PenugasanStatusUpdateToOneWithWhereWithoutPenugasanHistoryObjInput = {
+    where?: Prisma.PenugasanStatusWhereInput;
+    data: Prisma.XOR<Prisma.PenugasanStatusUpdateWithoutPenugasanHistoryObjInput, Prisma.PenugasanStatusUncheckedUpdateWithoutPenugasanHistoryObjInput>;
+};
+export type PenugasanStatusUpdateWithoutPenugasanHistoryObjInput = {
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUpdateManyWithoutStatusObjNestedInput;
+};
+export type PenugasanStatusUncheckedUpdateWithoutPenugasanHistoryObjInput = {
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUncheckedUpdateManyWithoutStatusObjNestedInput;
+};
+/**
+ * Count Type PenugasanStatusCountOutputType
+ */
+export type PenugasanStatusCountOutputType = {
+    penugasanObj: number;
+    penugasanHistoryObj: number;
+};
+export type PenugasanStatusCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    penugasanObj?: boolean | PenugasanStatusCountOutputTypeCountPenugasanObjArgs;
+    penugasanHistoryObj?: boolean | PenugasanStatusCountOutputTypeCountPenugasanHistoryObjArgs;
+};
+/**
+ * PenugasanStatusCountOutputType without action
+ */
+export type PenugasanStatusCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanStatusCountOutputType
+     */
+    select?: Prisma.PenugasanStatusCountOutputTypeSelect<ExtArgs> | null;
+};
+/**
+ * PenugasanStatusCountOutputType without action
+ */
+export type PenugasanStatusCountOutputTypeCountPenugasanObjArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.KegiatanMitraPenugasanWhereInput;
+};
+/**
+ * PenugasanStatusCountOutputType without action
+ */
+export type PenugasanStatusCountOutputTypeCountPenugasanHistoryObjArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.PenugasanHistoryWhereInput;
+};
+export type PenugasanStatusSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    id?: boolean;
+    description?: boolean;
+    penugasanObj?: boolean | Prisma.PenugasanStatus$penugasanObjArgs<ExtArgs>;
+    penugasanHistoryObj?: boolean | Prisma.PenugasanStatus$penugasanHistoryObjArgs<ExtArgs>;
+    _count?: boolean | Prisma.PenugasanStatusCountOutputTypeDefaultArgs<ExtArgs>;
+}, ExtArgs["result"]["penugasanStatus"]>;
+export type PenugasanStatusSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    id?: boolean;
+    description?: boolean;
+}, ExtArgs["result"]["penugasanStatus"]>;
+export type PenugasanStatusSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    id?: boolean;
+    description?: boolean;
+}, ExtArgs["result"]["penugasanStatus"]>;
+export type PenugasanStatusSelectScalar = {
+    id?: boolean;
+    description?: boolean;
+};
+export type PenugasanStatusOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "description", ExtArgs["result"]["penugasanStatus"]>;
+export type PenugasanStatusInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    penugasanObj?: boolean | Prisma.PenugasanStatus$penugasanObjArgs<ExtArgs>;
+    penugasanHistoryObj?: boolean | Prisma.PenugasanStatus$penugasanHistoryObjArgs<ExtArgs>;
+    _count?: boolean | Prisma.PenugasanStatusCountOutputTypeDefaultArgs<ExtArgs>;
+};
+export type PenugasanStatusIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {};
+export type PenugasanStatusIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {};
+export type $PenugasanStatusPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    name: "PenugasanStatus";
+    objects: {
+        penugasanObj: Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>[];
+        penugasanHistoryObj: Prisma.$PenugasanHistoryPayload<ExtArgs>[];
+    };
+    scalars: runtime.Types.Extensions.GetPayloadResult<{
+        id: number;
+        description: string;
+    }, ExtArgs["result"]["penugasanStatus"]>;
+    composites: {};
+};
+export type PenugasanStatusGetPayload<S extends boolean | null | undefined | PenugasanStatusDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$PenugasanStatusPayload, S>;
+export type PenugasanStatusCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<PenugasanStatusFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: PenugasanStatusCountAggregateInputType | true;
+};
+export interface PenugasanStatusDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: {
+        types: Prisma.TypeMap<ExtArgs>['model']['PenugasanStatus'];
+        meta: {
+            name: 'PenugasanStatus';
+        };
+    };
+    /**
+     * Find zero or one PenugasanStatus that matches the filter.
+     * @param {PenugasanStatusFindUniqueArgs} args - Arguments to find a PenugasanStatus
+     * @example
+     * // Get one PenugasanStatus
+     * const penugasanStatus = await prisma.penugasanStatus.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends PenugasanStatusFindUniqueArgs>(args: Prisma.SelectSubset<T, PenugasanStatusFindUniqueArgs<ExtArgs>>): Prisma.Prisma__PenugasanStatusClient<runtime.Types.Result.GetResult<Prisma.$PenugasanStatusPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find one PenugasanStatus that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {PenugasanStatusFindUniqueOrThrowArgs} args - Arguments to find a PenugasanStatus
+     * @example
+     * // Get one PenugasanStatus
+     * const penugasanStatus = await prisma.penugasanStatus.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends PenugasanStatusFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, PenugasanStatusFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__PenugasanStatusClient<runtime.Types.Result.GetResult<Prisma.$PenugasanStatusPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find the first PenugasanStatus that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PenugasanStatusFindFirstArgs} args - Arguments to find a PenugasanStatus
+     * @example
+     * // Get one PenugasanStatus
+     * const penugasanStatus = await prisma.penugasanStatus.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends PenugasanStatusFindFirstArgs>(args?: Prisma.SelectSubset<T, PenugasanStatusFindFirstArgs<ExtArgs>>): Prisma.Prisma__PenugasanStatusClient<runtime.Types.Result.GetResult<Prisma.$PenugasanStatusPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find the first PenugasanStatus that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PenugasanStatusFindFirstOrThrowArgs} args - Arguments to find a PenugasanStatus
+     * @example
+     * // Get one PenugasanStatus
+     * const penugasanStatus = await prisma.penugasanStatus.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends PenugasanStatusFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, PenugasanStatusFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__PenugasanStatusClient<runtime.Types.Result.GetResult<Prisma.$PenugasanStatusPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find zero or more PenugasanStatuses that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PenugasanStatusFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all PenugasanStatuses
+     * const penugasanStatuses = await prisma.penugasanStatus.findMany()
+     *
+     * // Get first 10 PenugasanStatuses
+     * const penugasanStatuses = await prisma.penugasanStatus.findMany({ take: 10 })
+     *
+     * // Only select the `id`
+     * const penugasanStatusWithIdOnly = await prisma.penugasanStatus.findMany({ select: { id: true } })
+     *
+     */
+    findMany<T extends PenugasanStatusFindManyArgs>(args?: Prisma.SelectSubset<T, PenugasanStatusFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PenugasanStatusPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
+    /**
+     * Create a PenugasanStatus.
+     * @param {PenugasanStatusCreateArgs} args - Arguments to create a PenugasanStatus.
+     * @example
+     * // Create one PenugasanStatus
+     * const PenugasanStatus = await prisma.penugasanStatus.create({
+     *   data: {
+     *     // ... data to create a PenugasanStatus
+     *   }
+     * })
+     *
+     */
+    create<T extends PenugasanStatusCreateArgs>(args: Prisma.SelectSubset<T, PenugasanStatusCreateArgs<ExtArgs>>): Prisma.Prisma__PenugasanStatusClient<runtime.Types.Result.GetResult<Prisma.$PenugasanStatusPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Create many PenugasanStatuses.
+     * @param {PenugasanStatusCreateManyArgs} args - Arguments to create many PenugasanStatuses.
+     * @example
+     * // Create many PenugasanStatuses
+     * const penugasanStatus = await prisma.penugasanStatus.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     */
+    createMany<T extends PenugasanStatusCreateManyArgs>(args?: Prisma.SelectSubset<T, PenugasanStatusCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Create many PenugasanStatuses and returns the data saved in the database.
+     * @param {PenugasanStatusCreateManyAndReturnArgs} args - Arguments to create many PenugasanStatuses.
+     * @example
+     * // Create many PenugasanStatuses
+     * const penugasanStatus = await prisma.penugasanStatus.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Create many PenugasanStatuses and only return the `id`
+     * const penugasanStatusWithIdOnly = await prisma.penugasanStatus.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    createManyAndReturn<T extends PenugasanStatusCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, PenugasanStatusCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PenugasanStatusPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
+    /**
+     * Delete a PenugasanStatus.
+     * @param {PenugasanStatusDeleteArgs} args - Arguments to delete one PenugasanStatus.
+     * @example
+     * // Delete one PenugasanStatus
+     * const PenugasanStatus = await prisma.penugasanStatus.delete({
+     *   where: {
+     *     // ... filter to delete one PenugasanStatus
+     *   }
+     * })
+     *
+     */
+    delete<T extends PenugasanStatusDeleteArgs>(args: Prisma.SelectSubset<T, PenugasanStatusDeleteArgs<ExtArgs>>): Prisma.Prisma__PenugasanStatusClient<runtime.Types.Result.GetResult<Prisma.$PenugasanStatusPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Update one PenugasanStatus.
+     * @param {PenugasanStatusUpdateArgs} args - Arguments to update one PenugasanStatus.
+     * @example
+     * // Update one PenugasanStatus
+     * const penugasanStatus = await prisma.penugasanStatus.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    update<T extends PenugasanStatusUpdateArgs>(args: Prisma.SelectSubset<T, PenugasanStatusUpdateArgs<ExtArgs>>): Prisma.Prisma__PenugasanStatusClient<runtime.Types.Result.GetResult<Prisma.$PenugasanStatusPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Delete zero or more PenugasanStatuses.
+     * @param {PenugasanStatusDeleteManyArgs} args - Arguments to filter PenugasanStatuses to delete.
+     * @example
+     * // Delete a few PenugasanStatuses
+     * const { count } = await prisma.penugasanStatus.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     *
+     */
+    deleteMany<T extends PenugasanStatusDeleteManyArgs>(args?: Prisma.SelectSubset<T, PenugasanStatusDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Update zero or more PenugasanStatuses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PenugasanStatusUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many PenugasanStatuses
+     * const penugasanStatus = await prisma.penugasanStatus.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    updateMany<T extends PenugasanStatusUpdateManyArgs>(args: Prisma.SelectSubset<T, PenugasanStatusUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Update zero or more PenugasanStatuses and returns the data updated in the database.
+     * @param {PenugasanStatusUpdateManyAndReturnArgs} args - Arguments to update many PenugasanStatuses.
+     * @example
+     * // Update many PenugasanStatuses
+     * const penugasanStatus = await prisma.penugasanStatus.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Update zero or more PenugasanStatuses and only return the `id`
+     * const penugasanStatusWithIdOnly = await prisma.penugasanStatus.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    updateManyAndReturn<T extends PenugasanStatusUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, PenugasanStatusUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PenugasanStatusPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
+    /**
+     * Create or update one PenugasanStatus.
+     * @param {PenugasanStatusUpsertArgs} args - Arguments to update or create a PenugasanStatus.
+     * @example
+     * // Update or create a PenugasanStatus
+     * const penugasanStatus = await prisma.penugasanStatus.upsert({
+     *   create: {
+     *     // ... data to create a PenugasanStatus
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the PenugasanStatus we want to update
+     *   }
+     * })
+     */
+    upsert<T extends PenugasanStatusUpsertArgs>(args: Prisma.SelectSubset<T, PenugasanStatusUpsertArgs<ExtArgs>>): Prisma.Prisma__PenugasanStatusClient<runtime.Types.Result.GetResult<Prisma.$PenugasanStatusPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Count the number of PenugasanStatuses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PenugasanStatusCountArgs} args - Arguments to filter PenugasanStatuses to count.
+     * @example
+     * // Count the number of PenugasanStatuses
+     * const count = await prisma.penugasanStatus.count({
+     *   where: {
+     *     // ... the filter for the PenugasanStatuses we want to count
+     *   }
+     * })
+    **/
+    count<T extends PenugasanStatusCountArgs>(args?: Prisma.Subset<T, PenugasanStatusCountArgs>): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<'select', any> ? T['select'] extends true ? number : Prisma.GetScalarType<T['select'], PenugasanStatusCountAggregateOutputType> : number>;
+    /**
+     * Allows you to perform aggregations operations on a PenugasanStatus.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PenugasanStatusAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends PenugasanStatusAggregateArgs>(args: Prisma.Subset<T, PenugasanStatusAggregateArgs>): Prisma.PrismaPromise<GetPenugasanStatusAggregateType<T>>;
+    /**
+     * Group by PenugasanStatus.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PenugasanStatusGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+    **/
+    groupBy<T extends PenugasanStatusGroupByArgs, HasSelectOrTake extends Prisma.Or<Prisma.Extends<'skip', Prisma.Keys<T>>, Prisma.Extends<'take', Prisma.Keys<T>>>, OrderByArg extends Prisma.True extends HasSelectOrTake ? {
+        orderBy: PenugasanStatusGroupByArgs['orderBy'];
+    } : {
+        orderBy?: PenugasanStatusGroupByArgs['orderBy'];
+    }, OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>, ByFields extends Prisma.MaybeTupleToUnion<T['by']>, ByValid extends Prisma.Has<ByFields, OrderFields>, HavingFields extends Prisma.GetHavingFields<T['having']>, HavingValid extends Prisma.Has<ByFields, HavingFields>, ByEmpty extends T['by'] extends never[] ? Prisma.True : Prisma.False, InputErrors extends ByEmpty extends Prisma.True ? `Error: "by" must not be empty.` : HavingValid extends Prisma.False ? {
+        [P in HavingFields]: P extends ByFields ? never : P extends string ? `Error: Field "${P}" used in "having" needs to be provided in "by".` : [
+            Error,
+            'Field ',
+            P,
+            ` in "having" needs to be provided in "by"`
+        ];
+    }[HavingFields] : 'take' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "take", you also need to provide "orderBy"' : 'skip' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "skip", you also need to provide "orderBy"' : ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields]>(args: Prisma.SubsetIntersection<T, PenugasanStatusGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPenugasanStatusGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the PenugasanStatus model
+     */
+    readonly fields: PenugasanStatusFieldRefs;
+}
+/**
+ * The delegate class that acts as a "Promise-like" for PenugasanStatus.
+ * Why is this prefixed with `Prisma__`?
+ * Because we want to prevent naming conflicts as mentioned in
+ * https://github.com/prisma/prisma-client-js/issues/707
+ */
+export interface Prisma__PenugasanStatusClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise";
+    penugasanObj<T extends Prisma.PenugasanStatus$penugasanObjArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PenugasanStatus$penugasanObjArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
+    penugasanHistoryObj<T extends Prisma.PenugasanStatus$penugasanHistoryObjArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PenugasanStatus$penugasanHistoryObjArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PenugasanHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
+}
+/**
+ * Fields of the PenugasanStatus model
+ */
+export interface PenugasanStatusFieldRefs {
+    readonly id: Prisma.FieldRef<"PenugasanStatus", 'Int'>;
+    readonly description: Prisma.FieldRef<"PenugasanStatus", 'String'>;
+}
+/**
+ * PenugasanStatus findUnique
+ */
+export type PenugasanStatusFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanStatus
+     */
+    select?: Prisma.PenugasanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanStatus
+     */
+    omit?: Prisma.PenugasanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanStatusInclude<ExtArgs> | null;
+    /**
+     * Filter, which PenugasanStatus to fetch.
+     */
+    where: Prisma.PenugasanStatusWhereUniqueInput;
+};
+/**
+ * PenugasanStatus findUniqueOrThrow
+ */
+export type PenugasanStatusFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanStatus
+     */
+    select?: Prisma.PenugasanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanStatus
+     */
+    omit?: Prisma.PenugasanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanStatusInclude<ExtArgs> | null;
+    /**
+     * Filter, which PenugasanStatus to fetch.
+     */
+    where: Prisma.PenugasanStatusWhereUniqueInput;
+};
+/**
+ * PenugasanStatus findFirst
+ */
+export type PenugasanStatusFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanStatus
+     */
+    select?: Prisma.PenugasanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanStatus
+     */
+    omit?: Prisma.PenugasanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanStatusInclude<ExtArgs> | null;
+    /**
+     * Filter, which PenugasanStatus to fetch.
+     */
+    where?: Prisma.PenugasanStatusWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of PenugasanStatuses to fetch.
+     */
+    orderBy?: Prisma.PenugasanStatusOrderByWithRelationInput | Prisma.PenugasanStatusOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for PenugasanStatuses.
+     */
+    cursor?: Prisma.PenugasanStatusWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` PenugasanStatuses from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` PenugasanStatuses.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of PenugasanStatuses.
+     */
+    distinct?: Prisma.PenugasanStatusScalarFieldEnum | Prisma.PenugasanStatusScalarFieldEnum[];
+};
+/**
+ * PenugasanStatus findFirstOrThrow
+ */
+export type PenugasanStatusFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanStatus
+     */
+    select?: Prisma.PenugasanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanStatus
+     */
+    omit?: Prisma.PenugasanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanStatusInclude<ExtArgs> | null;
+    /**
+     * Filter, which PenugasanStatus to fetch.
+     */
+    where?: Prisma.PenugasanStatusWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of PenugasanStatuses to fetch.
+     */
+    orderBy?: Prisma.PenugasanStatusOrderByWithRelationInput | Prisma.PenugasanStatusOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for PenugasanStatuses.
+     */
+    cursor?: Prisma.PenugasanStatusWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` PenugasanStatuses from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` PenugasanStatuses.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of PenugasanStatuses.
+     */
+    distinct?: Prisma.PenugasanStatusScalarFieldEnum | Prisma.PenugasanStatusScalarFieldEnum[];
+};
+/**
+ * PenugasanStatus findMany
+ */
+export type PenugasanStatusFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanStatus
+     */
+    select?: Prisma.PenugasanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanStatus
+     */
+    omit?: Prisma.PenugasanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanStatusInclude<ExtArgs> | null;
+    /**
+     * Filter, which PenugasanStatuses to fetch.
+     */
+    where?: Prisma.PenugasanStatusWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of PenugasanStatuses to fetch.
+     */
+    orderBy?: Prisma.PenugasanStatusOrderByWithRelationInput | Prisma.PenugasanStatusOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for listing PenugasanStatuses.
+     */
+    cursor?: Prisma.PenugasanStatusWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` PenugasanStatuses from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` PenugasanStatuses.
+     */
+    skip?: number;
+    distinct?: Prisma.PenugasanStatusScalarFieldEnum | Prisma.PenugasanStatusScalarFieldEnum[];
+};
+/**
+ * PenugasanStatus create
+ */
+export type PenugasanStatusCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanStatus
+     */
+    select?: Prisma.PenugasanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanStatus
+     */
+    omit?: Prisma.PenugasanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanStatusInclude<ExtArgs> | null;
+    /**
+     * The data needed to create a PenugasanStatus.
+     */
+    data: Prisma.XOR<Prisma.PenugasanStatusCreateInput, Prisma.PenugasanStatusUncheckedCreateInput>;
+};
+/**
+ * PenugasanStatus createMany
+ */
+export type PenugasanStatusCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many PenugasanStatuses.
+     */
+    data: Prisma.PenugasanStatusCreateManyInput | Prisma.PenugasanStatusCreateManyInput[];
+    skipDuplicates?: boolean;
+};
+/**
+ * PenugasanStatus createManyAndReturn
+ */
+export type PenugasanStatusCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanStatus
+     */
+    select?: Prisma.PenugasanStatusSelectCreateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanStatus
+     */
+    omit?: Prisma.PenugasanStatusOmit<ExtArgs> | null;
+    /**
+     * The data used to create many PenugasanStatuses.
+     */
+    data: Prisma.PenugasanStatusCreateManyInput | Prisma.PenugasanStatusCreateManyInput[];
+    skipDuplicates?: boolean;
+};
+/**
+ * PenugasanStatus update
+ */
+export type PenugasanStatusUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanStatus
+     */
+    select?: Prisma.PenugasanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanStatus
+     */
+    omit?: Prisma.PenugasanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanStatusInclude<ExtArgs> | null;
+    /**
+     * The data needed to update a PenugasanStatus.
+     */
+    data: Prisma.XOR<Prisma.PenugasanStatusUpdateInput, Prisma.PenugasanStatusUncheckedUpdateInput>;
+    /**
+     * Choose, which PenugasanStatus to update.
+     */
+    where: Prisma.PenugasanStatusWhereUniqueInput;
+};
+/**
+ * PenugasanStatus updateMany
+ */
+export type PenugasanStatusUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * The data used to update PenugasanStatuses.
+     */
+    data: Prisma.XOR<Prisma.PenugasanStatusUpdateManyMutationInput, Prisma.PenugasanStatusUncheckedUpdateManyInput>;
+    /**
+     * Filter which PenugasanStatuses to update
+     */
+    where?: Prisma.PenugasanStatusWhereInput;
+    /**
+     * Limit how many PenugasanStatuses to update.
+     */
+    limit?: number;
+};
+/**
+ * PenugasanStatus updateManyAndReturn
+ */
+export type PenugasanStatusUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanStatus
+     */
+    select?: Prisma.PenugasanStatusSelectUpdateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanStatus
+     */
+    omit?: Prisma.PenugasanStatusOmit<ExtArgs> | null;
+    /**
+     * The data used to update PenugasanStatuses.
+     */
+    data: Prisma.XOR<Prisma.PenugasanStatusUpdateManyMutationInput, Prisma.PenugasanStatusUncheckedUpdateManyInput>;
+    /**
+     * Filter which PenugasanStatuses to update
+     */
+    where?: Prisma.PenugasanStatusWhereInput;
+    /**
+     * Limit how many PenugasanStatuses to update.
+     */
+    limit?: number;
+};
+/**
+ * PenugasanStatus upsert
+ */
+export type PenugasanStatusUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanStatus
+     */
+    select?: Prisma.PenugasanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanStatus
+     */
+    omit?: Prisma.PenugasanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanStatusInclude<ExtArgs> | null;
+    /**
+     * The filter to search for the PenugasanStatus to update in case it exists.
+     */
+    where: Prisma.PenugasanStatusWhereUniqueInput;
+    /**
+     * In case the PenugasanStatus found by the `where` argument doesn't exist, create a new PenugasanStatus with this data.
+     */
+    create: Prisma.XOR<Prisma.PenugasanStatusCreateInput, Prisma.PenugasanStatusUncheckedCreateInput>;
+    /**
+     * In case the PenugasanStatus was found with the provided `where` argument, update it with this data.
+     */
+    update: Prisma.XOR<Prisma.PenugasanStatusUpdateInput, Prisma.PenugasanStatusUncheckedUpdateInput>;
+};
+/**
+ * PenugasanStatus delete
+ */
+export type PenugasanStatusDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanStatus
+     */
+    select?: Prisma.PenugasanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanStatus
+     */
+    omit?: Prisma.PenugasanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanStatusInclude<ExtArgs> | null;
+    /**
+     * Filter which PenugasanStatus to delete.
+     */
+    where: Prisma.PenugasanStatusWhereUniqueInput;
+};
+/**
+ * PenugasanStatus deleteMany
+ */
+export type PenugasanStatusDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Filter which PenugasanStatuses to delete
+     */
+    where?: Prisma.PenugasanStatusWhereInput;
+    /**
+     * Limit how many PenugasanStatuses to delete.
+     */
+    limit?: number;
+};
+/**
+ * PenugasanStatus.penugasanObj
+ */
+export type PenugasanStatus$penugasanObjArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraPenugasan
+     */
+    select?: Prisma.KegiatanMitraPenugasanSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraPenugasan
+     */
+    omit?: Prisma.KegiatanMitraPenugasanOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraPenugasanInclude<ExtArgs> | null;
+    where?: Prisma.KegiatanMitraPenugasanWhereInput;
+    orderBy?: Prisma.KegiatanMitraPenugasanOrderByWithRelationInput | Prisma.KegiatanMitraPenugasanOrderByWithRelationInput[];
+    cursor?: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.KegiatanMitraPenugasanScalarFieldEnum | Prisma.KegiatanMitraPenugasanScalarFieldEnum[];
+};
+/**
+ * PenugasanStatus.penugasanHistoryObj
+ */
+export type PenugasanStatus$penugasanHistoryObjArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanHistory
+     */
+    select?: Prisma.PenugasanHistorySelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanHistory
+     */
+    omit?: Prisma.PenugasanHistoryOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanHistoryInclude<ExtArgs> | null;
+    where?: Prisma.PenugasanHistoryWhereInput;
+    orderBy?: Prisma.PenugasanHistoryOrderByWithRelationInput | Prisma.PenugasanHistoryOrderByWithRelationInput[];
+    cursor?: Prisma.PenugasanHistoryWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.PenugasanHistoryScalarFieldEnum | Prisma.PenugasanHistoryScalarFieldEnum[];
+};
+/**
+ * PenugasanStatus without action
+ */
+export type PenugasanStatusDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PenugasanStatus
+     */
+    select?: Prisma.PenugasanStatusSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PenugasanStatus
+     */
+    omit?: Prisma.PenugasanStatusOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.PenugasanStatusInclude<ExtArgs> | null;
+};
+export {};
+//# sourceMappingURL=PenugasanStatus.d.ts.map

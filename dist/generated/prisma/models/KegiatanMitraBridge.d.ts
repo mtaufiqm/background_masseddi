@@ -1,0 +1,1529 @@
+import type * as runtime from "@prisma/client/runtime/client";
+import type * as Prisma from "../internal/prismaNamespace";
+/**
+ * Model KegiatanMitraBridge
+ *
+ */
+export type KegiatanMitraBridgeModel = runtime.Types.Result.DefaultSelection<Prisma.$KegiatanMitraBridgePayload>;
+export type AggregateKegiatanMitraBridge = {
+    _count: KegiatanMitraBridgeCountAggregateOutputType | null;
+    _min: KegiatanMitraBridgeMinAggregateOutputType | null;
+    _max: KegiatanMitraBridgeMaxAggregateOutputType | null;
+};
+export type KegiatanMitraBridgeMinAggregateOutputType = {
+    uuid: string | null;
+    kegiatan_uuid: string | null;
+    mitra_id: string | null;
+    status: string | null;
+    pengawas: string | null;
+};
+export type KegiatanMitraBridgeMaxAggregateOutputType = {
+    uuid: string | null;
+    kegiatan_uuid: string | null;
+    mitra_id: string | null;
+    status: string | null;
+    pengawas: string | null;
+};
+export type KegiatanMitraBridgeCountAggregateOutputType = {
+    uuid: number;
+    kegiatan_uuid: number;
+    mitra_id: number;
+    status: number;
+    pengawas: number;
+    _all: number;
+};
+export type KegiatanMitraBridgeMinAggregateInputType = {
+    uuid?: true;
+    kegiatan_uuid?: true;
+    mitra_id?: true;
+    status?: true;
+    pengawas?: true;
+};
+export type KegiatanMitraBridgeMaxAggregateInputType = {
+    uuid?: true;
+    kegiatan_uuid?: true;
+    mitra_id?: true;
+    status?: true;
+    pengawas?: true;
+};
+export type KegiatanMitraBridgeCountAggregateInputType = {
+    uuid?: true;
+    kegiatan_uuid?: true;
+    mitra_id?: true;
+    status?: true;
+    pengawas?: true;
+    _all?: true;
+};
+export type KegiatanMitraBridgeAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Filter which KegiatanMitraBridge to aggregate.
+     */
+    where?: Prisma.KegiatanMitraBridgeWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of KegiatanMitraBridges to fetch.
+     */
+    orderBy?: Prisma.KegiatanMitraBridgeOrderByWithRelationInput | Prisma.KegiatanMitraBridgeOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the start position
+     */
+    cursor?: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` KegiatanMitraBridges from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` KegiatanMitraBridges.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned KegiatanMitraBridges
+    **/
+    _count?: true | KegiatanMitraBridgeCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+    **/
+    _min?: KegiatanMitraBridgeMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+    **/
+    _max?: KegiatanMitraBridgeMaxAggregateInputType;
+};
+export type GetKegiatanMitraBridgeAggregateType<T extends KegiatanMitraBridgeAggregateArgs> = {
+    [P in keyof T & keyof AggregateKegiatanMitraBridge]: P extends '_count' | 'count' ? T[P] extends true ? number : Prisma.GetScalarType<T[P], AggregateKegiatanMitraBridge[P]> : Prisma.GetScalarType<T[P], AggregateKegiatanMitraBridge[P]>;
+};
+export type KegiatanMitraBridgeGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.KegiatanMitraBridgeWhereInput;
+    orderBy?: Prisma.KegiatanMitraBridgeOrderByWithAggregationInput | Prisma.KegiatanMitraBridgeOrderByWithAggregationInput[];
+    by: Prisma.KegiatanMitraBridgeScalarFieldEnum[] | Prisma.KegiatanMitraBridgeScalarFieldEnum;
+    having?: Prisma.KegiatanMitraBridgeScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: KegiatanMitraBridgeCountAggregateInputType | true;
+    _min?: KegiatanMitraBridgeMinAggregateInputType;
+    _max?: KegiatanMitraBridgeMaxAggregateInputType;
+};
+export type KegiatanMitraBridgeGroupByOutputType = {
+    uuid: string;
+    kegiatan_uuid: string;
+    mitra_id: string;
+    status: string;
+    pengawas: string | null;
+    _count: KegiatanMitraBridgeCountAggregateOutputType | null;
+    _min: KegiatanMitraBridgeMinAggregateOutputType | null;
+    _max: KegiatanMitraBridgeMaxAggregateOutputType | null;
+};
+type GetKegiatanMitraBridgeGroupByPayload<T extends KegiatanMitraBridgeGroupByArgs> = Prisma.PrismaPromise<Array<Prisma.PickEnumerable<KegiatanMitraBridgeGroupByOutputType, T['by']> & {
+    [P in ((keyof T) & (keyof KegiatanMitraBridgeGroupByOutputType))]: P extends '_count' ? T[P] extends boolean ? number : Prisma.GetScalarType<T[P], KegiatanMitraBridgeGroupByOutputType[P]> : Prisma.GetScalarType<T[P], KegiatanMitraBridgeGroupByOutputType[P]>;
+}>>;
+export type KegiatanMitraBridgeWhereInput = {
+    AND?: Prisma.KegiatanMitraBridgeWhereInput | Prisma.KegiatanMitraBridgeWhereInput[];
+    OR?: Prisma.KegiatanMitraBridgeWhereInput[];
+    NOT?: Prisma.KegiatanMitraBridgeWhereInput | Prisma.KegiatanMitraBridgeWhereInput[];
+    uuid?: Prisma.StringFilter<"KegiatanMitraBridge"> | string;
+    kegiatan_uuid?: Prisma.StringFilter<"KegiatanMitraBridge"> | string;
+    mitra_id?: Prisma.StringFilter<"KegiatanMitraBridge"> | string;
+    status?: Prisma.StringFilter<"KegiatanMitraBridge"> | string;
+    pengawas?: Prisma.StringNullableFilter<"KegiatanMitraBridge"> | string | null;
+    kegiatanObj?: Prisma.XOR<Prisma.KegiatanScalarRelationFilter, Prisma.KegiatanWhereInput>;
+    mitraObj?: Prisma.XOR<Prisma.MitraScalarRelationFilter, Prisma.MitraWhereInput>;
+    pengawasObj?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanListRelationFilter;
+};
+export type KegiatanMitraBridgeOrderByWithRelationInput = {
+    uuid?: Prisma.SortOrder;
+    kegiatan_uuid?: Prisma.SortOrder;
+    mitra_id?: Prisma.SortOrder;
+    status?: Prisma.SortOrder;
+    pengawas?: Prisma.SortOrderInput | Prisma.SortOrder;
+    kegiatanObj?: Prisma.KegiatanOrderByWithRelationInput;
+    mitraObj?: Prisma.MitraOrderByWithRelationInput;
+    pengawasObj?: Prisma.UserOrderByWithRelationInput;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanOrderByRelationAggregateInput;
+};
+export type KegiatanMitraBridgeWhereUniqueInput = Prisma.AtLeast<{
+    uuid?: string;
+    AND?: Prisma.KegiatanMitraBridgeWhereInput | Prisma.KegiatanMitraBridgeWhereInput[];
+    OR?: Prisma.KegiatanMitraBridgeWhereInput[];
+    NOT?: Prisma.KegiatanMitraBridgeWhereInput | Prisma.KegiatanMitraBridgeWhereInput[];
+    kegiatan_uuid?: Prisma.StringFilter<"KegiatanMitraBridge"> | string;
+    mitra_id?: Prisma.StringFilter<"KegiatanMitraBridge"> | string;
+    status?: Prisma.StringFilter<"KegiatanMitraBridge"> | string;
+    pengawas?: Prisma.StringNullableFilter<"KegiatanMitraBridge"> | string | null;
+    kegiatanObj?: Prisma.XOR<Prisma.KegiatanScalarRelationFilter, Prisma.KegiatanWhereInput>;
+    mitraObj?: Prisma.XOR<Prisma.MitraScalarRelationFilter, Prisma.MitraWhereInput>;
+    pengawasObj?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanListRelationFilter;
+}, "uuid">;
+export type KegiatanMitraBridgeOrderByWithAggregationInput = {
+    uuid?: Prisma.SortOrder;
+    kegiatan_uuid?: Prisma.SortOrder;
+    mitra_id?: Prisma.SortOrder;
+    status?: Prisma.SortOrder;
+    pengawas?: Prisma.SortOrderInput | Prisma.SortOrder;
+    _count?: Prisma.KegiatanMitraBridgeCountOrderByAggregateInput;
+    _max?: Prisma.KegiatanMitraBridgeMaxOrderByAggregateInput;
+    _min?: Prisma.KegiatanMitraBridgeMinOrderByAggregateInput;
+};
+export type KegiatanMitraBridgeScalarWhereWithAggregatesInput = {
+    AND?: Prisma.KegiatanMitraBridgeScalarWhereWithAggregatesInput | Prisma.KegiatanMitraBridgeScalarWhereWithAggregatesInput[];
+    OR?: Prisma.KegiatanMitraBridgeScalarWhereWithAggregatesInput[];
+    NOT?: Prisma.KegiatanMitraBridgeScalarWhereWithAggregatesInput | Prisma.KegiatanMitraBridgeScalarWhereWithAggregatesInput[];
+    uuid?: Prisma.StringWithAggregatesFilter<"KegiatanMitraBridge"> | string;
+    kegiatan_uuid?: Prisma.StringWithAggregatesFilter<"KegiatanMitraBridge"> | string;
+    mitra_id?: Prisma.StringWithAggregatesFilter<"KegiatanMitraBridge"> | string;
+    status?: Prisma.StringWithAggregatesFilter<"KegiatanMitraBridge"> | string;
+    pengawas?: Prisma.StringNullableWithAggregatesFilter<"KegiatanMitraBridge"> | string | null;
+};
+export type KegiatanMitraBridgeCreateInput = {
+    uuid?: string;
+    status: string;
+    kegiatanObj: Prisma.KegiatanCreateNestedOneWithoutKegiatanMitraObjInput;
+    mitraObj: Prisma.MitraCreateNestedOneWithoutKegiatanMitraObjInput;
+    pengawasObj?: Prisma.UserCreateNestedOneWithoutPengawasMitraObjInput;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanCreateNestedManyWithoutBridgeObjInput;
+};
+export type KegiatanMitraBridgeUncheckedCreateInput = {
+    uuid?: string;
+    kegiatan_uuid: string;
+    mitra_id: string;
+    status: string;
+    pengawas?: string | null;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUncheckedCreateNestedManyWithoutBridgeObjInput;
+};
+export type KegiatanMitraBridgeUpdateInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.StringFieldUpdateOperationsInput | string;
+    kegiatanObj?: Prisma.KegiatanUpdateOneRequiredWithoutKegiatanMitraObjNestedInput;
+    mitraObj?: Prisma.MitraUpdateOneRequiredWithoutKegiatanMitraObjNestedInput;
+    pengawasObj?: Prisma.UserUpdateOneWithoutPengawasMitraObjNestedInput;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUpdateManyWithoutBridgeObjNestedInput;
+};
+export type KegiatanMitraBridgeUncheckedUpdateInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    kegiatan_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    mitra_id?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.StringFieldUpdateOperationsInput | string;
+    pengawas?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUncheckedUpdateManyWithoutBridgeObjNestedInput;
+};
+export type KegiatanMitraBridgeCreateManyInput = {
+    uuid?: string;
+    kegiatan_uuid: string;
+    mitra_id: string;
+    status: string;
+    pengawas?: string | null;
+};
+export type KegiatanMitraBridgeUpdateManyMutationInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.StringFieldUpdateOperationsInput | string;
+};
+export type KegiatanMitraBridgeUncheckedUpdateManyInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    kegiatan_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    mitra_id?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.StringFieldUpdateOperationsInput | string;
+    pengawas?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+};
+export type KegiatanMitraBridgeListRelationFilter = {
+    every?: Prisma.KegiatanMitraBridgeWhereInput;
+    some?: Prisma.KegiatanMitraBridgeWhereInput;
+    none?: Prisma.KegiatanMitraBridgeWhereInput;
+};
+export type KegiatanMitraBridgeOrderByRelationAggregateInput = {
+    _count?: Prisma.SortOrder;
+};
+export type KegiatanMitraBridgeCountOrderByAggregateInput = {
+    uuid?: Prisma.SortOrder;
+    kegiatan_uuid?: Prisma.SortOrder;
+    mitra_id?: Prisma.SortOrder;
+    status?: Prisma.SortOrder;
+    pengawas?: Prisma.SortOrder;
+};
+export type KegiatanMitraBridgeMaxOrderByAggregateInput = {
+    uuid?: Prisma.SortOrder;
+    kegiatan_uuid?: Prisma.SortOrder;
+    mitra_id?: Prisma.SortOrder;
+    status?: Prisma.SortOrder;
+    pengawas?: Prisma.SortOrder;
+};
+export type KegiatanMitraBridgeMinOrderByAggregateInput = {
+    uuid?: Prisma.SortOrder;
+    kegiatan_uuid?: Prisma.SortOrder;
+    mitra_id?: Prisma.SortOrder;
+    status?: Prisma.SortOrder;
+    pengawas?: Prisma.SortOrder;
+};
+export type KegiatanMitraBridgeScalarRelationFilter = {
+    is?: Prisma.KegiatanMitraBridgeWhereInput;
+    isNot?: Prisma.KegiatanMitraBridgeWhereInput;
+};
+export type KegiatanMitraBridgeCreateNestedManyWithoutPengawasObjInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutPengawasObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutPengawasObjInput> | Prisma.KegiatanMitraBridgeCreateWithoutPengawasObjInput[] | Prisma.KegiatanMitraBridgeUncheckedCreateWithoutPengawasObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraBridgeCreateOrConnectWithoutPengawasObjInput | Prisma.KegiatanMitraBridgeCreateOrConnectWithoutPengawasObjInput[];
+    createMany?: Prisma.KegiatanMitraBridgeCreateManyPengawasObjInputEnvelope;
+    connect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+};
+export type KegiatanMitraBridgeUncheckedCreateNestedManyWithoutPengawasObjInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutPengawasObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutPengawasObjInput> | Prisma.KegiatanMitraBridgeCreateWithoutPengawasObjInput[] | Prisma.KegiatanMitraBridgeUncheckedCreateWithoutPengawasObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraBridgeCreateOrConnectWithoutPengawasObjInput | Prisma.KegiatanMitraBridgeCreateOrConnectWithoutPengawasObjInput[];
+    createMany?: Prisma.KegiatanMitraBridgeCreateManyPengawasObjInputEnvelope;
+    connect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+};
+export type KegiatanMitraBridgeUpdateManyWithoutPengawasObjNestedInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutPengawasObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutPengawasObjInput> | Prisma.KegiatanMitraBridgeCreateWithoutPengawasObjInput[] | Prisma.KegiatanMitraBridgeUncheckedCreateWithoutPengawasObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraBridgeCreateOrConnectWithoutPengawasObjInput | Prisma.KegiatanMitraBridgeCreateOrConnectWithoutPengawasObjInput[];
+    upsert?: Prisma.KegiatanMitraBridgeUpsertWithWhereUniqueWithoutPengawasObjInput | Prisma.KegiatanMitraBridgeUpsertWithWhereUniqueWithoutPengawasObjInput[];
+    createMany?: Prisma.KegiatanMitraBridgeCreateManyPengawasObjInputEnvelope;
+    set?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    disconnect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    delete?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    connect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    update?: Prisma.KegiatanMitraBridgeUpdateWithWhereUniqueWithoutPengawasObjInput | Prisma.KegiatanMitraBridgeUpdateWithWhereUniqueWithoutPengawasObjInput[];
+    updateMany?: Prisma.KegiatanMitraBridgeUpdateManyWithWhereWithoutPengawasObjInput | Prisma.KegiatanMitraBridgeUpdateManyWithWhereWithoutPengawasObjInput[];
+    deleteMany?: Prisma.KegiatanMitraBridgeScalarWhereInput | Prisma.KegiatanMitraBridgeScalarWhereInput[];
+};
+export type KegiatanMitraBridgeUncheckedUpdateManyWithoutPengawasObjNestedInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutPengawasObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutPengawasObjInput> | Prisma.KegiatanMitraBridgeCreateWithoutPengawasObjInput[] | Prisma.KegiatanMitraBridgeUncheckedCreateWithoutPengawasObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraBridgeCreateOrConnectWithoutPengawasObjInput | Prisma.KegiatanMitraBridgeCreateOrConnectWithoutPengawasObjInput[];
+    upsert?: Prisma.KegiatanMitraBridgeUpsertWithWhereUniqueWithoutPengawasObjInput | Prisma.KegiatanMitraBridgeUpsertWithWhereUniqueWithoutPengawasObjInput[];
+    createMany?: Prisma.KegiatanMitraBridgeCreateManyPengawasObjInputEnvelope;
+    set?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    disconnect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    delete?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    connect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    update?: Prisma.KegiatanMitraBridgeUpdateWithWhereUniqueWithoutPengawasObjInput | Prisma.KegiatanMitraBridgeUpdateWithWhereUniqueWithoutPengawasObjInput[];
+    updateMany?: Prisma.KegiatanMitraBridgeUpdateManyWithWhereWithoutPengawasObjInput | Prisma.KegiatanMitraBridgeUpdateManyWithWhereWithoutPengawasObjInput[];
+    deleteMany?: Prisma.KegiatanMitraBridgeScalarWhereInput | Prisma.KegiatanMitraBridgeScalarWhereInput[];
+};
+export type KegiatanMitraBridgeCreateNestedManyWithoutMitraObjInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutMitraObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutMitraObjInput> | Prisma.KegiatanMitraBridgeCreateWithoutMitraObjInput[] | Prisma.KegiatanMitraBridgeUncheckedCreateWithoutMitraObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraBridgeCreateOrConnectWithoutMitraObjInput | Prisma.KegiatanMitraBridgeCreateOrConnectWithoutMitraObjInput[];
+    createMany?: Prisma.KegiatanMitraBridgeCreateManyMitraObjInputEnvelope;
+    connect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+};
+export type KegiatanMitraBridgeUncheckedCreateNestedManyWithoutMitraObjInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutMitraObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutMitraObjInput> | Prisma.KegiatanMitraBridgeCreateWithoutMitraObjInput[] | Prisma.KegiatanMitraBridgeUncheckedCreateWithoutMitraObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraBridgeCreateOrConnectWithoutMitraObjInput | Prisma.KegiatanMitraBridgeCreateOrConnectWithoutMitraObjInput[];
+    createMany?: Prisma.KegiatanMitraBridgeCreateManyMitraObjInputEnvelope;
+    connect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+};
+export type KegiatanMitraBridgeUpdateManyWithoutMitraObjNestedInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutMitraObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutMitraObjInput> | Prisma.KegiatanMitraBridgeCreateWithoutMitraObjInput[] | Prisma.KegiatanMitraBridgeUncheckedCreateWithoutMitraObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraBridgeCreateOrConnectWithoutMitraObjInput | Prisma.KegiatanMitraBridgeCreateOrConnectWithoutMitraObjInput[];
+    upsert?: Prisma.KegiatanMitraBridgeUpsertWithWhereUniqueWithoutMitraObjInput | Prisma.KegiatanMitraBridgeUpsertWithWhereUniqueWithoutMitraObjInput[];
+    createMany?: Prisma.KegiatanMitraBridgeCreateManyMitraObjInputEnvelope;
+    set?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    disconnect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    delete?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    connect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    update?: Prisma.KegiatanMitraBridgeUpdateWithWhereUniqueWithoutMitraObjInput | Prisma.KegiatanMitraBridgeUpdateWithWhereUniqueWithoutMitraObjInput[];
+    updateMany?: Prisma.KegiatanMitraBridgeUpdateManyWithWhereWithoutMitraObjInput | Prisma.KegiatanMitraBridgeUpdateManyWithWhereWithoutMitraObjInput[];
+    deleteMany?: Prisma.KegiatanMitraBridgeScalarWhereInput | Prisma.KegiatanMitraBridgeScalarWhereInput[];
+};
+export type KegiatanMitraBridgeUncheckedUpdateManyWithoutMitraObjNestedInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutMitraObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutMitraObjInput> | Prisma.KegiatanMitraBridgeCreateWithoutMitraObjInput[] | Prisma.KegiatanMitraBridgeUncheckedCreateWithoutMitraObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraBridgeCreateOrConnectWithoutMitraObjInput | Prisma.KegiatanMitraBridgeCreateOrConnectWithoutMitraObjInput[];
+    upsert?: Prisma.KegiatanMitraBridgeUpsertWithWhereUniqueWithoutMitraObjInput | Prisma.KegiatanMitraBridgeUpsertWithWhereUniqueWithoutMitraObjInput[];
+    createMany?: Prisma.KegiatanMitraBridgeCreateManyMitraObjInputEnvelope;
+    set?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    disconnect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    delete?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    connect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    update?: Prisma.KegiatanMitraBridgeUpdateWithWhereUniqueWithoutMitraObjInput | Prisma.KegiatanMitraBridgeUpdateWithWhereUniqueWithoutMitraObjInput[];
+    updateMany?: Prisma.KegiatanMitraBridgeUpdateManyWithWhereWithoutMitraObjInput | Prisma.KegiatanMitraBridgeUpdateManyWithWhereWithoutMitraObjInput[];
+    deleteMany?: Prisma.KegiatanMitraBridgeScalarWhereInput | Prisma.KegiatanMitraBridgeScalarWhereInput[];
+};
+export type KegiatanMitraBridgeCreateNestedManyWithoutKegiatanObjInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutKegiatanObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutKegiatanObjInput> | Prisma.KegiatanMitraBridgeCreateWithoutKegiatanObjInput[] | Prisma.KegiatanMitraBridgeUncheckedCreateWithoutKegiatanObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraBridgeCreateOrConnectWithoutKegiatanObjInput | Prisma.KegiatanMitraBridgeCreateOrConnectWithoutKegiatanObjInput[];
+    createMany?: Prisma.KegiatanMitraBridgeCreateManyKegiatanObjInputEnvelope;
+    connect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+};
+export type KegiatanMitraBridgeUncheckedCreateNestedManyWithoutKegiatanObjInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutKegiatanObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutKegiatanObjInput> | Prisma.KegiatanMitraBridgeCreateWithoutKegiatanObjInput[] | Prisma.KegiatanMitraBridgeUncheckedCreateWithoutKegiatanObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraBridgeCreateOrConnectWithoutKegiatanObjInput | Prisma.KegiatanMitraBridgeCreateOrConnectWithoutKegiatanObjInput[];
+    createMany?: Prisma.KegiatanMitraBridgeCreateManyKegiatanObjInputEnvelope;
+    connect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+};
+export type KegiatanMitraBridgeUpdateManyWithoutKegiatanObjNestedInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutKegiatanObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutKegiatanObjInput> | Prisma.KegiatanMitraBridgeCreateWithoutKegiatanObjInput[] | Prisma.KegiatanMitraBridgeUncheckedCreateWithoutKegiatanObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraBridgeCreateOrConnectWithoutKegiatanObjInput | Prisma.KegiatanMitraBridgeCreateOrConnectWithoutKegiatanObjInput[];
+    upsert?: Prisma.KegiatanMitraBridgeUpsertWithWhereUniqueWithoutKegiatanObjInput | Prisma.KegiatanMitraBridgeUpsertWithWhereUniqueWithoutKegiatanObjInput[];
+    createMany?: Prisma.KegiatanMitraBridgeCreateManyKegiatanObjInputEnvelope;
+    set?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    disconnect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    delete?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    connect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    update?: Prisma.KegiatanMitraBridgeUpdateWithWhereUniqueWithoutKegiatanObjInput | Prisma.KegiatanMitraBridgeUpdateWithWhereUniqueWithoutKegiatanObjInput[];
+    updateMany?: Prisma.KegiatanMitraBridgeUpdateManyWithWhereWithoutKegiatanObjInput | Prisma.KegiatanMitraBridgeUpdateManyWithWhereWithoutKegiatanObjInput[];
+    deleteMany?: Prisma.KegiatanMitraBridgeScalarWhereInput | Prisma.KegiatanMitraBridgeScalarWhereInput[];
+};
+export type KegiatanMitraBridgeUncheckedUpdateManyWithoutKegiatanObjNestedInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutKegiatanObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutKegiatanObjInput> | Prisma.KegiatanMitraBridgeCreateWithoutKegiatanObjInput[] | Prisma.KegiatanMitraBridgeUncheckedCreateWithoutKegiatanObjInput[];
+    connectOrCreate?: Prisma.KegiatanMitraBridgeCreateOrConnectWithoutKegiatanObjInput | Prisma.KegiatanMitraBridgeCreateOrConnectWithoutKegiatanObjInput[];
+    upsert?: Prisma.KegiatanMitraBridgeUpsertWithWhereUniqueWithoutKegiatanObjInput | Prisma.KegiatanMitraBridgeUpsertWithWhereUniqueWithoutKegiatanObjInput[];
+    createMany?: Prisma.KegiatanMitraBridgeCreateManyKegiatanObjInputEnvelope;
+    set?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    disconnect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    delete?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    connect?: Prisma.KegiatanMitraBridgeWhereUniqueInput | Prisma.KegiatanMitraBridgeWhereUniqueInput[];
+    update?: Prisma.KegiatanMitraBridgeUpdateWithWhereUniqueWithoutKegiatanObjInput | Prisma.KegiatanMitraBridgeUpdateWithWhereUniqueWithoutKegiatanObjInput[];
+    updateMany?: Prisma.KegiatanMitraBridgeUpdateManyWithWhereWithoutKegiatanObjInput | Prisma.KegiatanMitraBridgeUpdateManyWithWhereWithoutKegiatanObjInput[];
+    deleteMany?: Prisma.KegiatanMitraBridgeScalarWhereInput | Prisma.KegiatanMitraBridgeScalarWhereInput[];
+};
+export type KegiatanMitraBridgeCreateNestedOneWithoutPenugasanObjInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutPenugasanObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutPenugasanObjInput>;
+    connectOrCreate?: Prisma.KegiatanMitraBridgeCreateOrConnectWithoutPenugasanObjInput;
+    connect?: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+};
+export type KegiatanMitraBridgeUpdateOneRequiredWithoutPenugasanObjNestedInput = {
+    create?: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutPenugasanObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutPenugasanObjInput>;
+    connectOrCreate?: Prisma.KegiatanMitraBridgeCreateOrConnectWithoutPenugasanObjInput;
+    upsert?: Prisma.KegiatanMitraBridgeUpsertWithoutPenugasanObjInput;
+    connect?: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+    update?: Prisma.XOR<Prisma.XOR<Prisma.KegiatanMitraBridgeUpdateToOneWithWhereWithoutPenugasanObjInput, Prisma.KegiatanMitraBridgeUpdateWithoutPenugasanObjInput>, Prisma.KegiatanMitraBridgeUncheckedUpdateWithoutPenugasanObjInput>;
+};
+export type KegiatanMitraBridgeCreateWithoutPengawasObjInput = {
+    uuid?: string;
+    status: string;
+    kegiatanObj: Prisma.KegiatanCreateNestedOneWithoutKegiatanMitraObjInput;
+    mitraObj: Prisma.MitraCreateNestedOneWithoutKegiatanMitraObjInput;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanCreateNestedManyWithoutBridgeObjInput;
+};
+export type KegiatanMitraBridgeUncheckedCreateWithoutPengawasObjInput = {
+    uuid?: string;
+    kegiatan_uuid: string;
+    mitra_id: string;
+    status: string;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUncheckedCreateNestedManyWithoutBridgeObjInput;
+};
+export type KegiatanMitraBridgeCreateOrConnectWithoutPengawasObjInput = {
+    where: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+    create: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutPengawasObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutPengawasObjInput>;
+};
+export type KegiatanMitraBridgeCreateManyPengawasObjInputEnvelope = {
+    data: Prisma.KegiatanMitraBridgeCreateManyPengawasObjInput | Prisma.KegiatanMitraBridgeCreateManyPengawasObjInput[];
+    skipDuplicates?: boolean;
+};
+export type KegiatanMitraBridgeUpsertWithWhereUniqueWithoutPengawasObjInput = {
+    where: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+    update: Prisma.XOR<Prisma.KegiatanMitraBridgeUpdateWithoutPengawasObjInput, Prisma.KegiatanMitraBridgeUncheckedUpdateWithoutPengawasObjInput>;
+    create: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutPengawasObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutPengawasObjInput>;
+};
+export type KegiatanMitraBridgeUpdateWithWhereUniqueWithoutPengawasObjInput = {
+    where: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+    data: Prisma.XOR<Prisma.KegiatanMitraBridgeUpdateWithoutPengawasObjInput, Prisma.KegiatanMitraBridgeUncheckedUpdateWithoutPengawasObjInput>;
+};
+export type KegiatanMitraBridgeUpdateManyWithWhereWithoutPengawasObjInput = {
+    where: Prisma.KegiatanMitraBridgeScalarWhereInput;
+    data: Prisma.XOR<Prisma.KegiatanMitraBridgeUpdateManyMutationInput, Prisma.KegiatanMitraBridgeUncheckedUpdateManyWithoutPengawasObjInput>;
+};
+export type KegiatanMitraBridgeScalarWhereInput = {
+    AND?: Prisma.KegiatanMitraBridgeScalarWhereInput | Prisma.KegiatanMitraBridgeScalarWhereInput[];
+    OR?: Prisma.KegiatanMitraBridgeScalarWhereInput[];
+    NOT?: Prisma.KegiatanMitraBridgeScalarWhereInput | Prisma.KegiatanMitraBridgeScalarWhereInput[];
+    uuid?: Prisma.StringFilter<"KegiatanMitraBridge"> | string;
+    kegiatan_uuid?: Prisma.StringFilter<"KegiatanMitraBridge"> | string;
+    mitra_id?: Prisma.StringFilter<"KegiatanMitraBridge"> | string;
+    status?: Prisma.StringFilter<"KegiatanMitraBridge"> | string;
+    pengawas?: Prisma.StringNullableFilter<"KegiatanMitraBridge"> | string | null;
+};
+export type KegiatanMitraBridgeCreateWithoutMitraObjInput = {
+    uuid?: string;
+    status: string;
+    kegiatanObj: Prisma.KegiatanCreateNestedOneWithoutKegiatanMitraObjInput;
+    pengawasObj?: Prisma.UserCreateNestedOneWithoutPengawasMitraObjInput;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanCreateNestedManyWithoutBridgeObjInput;
+};
+export type KegiatanMitraBridgeUncheckedCreateWithoutMitraObjInput = {
+    uuid?: string;
+    kegiatan_uuid: string;
+    status: string;
+    pengawas?: string | null;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUncheckedCreateNestedManyWithoutBridgeObjInput;
+};
+export type KegiatanMitraBridgeCreateOrConnectWithoutMitraObjInput = {
+    where: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+    create: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutMitraObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutMitraObjInput>;
+};
+export type KegiatanMitraBridgeCreateManyMitraObjInputEnvelope = {
+    data: Prisma.KegiatanMitraBridgeCreateManyMitraObjInput | Prisma.KegiatanMitraBridgeCreateManyMitraObjInput[];
+    skipDuplicates?: boolean;
+};
+export type KegiatanMitraBridgeUpsertWithWhereUniqueWithoutMitraObjInput = {
+    where: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+    update: Prisma.XOR<Prisma.KegiatanMitraBridgeUpdateWithoutMitraObjInput, Prisma.KegiatanMitraBridgeUncheckedUpdateWithoutMitraObjInput>;
+    create: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutMitraObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutMitraObjInput>;
+};
+export type KegiatanMitraBridgeUpdateWithWhereUniqueWithoutMitraObjInput = {
+    where: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+    data: Prisma.XOR<Prisma.KegiatanMitraBridgeUpdateWithoutMitraObjInput, Prisma.KegiatanMitraBridgeUncheckedUpdateWithoutMitraObjInput>;
+};
+export type KegiatanMitraBridgeUpdateManyWithWhereWithoutMitraObjInput = {
+    where: Prisma.KegiatanMitraBridgeScalarWhereInput;
+    data: Prisma.XOR<Prisma.KegiatanMitraBridgeUpdateManyMutationInput, Prisma.KegiatanMitraBridgeUncheckedUpdateManyWithoutMitraObjInput>;
+};
+export type KegiatanMitraBridgeCreateWithoutKegiatanObjInput = {
+    uuid?: string;
+    status: string;
+    mitraObj: Prisma.MitraCreateNestedOneWithoutKegiatanMitraObjInput;
+    pengawasObj?: Prisma.UserCreateNestedOneWithoutPengawasMitraObjInput;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanCreateNestedManyWithoutBridgeObjInput;
+};
+export type KegiatanMitraBridgeUncheckedCreateWithoutKegiatanObjInput = {
+    uuid?: string;
+    mitra_id: string;
+    status: string;
+    pengawas?: string | null;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUncheckedCreateNestedManyWithoutBridgeObjInput;
+};
+export type KegiatanMitraBridgeCreateOrConnectWithoutKegiatanObjInput = {
+    where: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+    create: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutKegiatanObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutKegiatanObjInput>;
+};
+export type KegiatanMitraBridgeCreateManyKegiatanObjInputEnvelope = {
+    data: Prisma.KegiatanMitraBridgeCreateManyKegiatanObjInput | Prisma.KegiatanMitraBridgeCreateManyKegiatanObjInput[];
+    skipDuplicates?: boolean;
+};
+export type KegiatanMitraBridgeUpsertWithWhereUniqueWithoutKegiatanObjInput = {
+    where: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+    update: Prisma.XOR<Prisma.KegiatanMitraBridgeUpdateWithoutKegiatanObjInput, Prisma.KegiatanMitraBridgeUncheckedUpdateWithoutKegiatanObjInput>;
+    create: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutKegiatanObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutKegiatanObjInput>;
+};
+export type KegiatanMitraBridgeUpdateWithWhereUniqueWithoutKegiatanObjInput = {
+    where: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+    data: Prisma.XOR<Prisma.KegiatanMitraBridgeUpdateWithoutKegiatanObjInput, Prisma.KegiatanMitraBridgeUncheckedUpdateWithoutKegiatanObjInput>;
+};
+export type KegiatanMitraBridgeUpdateManyWithWhereWithoutKegiatanObjInput = {
+    where: Prisma.KegiatanMitraBridgeScalarWhereInput;
+    data: Prisma.XOR<Prisma.KegiatanMitraBridgeUpdateManyMutationInput, Prisma.KegiatanMitraBridgeUncheckedUpdateManyWithoutKegiatanObjInput>;
+};
+export type KegiatanMitraBridgeCreateWithoutPenugasanObjInput = {
+    uuid?: string;
+    status: string;
+    kegiatanObj: Prisma.KegiatanCreateNestedOneWithoutKegiatanMitraObjInput;
+    mitraObj: Prisma.MitraCreateNestedOneWithoutKegiatanMitraObjInput;
+    pengawasObj?: Prisma.UserCreateNestedOneWithoutPengawasMitraObjInput;
+};
+export type KegiatanMitraBridgeUncheckedCreateWithoutPenugasanObjInput = {
+    uuid?: string;
+    kegiatan_uuid: string;
+    mitra_id: string;
+    status: string;
+    pengawas?: string | null;
+};
+export type KegiatanMitraBridgeCreateOrConnectWithoutPenugasanObjInput = {
+    where: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+    create: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutPenugasanObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutPenugasanObjInput>;
+};
+export type KegiatanMitraBridgeUpsertWithoutPenugasanObjInput = {
+    update: Prisma.XOR<Prisma.KegiatanMitraBridgeUpdateWithoutPenugasanObjInput, Prisma.KegiatanMitraBridgeUncheckedUpdateWithoutPenugasanObjInput>;
+    create: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateWithoutPenugasanObjInput, Prisma.KegiatanMitraBridgeUncheckedCreateWithoutPenugasanObjInput>;
+    where?: Prisma.KegiatanMitraBridgeWhereInput;
+};
+export type KegiatanMitraBridgeUpdateToOneWithWhereWithoutPenugasanObjInput = {
+    where?: Prisma.KegiatanMitraBridgeWhereInput;
+    data: Prisma.XOR<Prisma.KegiatanMitraBridgeUpdateWithoutPenugasanObjInput, Prisma.KegiatanMitraBridgeUncheckedUpdateWithoutPenugasanObjInput>;
+};
+export type KegiatanMitraBridgeUpdateWithoutPenugasanObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.StringFieldUpdateOperationsInput | string;
+    kegiatanObj?: Prisma.KegiatanUpdateOneRequiredWithoutKegiatanMitraObjNestedInput;
+    mitraObj?: Prisma.MitraUpdateOneRequiredWithoutKegiatanMitraObjNestedInput;
+    pengawasObj?: Prisma.UserUpdateOneWithoutPengawasMitraObjNestedInput;
+};
+export type KegiatanMitraBridgeUncheckedUpdateWithoutPenugasanObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    kegiatan_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    mitra_id?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.StringFieldUpdateOperationsInput | string;
+    pengawas?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+};
+export type KegiatanMitraBridgeCreateManyPengawasObjInput = {
+    uuid?: string;
+    kegiatan_uuid: string;
+    mitra_id: string;
+    status: string;
+};
+export type KegiatanMitraBridgeUpdateWithoutPengawasObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.StringFieldUpdateOperationsInput | string;
+    kegiatanObj?: Prisma.KegiatanUpdateOneRequiredWithoutKegiatanMitraObjNestedInput;
+    mitraObj?: Prisma.MitraUpdateOneRequiredWithoutKegiatanMitraObjNestedInput;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUpdateManyWithoutBridgeObjNestedInput;
+};
+export type KegiatanMitraBridgeUncheckedUpdateWithoutPengawasObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    kegiatan_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    mitra_id?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.StringFieldUpdateOperationsInput | string;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUncheckedUpdateManyWithoutBridgeObjNestedInput;
+};
+export type KegiatanMitraBridgeUncheckedUpdateManyWithoutPengawasObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    kegiatan_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    mitra_id?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.StringFieldUpdateOperationsInput | string;
+};
+export type KegiatanMitraBridgeCreateManyMitraObjInput = {
+    uuid?: string;
+    kegiatan_uuid: string;
+    status: string;
+    pengawas?: string | null;
+};
+export type KegiatanMitraBridgeUpdateWithoutMitraObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.StringFieldUpdateOperationsInput | string;
+    kegiatanObj?: Prisma.KegiatanUpdateOneRequiredWithoutKegiatanMitraObjNestedInput;
+    pengawasObj?: Prisma.UserUpdateOneWithoutPengawasMitraObjNestedInput;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUpdateManyWithoutBridgeObjNestedInput;
+};
+export type KegiatanMitraBridgeUncheckedUpdateWithoutMitraObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    kegiatan_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.StringFieldUpdateOperationsInput | string;
+    pengawas?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUncheckedUpdateManyWithoutBridgeObjNestedInput;
+};
+export type KegiatanMitraBridgeUncheckedUpdateManyWithoutMitraObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    kegiatan_uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.StringFieldUpdateOperationsInput | string;
+    pengawas?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+};
+export type KegiatanMitraBridgeCreateManyKegiatanObjInput = {
+    uuid?: string;
+    mitra_id: string;
+    status: string;
+    pengawas?: string | null;
+};
+export type KegiatanMitraBridgeUpdateWithoutKegiatanObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.StringFieldUpdateOperationsInput | string;
+    mitraObj?: Prisma.MitraUpdateOneRequiredWithoutKegiatanMitraObjNestedInput;
+    pengawasObj?: Prisma.UserUpdateOneWithoutPengawasMitraObjNestedInput;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUpdateManyWithoutBridgeObjNestedInput;
+};
+export type KegiatanMitraBridgeUncheckedUpdateWithoutKegiatanObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    mitra_id?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.StringFieldUpdateOperationsInput | string;
+    pengawas?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    penugasanObj?: Prisma.KegiatanMitraPenugasanUncheckedUpdateManyWithoutBridgeObjNestedInput;
+};
+export type KegiatanMitraBridgeUncheckedUpdateManyWithoutKegiatanObjInput = {
+    uuid?: Prisma.StringFieldUpdateOperationsInput | string;
+    mitra_id?: Prisma.StringFieldUpdateOperationsInput | string;
+    status?: Prisma.StringFieldUpdateOperationsInput | string;
+    pengawas?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+};
+/**
+ * Count Type KegiatanMitraBridgeCountOutputType
+ */
+export type KegiatanMitraBridgeCountOutputType = {
+    penugasanObj: number;
+};
+export type KegiatanMitraBridgeCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    penugasanObj?: boolean | KegiatanMitraBridgeCountOutputTypeCountPenugasanObjArgs;
+};
+/**
+ * KegiatanMitraBridgeCountOutputType without action
+ */
+export type KegiatanMitraBridgeCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraBridgeCountOutputType
+     */
+    select?: Prisma.KegiatanMitraBridgeCountOutputTypeSelect<ExtArgs> | null;
+};
+/**
+ * KegiatanMitraBridgeCountOutputType without action
+ */
+export type KegiatanMitraBridgeCountOutputTypeCountPenugasanObjArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.KegiatanMitraPenugasanWhereInput;
+};
+export type KegiatanMitraBridgeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    uuid?: boolean;
+    kegiatan_uuid?: boolean;
+    mitra_id?: boolean;
+    status?: boolean;
+    pengawas?: boolean;
+    kegiatanObj?: boolean | Prisma.KegiatanDefaultArgs<ExtArgs>;
+    mitraObj?: boolean | Prisma.MitraDefaultArgs<ExtArgs>;
+    pengawasObj?: boolean | Prisma.KegiatanMitraBridge$pengawasObjArgs<ExtArgs>;
+    penugasanObj?: boolean | Prisma.KegiatanMitraBridge$penugasanObjArgs<ExtArgs>;
+    _count?: boolean | Prisma.KegiatanMitraBridgeCountOutputTypeDefaultArgs<ExtArgs>;
+}, ExtArgs["result"]["kegiatanMitraBridge"]>;
+export type KegiatanMitraBridgeSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    uuid?: boolean;
+    kegiatan_uuid?: boolean;
+    mitra_id?: boolean;
+    status?: boolean;
+    pengawas?: boolean;
+    kegiatanObj?: boolean | Prisma.KegiatanDefaultArgs<ExtArgs>;
+    mitraObj?: boolean | Prisma.MitraDefaultArgs<ExtArgs>;
+    pengawasObj?: boolean | Prisma.KegiatanMitraBridge$pengawasObjArgs<ExtArgs>;
+}, ExtArgs["result"]["kegiatanMitraBridge"]>;
+export type KegiatanMitraBridgeSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    uuid?: boolean;
+    kegiatan_uuid?: boolean;
+    mitra_id?: boolean;
+    status?: boolean;
+    pengawas?: boolean;
+    kegiatanObj?: boolean | Prisma.KegiatanDefaultArgs<ExtArgs>;
+    mitraObj?: boolean | Prisma.MitraDefaultArgs<ExtArgs>;
+    pengawasObj?: boolean | Prisma.KegiatanMitraBridge$pengawasObjArgs<ExtArgs>;
+}, ExtArgs["result"]["kegiatanMitraBridge"]>;
+export type KegiatanMitraBridgeSelectScalar = {
+    uuid?: boolean;
+    kegiatan_uuid?: boolean;
+    mitra_id?: boolean;
+    status?: boolean;
+    pengawas?: boolean;
+};
+export type KegiatanMitraBridgeOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"uuid" | "kegiatan_uuid" | "mitra_id" | "status" | "pengawas", ExtArgs["result"]["kegiatanMitraBridge"]>;
+export type KegiatanMitraBridgeInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    kegiatanObj?: boolean | Prisma.KegiatanDefaultArgs<ExtArgs>;
+    mitraObj?: boolean | Prisma.MitraDefaultArgs<ExtArgs>;
+    pengawasObj?: boolean | Prisma.KegiatanMitraBridge$pengawasObjArgs<ExtArgs>;
+    penugasanObj?: boolean | Prisma.KegiatanMitraBridge$penugasanObjArgs<ExtArgs>;
+    _count?: boolean | Prisma.KegiatanMitraBridgeCountOutputTypeDefaultArgs<ExtArgs>;
+};
+export type KegiatanMitraBridgeIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    kegiatanObj?: boolean | Prisma.KegiatanDefaultArgs<ExtArgs>;
+    mitraObj?: boolean | Prisma.MitraDefaultArgs<ExtArgs>;
+    pengawasObj?: boolean | Prisma.KegiatanMitraBridge$pengawasObjArgs<ExtArgs>;
+};
+export type KegiatanMitraBridgeIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    kegiatanObj?: boolean | Prisma.KegiatanDefaultArgs<ExtArgs>;
+    mitraObj?: boolean | Prisma.MitraDefaultArgs<ExtArgs>;
+    pengawasObj?: boolean | Prisma.KegiatanMitraBridge$pengawasObjArgs<ExtArgs>;
+};
+export type $KegiatanMitraBridgePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    name: "KegiatanMitraBridge";
+    objects: {
+        kegiatanObj: Prisma.$KegiatanPayload<ExtArgs>;
+        mitraObj: Prisma.$MitraPayload<ExtArgs>;
+        pengawasObj: Prisma.$UserPayload<ExtArgs> | null;
+        penugasanObj: Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>[];
+    };
+    scalars: runtime.Types.Extensions.GetPayloadResult<{
+        uuid: string;
+        kegiatan_uuid: string;
+        mitra_id: string;
+        status: string;
+        pengawas: string | null;
+    }, ExtArgs["result"]["kegiatanMitraBridge"]>;
+    composites: {};
+};
+export type KegiatanMitraBridgeGetPayload<S extends boolean | null | undefined | KegiatanMitraBridgeDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$KegiatanMitraBridgePayload, S>;
+export type KegiatanMitraBridgeCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<KegiatanMitraBridgeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: KegiatanMitraBridgeCountAggregateInputType | true;
+};
+export interface KegiatanMitraBridgeDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: {
+        types: Prisma.TypeMap<ExtArgs>['model']['KegiatanMitraBridge'];
+        meta: {
+            name: 'KegiatanMitraBridge';
+        };
+    };
+    /**
+     * Find zero or one KegiatanMitraBridge that matches the filter.
+     * @param {KegiatanMitraBridgeFindUniqueArgs} args - Arguments to find a KegiatanMitraBridge
+     * @example
+     * // Get one KegiatanMitraBridge
+     * const kegiatanMitraBridge = await prisma.kegiatanMitraBridge.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends KegiatanMitraBridgeFindUniqueArgs>(args: Prisma.SelectSubset<T, KegiatanMitraBridgeFindUniqueArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraBridgeClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraBridgePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find one KegiatanMitraBridge that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {KegiatanMitraBridgeFindUniqueOrThrowArgs} args - Arguments to find a KegiatanMitraBridge
+     * @example
+     * // Get one KegiatanMitraBridge
+     * const kegiatanMitraBridge = await prisma.kegiatanMitraBridge.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends KegiatanMitraBridgeFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, KegiatanMitraBridgeFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraBridgeClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraBridgePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find the first KegiatanMitraBridge that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanMitraBridgeFindFirstArgs} args - Arguments to find a KegiatanMitraBridge
+     * @example
+     * // Get one KegiatanMitraBridge
+     * const kegiatanMitraBridge = await prisma.kegiatanMitraBridge.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends KegiatanMitraBridgeFindFirstArgs>(args?: Prisma.SelectSubset<T, KegiatanMitraBridgeFindFirstArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraBridgeClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraBridgePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find the first KegiatanMitraBridge that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanMitraBridgeFindFirstOrThrowArgs} args - Arguments to find a KegiatanMitraBridge
+     * @example
+     * // Get one KegiatanMitraBridge
+     * const kegiatanMitraBridge = await prisma.kegiatanMitraBridge.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends KegiatanMitraBridgeFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, KegiatanMitraBridgeFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraBridgeClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraBridgePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find zero or more KegiatanMitraBridges that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanMitraBridgeFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all KegiatanMitraBridges
+     * const kegiatanMitraBridges = await prisma.kegiatanMitraBridge.findMany()
+     *
+     * // Get first 10 KegiatanMitraBridges
+     * const kegiatanMitraBridges = await prisma.kegiatanMitraBridge.findMany({ take: 10 })
+     *
+     * // Only select the `uuid`
+     * const kegiatanMitraBridgeWithUuidOnly = await prisma.kegiatanMitraBridge.findMany({ select: { uuid: true } })
+     *
+     */
+    findMany<T extends KegiatanMitraBridgeFindManyArgs>(args?: Prisma.SelectSubset<T, KegiatanMitraBridgeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraBridgePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
+    /**
+     * Create a KegiatanMitraBridge.
+     * @param {KegiatanMitraBridgeCreateArgs} args - Arguments to create a KegiatanMitraBridge.
+     * @example
+     * // Create one KegiatanMitraBridge
+     * const KegiatanMitraBridge = await prisma.kegiatanMitraBridge.create({
+     *   data: {
+     *     // ... data to create a KegiatanMitraBridge
+     *   }
+     * })
+     *
+     */
+    create<T extends KegiatanMitraBridgeCreateArgs>(args: Prisma.SelectSubset<T, KegiatanMitraBridgeCreateArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraBridgeClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraBridgePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Create many KegiatanMitraBridges.
+     * @param {KegiatanMitraBridgeCreateManyArgs} args - Arguments to create many KegiatanMitraBridges.
+     * @example
+     * // Create many KegiatanMitraBridges
+     * const kegiatanMitraBridge = await prisma.kegiatanMitraBridge.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     */
+    createMany<T extends KegiatanMitraBridgeCreateManyArgs>(args?: Prisma.SelectSubset<T, KegiatanMitraBridgeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Create many KegiatanMitraBridges and returns the data saved in the database.
+     * @param {KegiatanMitraBridgeCreateManyAndReturnArgs} args - Arguments to create many KegiatanMitraBridges.
+     * @example
+     * // Create many KegiatanMitraBridges
+     * const kegiatanMitraBridge = await prisma.kegiatanMitraBridge.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Create many KegiatanMitraBridges and only return the `uuid`
+     * const kegiatanMitraBridgeWithUuidOnly = await prisma.kegiatanMitraBridge.createManyAndReturn({
+     *   select: { uuid: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    createManyAndReturn<T extends KegiatanMitraBridgeCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, KegiatanMitraBridgeCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraBridgePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
+    /**
+     * Delete a KegiatanMitraBridge.
+     * @param {KegiatanMitraBridgeDeleteArgs} args - Arguments to delete one KegiatanMitraBridge.
+     * @example
+     * // Delete one KegiatanMitraBridge
+     * const KegiatanMitraBridge = await prisma.kegiatanMitraBridge.delete({
+     *   where: {
+     *     // ... filter to delete one KegiatanMitraBridge
+     *   }
+     * })
+     *
+     */
+    delete<T extends KegiatanMitraBridgeDeleteArgs>(args: Prisma.SelectSubset<T, KegiatanMitraBridgeDeleteArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraBridgeClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraBridgePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Update one KegiatanMitraBridge.
+     * @param {KegiatanMitraBridgeUpdateArgs} args - Arguments to update one KegiatanMitraBridge.
+     * @example
+     * // Update one KegiatanMitraBridge
+     * const kegiatanMitraBridge = await prisma.kegiatanMitraBridge.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    update<T extends KegiatanMitraBridgeUpdateArgs>(args: Prisma.SelectSubset<T, KegiatanMitraBridgeUpdateArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraBridgeClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraBridgePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Delete zero or more KegiatanMitraBridges.
+     * @param {KegiatanMitraBridgeDeleteManyArgs} args - Arguments to filter KegiatanMitraBridges to delete.
+     * @example
+     * // Delete a few KegiatanMitraBridges
+     * const { count } = await prisma.kegiatanMitraBridge.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     *
+     */
+    deleteMany<T extends KegiatanMitraBridgeDeleteManyArgs>(args?: Prisma.SelectSubset<T, KegiatanMitraBridgeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Update zero or more KegiatanMitraBridges.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanMitraBridgeUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many KegiatanMitraBridges
+     * const kegiatanMitraBridge = await prisma.kegiatanMitraBridge.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    updateMany<T extends KegiatanMitraBridgeUpdateManyArgs>(args: Prisma.SelectSubset<T, KegiatanMitraBridgeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Update zero or more KegiatanMitraBridges and returns the data updated in the database.
+     * @param {KegiatanMitraBridgeUpdateManyAndReturnArgs} args - Arguments to update many KegiatanMitraBridges.
+     * @example
+     * // Update many KegiatanMitraBridges
+     * const kegiatanMitraBridge = await prisma.kegiatanMitraBridge.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Update zero or more KegiatanMitraBridges and only return the `uuid`
+     * const kegiatanMitraBridgeWithUuidOnly = await prisma.kegiatanMitraBridge.updateManyAndReturn({
+     *   select: { uuid: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    updateManyAndReturn<T extends KegiatanMitraBridgeUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, KegiatanMitraBridgeUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraBridgePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
+    /**
+     * Create or update one KegiatanMitraBridge.
+     * @param {KegiatanMitraBridgeUpsertArgs} args - Arguments to update or create a KegiatanMitraBridge.
+     * @example
+     * // Update or create a KegiatanMitraBridge
+     * const kegiatanMitraBridge = await prisma.kegiatanMitraBridge.upsert({
+     *   create: {
+     *     // ... data to create a KegiatanMitraBridge
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the KegiatanMitraBridge we want to update
+     *   }
+     * })
+     */
+    upsert<T extends KegiatanMitraBridgeUpsertArgs>(args: Prisma.SelectSubset<T, KegiatanMitraBridgeUpsertArgs<ExtArgs>>): Prisma.Prisma__KegiatanMitraBridgeClient<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraBridgePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Count the number of KegiatanMitraBridges.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanMitraBridgeCountArgs} args - Arguments to filter KegiatanMitraBridges to count.
+     * @example
+     * // Count the number of KegiatanMitraBridges
+     * const count = await prisma.kegiatanMitraBridge.count({
+     *   where: {
+     *     // ... the filter for the KegiatanMitraBridges we want to count
+     *   }
+     * })
+    **/
+    count<T extends KegiatanMitraBridgeCountArgs>(args?: Prisma.Subset<T, KegiatanMitraBridgeCountArgs>): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<'select', any> ? T['select'] extends true ? number : Prisma.GetScalarType<T['select'], KegiatanMitraBridgeCountAggregateOutputType> : number>;
+    /**
+     * Allows you to perform aggregations operations on a KegiatanMitraBridge.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanMitraBridgeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends KegiatanMitraBridgeAggregateArgs>(args: Prisma.Subset<T, KegiatanMitraBridgeAggregateArgs>): Prisma.PrismaPromise<GetKegiatanMitraBridgeAggregateType<T>>;
+    /**
+     * Group by KegiatanMitraBridge.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KegiatanMitraBridgeGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+    **/
+    groupBy<T extends KegiatanMitraBridgeGroupByArgs, HasSelectOrTake extends Prisma.Or<Prisma.Extends<'skip', Prisma.Keys<T>>, Prisma.Extends<'take', Prisma.Keys<T>>>, OrderByArg extends Prisma.True extends HasSelectOrTake ? {
+        orderBy: KegiatanMitraBridgeGroupByArgs['orderBy'];
+    } : {
+        orderBy?: KegiatanMitraBridgeGroupByArgs['orderBy'];
+    }, OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>, ByFields extends Prisma.MaybeTupleToUnion<T['by']>, ByValid extends Prisma.Has<ByFields, OrderFields>, HavingFields extends Prisma.GetHavingFields<T['having']>, HavingValid extends Prisma.Has<ByFields, HavingFields>, ByEmpty extends T['by'] extends never[] ? Prisma.True : Prisma.False, InputErrors extends ByEmpty extends Prisma.True ? `Error: "by" must not be empty.` : HavingValid extends Prisma.False ? {
+        [P in HavingFields]: P extends ByFields ? never : P extends string ? `Error: Field "${P}" used in "having" needs to be provided in "by".` : [
+            Error,
+            'Field ',
+            P,
+            ` in "having" needs to be provided in "by"`
+        ];
+    }[HavingFields] : 'take' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "take", you also need to provide "orderBy"' : 'skip' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "skip", you also need to provide "orderBy"' : ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields]>(args: Prisma.SubsetIntersection<T, KegiatanMitraBridgeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetKegiatanMitraBridgeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the KegiatanMitraBridge model
+     */
+    readonly fields: KegiatanMitraBridgeFieldRefs;
+}
+/**
+ * The delegate class that acts as a "Promise-like" for KegiatanMitraBridge.
+ * Why is this prefixed with `Prisma__`?
+ * Because we want to prevent naming conflicts as mentioned in
+ * https://github.com/prisma/prisma-client-js/issues/707
+ */
+export interface Prisma__KegiatanMitraBridgeClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise";
+    kegiatanObj<T extends Prisma.KegiatanDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.KegiatanDefaultArgs<ExtArgs>>): Prisma.Prisma__KegiatanClient<runtime.Types.Result.GetResult<Prisma.$KegiatanPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
+    mitraObj<T extends Prisma.MitraDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MitraDefaultArgs<ExtArgs>>): Prisma.Prisma__MitraClient<runtime.Types.Result.GetResult<Prisma.$MitraPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
+    pengawasObj<T extends Prisma.KegiatanMitraBridge$pengawasObjArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.KegiatanMitraBridge$pengawasObjArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    penugasanObj<T extends Prisma.KegiatanMitraBridge$penugasanObjArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.KegiatanMitraBridge$penugasanObjArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$KegiatanMitraPenugasanPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
+}
+/**
+ * Fields of the KegiatanMitraBridge model
+ */
+export interface KegiatanMitraBridgeFieldRefs {
+    readonly uuid: Prisma.FieldRef<"KegiatanMitraBridge", 'String'>;
+    readonly kegiatan_uuid: Prisma.FieldRef<"KegiatanMitraBridge", 'String'>;
+    readonly mitra_id: Prisma.FieldRef<"KegiatanMitraBridge", 'String'>;
+    readonly status: Prisma.FieldRef<"KegiatanMitraBridge", 'String'>;
+    readonly pengawas: Prisma.FieldRef<"KegiatanMitraBridge", 'String'>;
+}
+/**
+ * KegiatanMitraBridge findUnique
+ */
+export type KegiatanMitraBridgeFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraBridge
+     */
+    select?: Prisma.KegiatanMitraBridgeSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraBridge
+     */
+    omit?: Prisma.KegiatanMitraBridgeOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraBridgeInclude<ExtArgs> | null;
+    /**
+     * Filter, which KegiatanMitraBridge to fetch.
+     */
+    where: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+};
+/**
+ * KegiatanMitraBridge findUniqueOrThrow
+ */
+export type KegiatanMitraBridgeFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraBridge
+     */
+    select?: Prisma.KegiatanMitraBridgeSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraBridge
+     */
+    omit?: Prisma.KegiatanMitraBridgeOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraBridgeInclude<ExtArgs> | null;
+    /**
+     * Filter, which KegiatanMitraBridge to fetch.
+     */
+    where: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+};
+/**
+ * KegiatanMitraBridge findFirst
+ */
+export type KegiatanMitraBridgeFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraBridge
+     */
+    select?: Prisma.KegiatanMitraBridgeSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraBridge
+     */
+    omit?: Prisma.KegiatanMitraBridgeOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraBridgeInclude<ExtArgs> | null;
+    /**
+     * Filter, which KegiatanMitraBridge to fetch.
+     */
+    where?: Prisma.KegiatanMitraBridgeWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of KegiatanMitraBridges to fetch.
+     */
+    orderBy?: Prisma.KegiatanMitraBridgeOrderByWithRelationInput | Prisma.KegiatanMitraBridgeOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for KegiatanMitraBridges.
+     */
+    cursor?: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` KegiatanMitraBridges from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` KegiatanMitraBridges.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of KegiatanMitraBridges.
+     */
+    distinct?: Prisma.KegiatanMitraBridgeScalarFieldEnum | Prisma.KegiatanMitraBridgeScalarFieldEnum[];
+};
+/**
+ * KegiatanMitraBridge findFirstOrThrow
+ */
+export type KegiatanMitraBridgeFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraBridge
+     */
+    select?: Prisma.KegiatanMitraBridgeSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraBridge
+     */
+    omit?: Prisma.KegiatanMitraBridgeOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraBridgeInclude<ExtArgs> | null;
+    /**
+     * Filter, which KegiatanMitraBridge to fetch.
+     */
+    where?: Prisma.KegiatanMitraBridgeWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of KegiatanMitraBridges to fetch.
+     */
+    orderBy?: Prisma.KegiatanMitraBridgeOrderByWithRelationInput | Prisma.KegiatanMitraBridgeOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for KegiatanMitraBridges.
+     */
+    cursor?: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` KegiatanMitraBridges from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` KegiatanMitraBridges.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of KegiatanMitraBridges.
+     */
+    distinct?: Prisma.KegiatanMitraBridgeScalarFieldEnum | Prisma.KegiatanMitraBridgeScalarFieldEnum[];
+};
+/**
+ * KegiatanMitraBridge findMany
+ */
+export type KegiatanMitraBridgeFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraBridge
+     */
+    select?: Prisma.KegiatanMitraBridgeSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraBridge
+     */
+    omit?: Prisma.KegiatanMitraBridgeOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraBridgeInclude<ExtArgs> | null;
+    /**
+     * Filter, which KegiatanMitraBridges to fetch.
+     */
+    where?: Prisma.KegiatanMitraBridgeWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of KegiatanMitraBridges to fetch.
+     */
+    orderBy?: Prisma.KegiatanMitraBridgeOrderByWithRelationInput | Prisma.KegiatanMitraBridgeOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for listing KegiatanMitraBridges.
+     */
+    cursor?: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` KegiatanMitraBridges from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` KegiatanMitraBridges.
+     */
+    skip?: number;
+    distinct?: Prisma.KegiatanMitraBridgeScalarFieldEnum | Prisma.KegiatanMitraBridgeScalarFieldEnum[];
+};
+/**
+ * KegiatanMitraBridge create
+ */
+export type KegiatanMitraBridgeCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraBridge
+     */
+    select?: Prisma.KegiatanMitraBridgeSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraBridge
+     */
+    omit?: Prisma.KegiatanMitraBridgeOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraBridgeInclude<ExtArgs> | null;
+    /**
+     * The data needed to create a KegiatanMitraBridge.
+     */
+    data: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateInput, Prisma.KegiatanMitraBridgeUncheckedCreateInput>;
+};
+/**
+ * KegiatanMitraBridge createMany
+ */
+export type KegiatanMitraBridgeCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many KegiatanMitraBridges.
+     */
+    data: Prisma.KegiatanMitraBridgeCreateManyInput | Prisma.KegiatanMitraBridgeCreateManyInput[];
+    skipDuplicates?: boolean;
+};
+/**
+ * KegiatanMitraBridge createManyAndReturn
+ */
+export type KegiatanMitraBridgeCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraBridge
+     */
+    select?: Prisma.KegiatanMitraBridgeSelectCreateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraBridge
+     */
+    omit?: Prisma.KegiatanMitraBridgeOmit<ExtArgs> | null;
+    /**
+     * The data used to create many KegiatanMitraBridges.
+     */
+    data: Prisma.KegiatanMitraBridgeCreateManyInput | Prisma.KegiatanMitraBridgeCreateManyInput[];
+    skipDuplicates?: boolean;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraBridgeIncludeCreateManyAndReturn<ExtArgs> | null;
+};
+/**
+ * KegiatanMitraBridge update
+ */
+export type KegiatanMitraBridgeUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraBridge
+     */
+    select?: Prisma.KegiatanMitraBridgeSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraBridge
+     */
+    omit?: Prisma.KegiatanMitraBridgeOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraBridgeInclude<ExtArgs> | null;
+    /**
+     * The data needed to update a KegiatanMitraBridge.
+     */
+    data: Prisma.XOR<Prisma.KegiatanMitraBridgeUpdateInput, Prisma.KegiatanMitraBridgeUncheckedUpdateInput>;
+    /**
+     * Choose, which KegiatanMitraBridge to update.
+     */
+    where: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+};
+/**
+ * KegiatanMitraBridge updateMany
+ */
+export type KegiatanMitraBridgeUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * The data used to update KegiatanMitraBridges.
+     */
+    data: Prisma.XOR<Prisma.KegiatanMitraBridgeUpdateManyMutationInput, Prisma.KegiatanMitraBridgeUncheckedUpdateManyInput>;
+    /**
+     * Filter which KegiatanMitraBridges to update
+     */
+    where?: Prisma.KegiatanMitraBridgeWhereInput;
+    /**
+     * Limit how many KegiatanMitraBridges to update.
+     */
+    limit?: number;
+};
+/**
+ * KegiatanMitraBridge updateManyAndReturn
+ */
+export type KegiatanMitraBridgeUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraBridge
+     */
+    select?: Prisma.KegiatanMitraBridgeSelectUpdateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraBridge
+     */
+    omit?: Prisma.KegiatanMitraBridgeOmit<ExtArgs> | null;
+    /**
+     * The data used to update KegiatanMitraBridges.
+     */
+    data: Prisma.XOR<Prisma.KegiatanMitraBridgeUpdateManyMutationInput, Prisma.KegiatanMitraBridgeUncheckedUpdateManyInput>;
+    /**
+     * Filter which KegiatanMitraBridges to update
+     */
+    where?: Prisma.KegiatanMitraBridgeWhereInput;
+    /**
+     * Limit how many KegiatanMitraBridges to update.
+     */
+    limit?: number;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraBridgeIncludeUpdateManyAndReturn<ExtArgs> | null;
+};
+/**
+ * KegiatanMitraBridge upsert
+ */
+export type KegiatanMitraBridgeUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraBridge
+     */
+    select?: Prisma.KegiatanMitraBridgeSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraBridge
+     */
+    omit?: Prisma.KegiatanMitraBridgeOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraBridgeInclude<ExtArgs> | null;
+    /**
+     * The filter to search for the KegiatanMitraBridge to update in case it exists.
+     */
+    where: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+    /**
+     * In case the KegiatanMitraBridge found by the `where` argument doesn't exist, create a new KegiatanMitraBridge with this data.
+     */
+    create: Prisma.XOR<Prisma.KegiatanMitraBridgeCreateInput, Prisma.KegiatanMitraBridgeUncheckedCreateInput>;
+    /**
+     * In case the KegiatanMitraBridge was found with the provided `where` argument, update it with this data.
+     */
+    update: Prisma.XOR<Prisma.KegiatanMitraBridgeUpdateInput, Prisma.KegiatanMitraBridgeUncheckedUpdateInput>;
+};
+/**
+ * KegiatanMitraBridge delete
+ */
+export type KegiatanMitraBridgeDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraBridge
+     */
+    select?: Prisma.KegiatanMitraBridgeSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraBridge
+     */
+    omit?: Prisma.KegiatanMitraBridgeOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraBridgeInclude<ExtArgs> | null;
+    /**
+     * Filter which KegiatanMitraBridge to delete.
+     */
+    where: Prisma.KegiatanMitraBridgeWhereUniqueInput;
+};
+/**
+ * KegiatanMitraBridge deleteMany
+ */
+export type KegiatanMitraBridgeDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Filter which KegiatanMitraBridges to delete
+     */
+    where?: Prisma.KegiatanMitraBridgeWhereInput;
+    /**
+     * Limit how many KegiatanMitraBridges to delete.
+     */
+    limit?: number;
+};
+/**
+ * KegiatanMitraBridge.pengawasObj
+ */
+export type KegiatanMitraBridge$pengawasObjArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the User
+     */
+    select?: Prisma.UserSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the User
+     */
+    omit?: Prisma.UserOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.UserInclude<ExtArgs> | null;
+    where?: Prisma.UserWhereInput;
+};
+/**
+ * KegiatanMitraBridge.penugasanObj
+ */
+export type KegiatanMitraBridge$penugasanObjArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraPenugasan
+     */
+    select?: Prisma.KegiatanMitraPenugasanSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraPenugasan
+     */
+    omit?: Prisma.KegiatanMitraPenugasanOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraPenugasanInclude<ExtArgs> | null;
+    where?: Prisma.KegiatanMitraPenugasanWhereInput;
+    orderBy?: Prisma.KegiatanMitraPenugasanOrderByWithRelationInput | Prisma.KegiatanMitraPenugasanOrderByWithRelationInput[];
+    cursor?: Prisma.KegiatanMitraPenugasanWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.KegiatanMitraPenugasanScalarFieldEnum | Prisma.KegiatanMitraPenugasanScalarFieldEnum[];
+};
+/**
+ * KegiatanMitraBridge without action
+ */
+export type KegiatanMitraBridgeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the KegiatanMitraBridge
+     */
+    select?: Prisma.KegiatanMitraBridgeSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the KegiatanMitraBridge
+     */
+    omit?: Prisma.KegiatanMitraBridgeOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.KegiatanMitraBridgeInclude<ExtArgs> | null;
+};
+export {};
+//# sourceMappingURL=KegiatanMitraBridge.d.ts.map

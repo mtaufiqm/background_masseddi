@@ -1,0 +1,264 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  username String @id @default(uuid())
+  pwd String
+
+  userRoleBridge UserRoleBridge[]
+  userLog UserLog?
+  pegawaiObj Pegawai?
+  MitraObj Mitra?
+
+  kegiatanCreatorObj Kegiatan[] @relation(name: "kegiatanCreator")
+  kegiatanPjObj Kegiatan[] @relation(name: "kegiatanPj")
+  pengawasMitraObj KegiatanMitraBridge[]
+
+  @@map("user")
+}
+
+model Roles {
+  description String @id
+
+  userRoleBridge UserRoleBridge[]
+  @@map("roles")
+}
+
+model UserRoleBridge {
+  description String
+  username String
+
+  roles Roles @relation(fields: [description],references: [description])
+  user User @relation(fields: [username],references: [username])
+
+  @@id([description,username])
+  @@unique([description,username])
+
+  @@map("user_role_bridge")
+}
+
+model UserLog {
+  uuid String @id @default(uuid())
+  username String @unique
+  resource String?
+  last_access String?
+
+  userObj User @relation(fields: [username],references: [username])
+
+  @@map("user_log")
+}
+
+model Pegawai {
+  uuid String @id @default(uuid())
+  fullname String
+  fullname_with_title String?
+  nickname String?
+  date_of_birth String?
+  city_of_birth String?
+  nip String?
+  old_nip String?
+  age Int?
+  username String? @unique
+  status_pegawai String?
+  phone_number String?
+
+  userObj User? @relation(fields: [username],references: [username], onUpdate: Cascade)
+  statusObj StatusPegawai? @relation(fields: [status_pegawai],references: [description])
+
+  @@map("pegawai")
+}
+
+model StatusPegawai {
+  description String @id
+
+  pegawaiObj Pegawai[]
+
+  @@map("status_pegawai")
+}
+
+model Mitra {
+  mitra_id String @id @unique
+  fullname String 
+  nickname String?
+  date_of_birth String?
+  city_of_birth String?
+  email String?
+  username String? @unique 
+  phone_number String?
+  address_code String?
+  address_detail String?
+
+  userObj User? @relation(fields: [username],references: [username],onUpdate: Cascade)
+  kegiatanMitraObj KegiatanMitraBridge[]
+
+  @@map("mitra")
+}
+
+model KegiatanMode {
+  description String @id
+
+  kegiatanObj Kegiatan[]
+
+  @@map("kegiatan_mode")
+}
+
+model KegiatanStatus {
+  id Int @id
+  description String
+
+  kegiatanObj Kegiatan[]
+  @@map("kegiatan_status")
+}
+
+model Kegiatan {
+  uuid String @id @default(uuid())
+  name String 
+  description String?
+  start String?
+  end String? 
+  monitoring_link String?
+  organic_involved Boolean?
+  organic_number Int? @default(0) 
+  mitra_involved Boolean?
+  mitra_number Int? @default(0)
+  created_by String?
+  penanggung_jawab String?
+  mode String?
+  status Int @default(0)
+
+  createdByObj User? @relation(name: "kegiatanCreator",fields: [created_by], references: [username])
+  pjObj User? @relation(name:"kegiatanPj",fields: [penanggung_jawab],references: [username])
+  modeObj KegiatanMode? @relation(fields: [mode],references: [description]) 
+  statusObj KegiatanStatus @relation(fields: [status], references: [id])
+  kegiatanMitraObj KegiatanMitraBridge[]
+
+
+  @@map("kegiatan")
+}
+
+model KegiatanMitraBridge {
+  uuid String @id @default(uuid())
+  kegiatan_uuid String
+  mitra_id String 
+  status String
+  pengawas String?
+
+  kegiatanObj Kegiatan @relation(fields: [kegiatan_uuid],references: [uuid])
+  mitraObj Mitra @relation(fields: [mitra_id],references: [mitra_id])
+  pengawasObj User? @relation(fields: [pengawas],references: [username])
+  penugasanObj KegiatanMitraPenugasan[]
+
+  @@map("kegiatan_mitra_bridge")
+}
+
+model KegiatanMitraPenugasan {
+  uuid String @id @default(uuid())
+  bridge_uuid String
+  code String
+  group String
+  group_type_id Int
+  group_desc String 
+  description String 
+  unit String
+  status Int
+  started_time String?
+  ended_time String ?
+  location_latitude String?
+  location_longitude String?
+  notes String?
+  created_at String?
+  last_updated String?
+
+  bridgeObj KegiatanMitraBridge @relation(fields: [bridge_uuid],references: [uuid],onUpdate: Cascade)
+  statusObj PenugasanStatus @relation(fields: [status],references: [id])
+  groupObj PenugasanGroupType @relation(fields: [group_type_id],references: [id])
+  historyListObj PenugasanHistory[]
+  penugasanPhoto PenugasanPhoto?
+  @@map("kegiatan_mitra_penugasan")
+}
+
+model PenugasanStatus {
+  id Int @id
+  description String
+
+  penugasanObj KegiatanMitraPenugasan[]
+  penugasanHistoryObj PenugasanHistory[]
+
+  @@map("penugasan_status")
+}
+
+model PenugasanGroupType {
+  id Int @id
+  description String
+
+  penugasanObj KegiatanMitraPenugasan[]
+  @@map("penugasan_group_type")
+}
+
+model PenugasanHistory {
+  uuid String @id @default(uuid())
+  penugasan_uuid String
+  status Int
+  created_at String
+  location_latitude String? 
+  location_longitude String?
+
+  penugasanObj KegiatanMitraPenugasan @relation(fields: [penugasan_uuid],references: [uuid])
+  statusObj PenugasanStatus @relation(fields: [status],references: [id])
+
+  @@map("penugasan_history")
+}
+
+model PenugasanPhoto {
+  uuid String @id @default(uuid())
+  kmp_uuid String @unique
+  photo1_loc String?
+  photo1_ext String?
+  photo2_loc String?
+  photo2_ext String?
+  photo3_loc String?
+  photo3_ext String?
+  last_updated String
+
+  penugasanObj KegiatanMitraPenugasan @relation(fields: [kmp_uuid],references: [uuid])
+  @@map("penugasan_photo")
+}
+
+model JadwalPst {
+  uuid String @id @default(uuid())
+  start_date DateTime @db.Date
+  end_date DateTime @db.Date
+  pst_petugas_name String? 
+  pst_petugas_nohp String?
+  pst_petugas_photo String?
+  mpp1_petugas_name String? 
+  mpp1_petugas_nohp String?
+  mpp1_petugas_photo String?
+  mpp2_petugas_name String? 
+  mpp2_petugas_nohp String?
+  mpp2_petugas_photo String?
+
+  @@map("jadwal_pst")
+}
+
+model HariPenting {
+  uuid String @id @default(uuid())
+  date DateTime @db.Date
+  description String?
+  is_libur Boolean
+
+  @@map("hari_penting")
+}
