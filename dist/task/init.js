@@ -68,7 +68,7 @@ class ManageBackground {
     }
     static async startFirstTaskCronJob(dbClient, waClient) {
         console.info("Start First Task Cron Job..");
-        let cronTask = new cron_1.CronJob("0 * 8 * * *", async function () {
+        let cronTask = new cron_1.CronJob("0 1 8,9 * * *", async function () {
             try {
                 let listHariLibur = await haripenting_service_1.HariPentingService.readAllDateByLiburStatus(dbClient, true);
                 //if not thrown means there today jadwal
@@ -172,7 +172,7 @@ ${JSON.stringify(resultSendMessage)}
             if (!myNumber) {
                 throw new Error("Number Invalid");
             }
-            let result = await waClient.sendMessage(myNumber._serialized, message);
+            let result = await waClient.sendMessage(myNumber._serialized, message, { sendSeen: false });
             console.info(`Sukses Mengirim Pesan ke ${phoneNumber}`);
             return true;
         }

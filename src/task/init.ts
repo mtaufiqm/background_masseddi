@@ -63,6 +63,8 @@ class ManageBackground {
 Halo _*${result.pst_petugas_name}*_, Minggu ini kamu bertugas sebagai petugas Pelayanan Statistik Terpadu *(PST)*!,
 Sehat Selalu Ya! 
 
+*Link Presensi* : https://linktr.ee/pst7317
+
 _Pesan ini merupakan pesan otomatis, tidak untuk dibalas!_
 Made With ❤️ BPS Kabupaten Luwu
 `;
@@ -76,6 +78,8 @@ Made With ❤️ BPS Kabupaten Luwu
 
 Halo _*${result.mpp1_petugas_name}*_, minggu ini kamu dan ${result.mpp2_petugas_name} bertugas sebagai petugas Pelayanan di Mall Pelayanan Publik *(MPP)* Kabupaten Luwu, 
 Sehat Selalu Ya! 
+
+*Link Presensi* : https://linktr.ee/pst7317
 
 _Pesan ini merupakan pesan otomatis, tidak untuk dibalas!_
 Made With ❤️ BPS Kabupaten Luwu
@@ -91,6 +95,8 @@ Made With ❤️ BPS Kabupaten Luwu
 
 Halo _*${result.mpp2_petugas_name}*_, minggu ini kamu dan ${result.mpp1_petugas_name} bertugas sebagai petugas Pelayanan di Mall Pelayanan Publik *(MPP)* Kabupaten Luwu, 
 Sehat Selalu Ya! 
+
+*Link Presensi* : https://linktr.ee/pst7317
 
 _Pesan ini merupakan pesan otomatis, tidak untuk dibalas!_
 Made With ❤️ BPS Kabupaten Luwu
